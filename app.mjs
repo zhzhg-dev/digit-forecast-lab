@@ -1,12 +1,12 @@
-import { METHODS, backtest, mostLikely, parseSequence, predict, syntheticSequence, verifiedPeriod } from "./forecast.mjs?v=0.3.0";
-import { DEFAULT_LANGUAGE, LocalizedError, createStaticLocalizer, createTranslator, describeError } from "./i18n.mjs?v=0.3.0";
-import { TRANSFORMER_CONTEXT_LENGTH } from "./transformer.mjs?v=0.2.0";
+import { METHODS, backtest, mostLikely, parseSequence, predict, syntheticSequence, verifiedPeriod } from "./forecast.mjs?v=0.4.0";
+import { DEFAULT_LANGUAGE, LocalizedError, createStaticLocalizer, createTranslator, describeError } from "./i18n.mjs?v=0.4.0";
+import { TRANSFORMER_CONTEXT_LENGTH } from "./transformer.mjs?v=0.4.0";
 
 const MAX_TEXT_LENGTH = 100_000;
 const SAMPLE_LENGTH = 420;
 const DEMO_SEED = 1729;
 const PERIODIC_SAMPLE_LENGTH = 64;
-const APP_VERSION = "0.3.0";
+const APP_VERSION = "0.4.0";
 
 const elements = {
   language: document.querySelector("#language"),

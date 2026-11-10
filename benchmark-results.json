@@ -82,16 +82,16 @@
     "historyLength": 32,
     "step": 1,
     "method": "transformer",
-    "label": "小型 Transformer",
+    "label": "滞后特征 Transformer",
     "streams": 400,
-    "accuracy": 0.0925,
-    "logLoss": 2.3738484556512547,
+    "accuracy": 0.11,
+    "logLoss": 2.405676470757716,
     "oracleAccuracy": 0.1,
     "oracleLogLoss": 2.3025850929940455,
-    "advantage": -0.0175,
+    "advantage": 0,
     "advantageInterval": [
-      -0.057017246956456165,
-      0.02201724695645616
+      -0.01962454603341295,
+      0.01962454603341295
     ]
   },
   {
@@ -196,16 +196,16 @@
     "historyLength": 32,
     "step": 5,
     "method": "transformer",
-    "label": "小型 Transformer",
+    "label": "滞后特征 Transformer",
     "streams": 400,
-    "accuracy": 0.1225,
-    "logLoss": 2.3601338903899403,
+    "accuracy": 0.1,
+    "logLoss": 2.370617382904611,
     "oracleAccuracy": 0.1,
     "oracleLogLoss": 2.3025850929940455,
-    "advantage": 0.02,
+    "advantage": -0.0025,
     "advantageInterval": [
-      -0.021000744537527347,
-      0.06100074453752735
+      -0.017216365159534876,
+      0.012216365159534875
     ]
   },
   {
@@ -310,16 +310,16 @@
     "historyLength": 128,
     "step": 1,
     "method": "transformer",
-    "label": "小型 Transformer",
+    "label": "滞后特征 Transformer",
     "streams": 400,
-    "accuracy": 0.115,
-    "logLoss": 2.3717316930740595,
+    "accuracy": 0.1,
+    "logLoss": 2.361289584517688,
     "oracleAccuracy": 0.1,
     "oracleLogLoss": 2.3025850929940455,
-    "advantage": 0.015,
+    "advantage": 0,
     "advantageInterval": [
-      -0.02660392187990783,
-      0.05660392187990783
+      -0.006938324788966929,
+      0.006938324788966929
     ]
   },
   {
@@ -424,16 +424,16 @@
     "historyLength": 128,
     "step": 5,
     "method": "transformer",
-    "label": "小型 Transformer",
+    "label": "滞后特征 Transformer",
     "streams": 400,
-    "accuracy": 0.1,
-    "logLoss": 2.380256084230304,
+    "accuracy": 0.0875,
+    "logLoss": 2.3485612561388196,
     "oracleAccuracy": 0.1,
     "oracleLogLoss": 2.3025850929940455,
-    "advantage": 0.0075,
+    "advantage": -0.005,
     "advantageInterval": [
-      -0.032651714476951,
-      0.047651714476951
+      -0.011920957240353896,
+      0.0019209572403538957
     ]
   },
   {
@@ -538,16 +538,16 @@
     "historyLength": 512,
     "step": 1,
     "method": "transformer",
-    "label": "小型 Transformer",
+    "label": "滞后特征 Transformer",
     "streams": 400,
-    "accuracy": 0.09,
-    "logLoss": 2.3571492407423227,
+    "accuracy": 0.1125,
+    "logLoss": 2.312668175536222,
     "oracleAccuracy": 0.1,
     "oracleLogLoss": 2.3025850929940455,
-    "advantage": -0.0225,
+    "advantage": 0,
     "advantageInterval": [
-      -0.06378084598956318,
-      0.018780845989563186
+      -0.009812273016706475,
+      0.009812273016706475
     ]
   },
   {
@@ -652,16 +652,16 @@
     "historyLength": 512,
     "step": 5,
     "method": "transformer",
-    "label": "小型 Transformer",
+    "label": "滞后特征 Transformer",
     "streams": 400,
-    "accuracy": 0.1225,
-    "logLoss": 2.349104427925003,
+    "accuracy": 0.105,
+    "logLoss": 2.3183700994972516,
     "oracleAccuracy": 0.1,
     "oracleLogLoss": 2.3025850929940455,
-    "advantage": 0.0125,
+    "advantage": -0.005,
     "advantageInterval": [
-      -0.029970681321705033,
-      0.05497068132170503
+      -0.011920957240353896,
+      0.0019209572403538957
     ]
   },
   {
@@ -766,16 +766,16 @@
     "historyLength": 32,
     "step": 1,
     "method": "transformer",
-    "label": "小型 Transformer",
+    "label": "滞后特征 Transformer",
     "streams": 400,
-    "accuracy": 0.4675,
-    "logLoss": 1.9056292277653804,
+    "accuracy": 0.4725,
+    "logLoss": 1.9647173430626432,
     "oracleAccuracy": 0.46,
     "oracleLogLoss": 1.876445030219958,
-    "advantage": -0.005,
+    "advantage": 0,
     "advantageInterval": [
-      -0.018867973959969277,
-      0.008867973959969275
+      0,
+      0
     ]
   },
   {
@@ -880,16 +880,16 @@
     "historyLength": 32,
     "step": 5,
     "method": "transformer",
-    "label": "小型 Transformer",
+    "label": "滞后特征 Transformer",
     "streams": 400,
-    "accuracy": 0.3575,
-    "logLoss": 1.9642132306087359,
+    "accuracy": 0.46,
+    "logLoss": 1.9601998691546632,
     "oracleAccuracy": 0.46,
     "oracleLogLoss": 1.876445030219958,
-    "advantage": -0.1025,
+    "advantage": 0,
     "advantageInterval": [
-      -0.13947466415633392,
-      -0.06552533584366607
+      0,
+      0
     ]
   },
   {
@@ -994,16 +994,16 @@
     "historyLength": 128,
     "step": 1,
     "method": "transformer",
-    "label": "小型 Transformer",
+    "label": "滞后特征 Transformer",
     "streams": 400,
-    "accuracy": 0.4325,
-    "logLoss": 1.9474998532448051,
+    "accuracy": 0.465,
+    "logLoss": 1.9038820049510385,
     "oracleAccuracy": 0.46,
     "oracleLogLoss": 1.876445030219958,
-    "advantage": -0.0325,
+    "advantage": 0,
     "advantageInterval": [
-      -0.04989950090028296,
-      -0.015100499099717047
+      0,
+      0
     ]
   },
   {
@@ -1108,16 +1108,16 @@
     "historyLength": 128,
     "step": 5,
     "method": "transformer",
-    "label": "小型 Transformer",
+    "label": "滞后特征 Transformer",
     "streams": 400,
-    "accuracy": 0.35,
-    "logLoss": 2.0277100044223375,
+    "accuracy": 0.4325,
+    "logLoss": 1.9527010566042537,
     "oracleAccuracy": 0.46,
     "oracleLogLoss": 1.876445030219958,
-    "advantage": -0.0825,
+    "advantage": 0,
     "advantageInterval": [
-      -0.11440026398174886,
-      -0.05059973601825114
+      0,
+      0
     ]
   },
   {
@@ -1222,16 +1222,16 @@
     "historyLength": 512,
     "step": 1,
     "method": "transformer",
-    "label": "小型 Transformer",
+    "label": "滞后特征 Transformer",
     "streams": 400,
-    "accuracy": 0.445,
-    "logLoss": 1.9475790380927718,
+    "accuracy": 0.47,
+    "logLoss": 1.8673953211016217,
     "oracleAccuracy": 0.46,
     "oracleLogLoss": 1.876445030219958,
-    "advantage": -0.025,
+    "advantage": 0,
     "advantageInterval": [
-      -0.04031940633726763,
-      -0.009680593662732367
+      0,
+      0
     ]
   },
   {
@@ -1336,16 +1336,16 @@
     "historyLength": 512,
     "step": 5,
     "method": "transformer",
-    "label": "小型 Transformer",
+    "label": "滞后特征 Transformer",
     "streams": 400,
-    "accuracy": 0.3375,
-    "logLoss": 2.0350096291230853,
+    "accuracy": 0.4175,
+    "logLoss": 1.970511828716352,
     "oracleAccuracy": 0.46,
     "oracleLogLoss": 1.876445030219958,
-    "advantage": -0.08,
+    "advantage": 0,
     "advantageInterval": [
-      -0.11233586895465517,
-      -0.04766413104534484
+      0,
+      0
     ]
   },
   {
@@ -1450,16 +1450,16 @@
     "historyLength": 32,
     "step": 1,
     "method": "transformer",
-    "label": "小型 Transformer",
+    "label": "滞后特征 Transformer",
     "streams": 400,
-    "accuracy": 0.4525,
-    "logLoss": 1.875681362188515,
+    "accuracy": 0.5875,
+    "logLoss": 1.768009939865803,
     "oracleAccuracy": 0.64,
     "oracleLogLoss": 1.4444190426347405,
-    "advantage": 0.28,
+    "advantage": 0.415,
     "advantageInterval": [
-      0.23029524361776288,
-      0.3297047563822372
+      0.35797262584066514,
+      0.4720273741593348
     ]
   },
   {
@@ -1564,16 +1564,16 @@
     "historyLength": 32,
     "step": 5,
     "method": "transformer",
-    "label": "小型 Transformer",
+    "label": "滞后特征 Transformer",
     "streams": 400,
-    "accuracy": 0.1775,
-    "logLoss": 2.3596995178591347,
+    "accuracy": 0.0975,
+    "logLoss": 2.6150911296322388,
     "oracleAccuracy": 0.169984,
     "oracleLogLoss": 2.2795923968662573,
-    "advantage": 0.0775,
+    "advantage": -0.0025,
     "advantageInterval": [
-      0.0351257753784131,
-      0.1198742246215869
+      -0.010994136264341006,
+      0.0059941362643410045
     ]
   },
   {
@@ -1678,16 +1678,16 @@
     "historyLength": 128,
     "step": 1,
     "method": "transformer",
-    "label": "小型 Transformer",
+    "label": "滞后特征 Transformer",
     "streams": 400,
-    "accuracy": 0.5275,
-    "logLoss": 1.7336709939397503,
+    "accuracy": 0.705,
+    "logLoss": 1.301519224749888,
     "oracleAccuracy": 0.64,
     "oracleLogLoss": 1.4444190426347405,
-    "advantage": 0.37,
+    "advantage": 0.5475,
     "advantageInterval": [
-      0.31509509337108543,
-      0.42490490662891456
+      0.493510759681438,
+      0.601489240318562
     ]
   },
   {
@@ -1792,16 +1792,16 @@
     "historyLength": 128,
     "step": 5,
     "method": "transformer",
-    "label": "小型 Transformer",
+    "label": "滞后特征 Transformer",
     "streams": 400,
-    "accuracy": 0.145,
-    "logLoss": 2.377597334640613,
+    "accuracy": 0.1175,
+    "logLoss": 2.4435345410638813,
     "oracleAccuracy": 0.169984,
     "oracleLogLoss": 2.2795923968662573,
-    "advantage": 0.0425,
+    "advantage": 0.015,
     "advantageInterval": [
-      -0.0003487200160931722,
-      0.08534872001609317
+      -0.009973150494361642,
+      0.03997315049436164
     ]
   },
   {
@@ -1906,16 +1906,16 @@
     "historyLength": 512,
     "step": 1,
     "method": "transformer",
-    "label": "小型 Transformer",
+    "label": "滞后特征 Transformer",
     "streams": 400,
-    "accuracy": 0.475,
-    "logLoss": 1.7939467311694373,
+    "accuracy": 0.6525,
+    "logLoss": 1.4141709911412284,
     "oracleAccuracy": 0.64,
     "oracleLogLoss": 1.4444190426347405,
-    "advantage": 0.3425,
+    "advantage": 0.52,
     "advantageInterval": [
-      0.2852688083450501,
-      0.39973119165494997
+      0.4623993664752189,
+      0.5776006335247812
     ]
   },
   {
@@ -2020,16 +2020,16 @@
     "historyLength": 512,
     "step": 5,
     "method": "transformer",
-    "label": "小型 Transformer",
+    "label": "滞后特征 Transformer",
     "streams": 400,
-    "accuracy": 0.1825,
-    "logLoss": 2.3242045743604764,
+    "accuracy": 0.1725,
+    "logLoss": 2.321690326201111,
     "oracleAccuracy": 0.169984,
     "oracleLogLoss": 2.2795923968662573,
-    "advantage": 0.105,
+    "advantage": 0.095,
     "advantageInterval": [
-      0.05908369933600195,
-      0.15091630066399803
+      0.05156198608785643,
+      0.13843801391214358
     ]
   },
   {
@@ -2134,16 +2134,16 @@
     "historyLength": 32,
     "step": 1,
     "method": "transformer",
-    "label": "小型 Transformer",
+    "label": "滞后特征 Transformer",
     "streams": 400,
-    "accuracy": 0.22,
-    "logLoss": 2.1608028711636957,
+    "accuracy": 0.615,
+    "logLoss": 1.632078609294274,
     "oracleAccuracy": 0.64,
     "oracleLogLoss": 1.4444190426347405,
-    "advantage": 0.0075,
+    "advantage": 0.4025,
     "advantageInterval": [
-      -0.028877439027169556,
-      0.043877439027169556
+      0.3456655265844659,
+      0.45933447341553413
     ]
   },
   {
@@ -2248,16 +2248,16 @@
     "historyLength": 32,
     "step": 5,
     "method": "transformer",
-    "label": "小型 Transformer",
+    "label": "滞后特征 Transformer",
     "streams": 400,
-    "accuracy": 0.5975,
-    "logLoss": 1.791839187551672,
+    "accuracy": 0.635,
+    "logLoss": 1.5931188506066831,
     "oracleAccuracy": 0.64,
     "oracleLogLoss": 1.4444190426347405,
-    "advantage": 0.4275,
+    "advantage": 0.465,
     "advantageInterval": [
-      0.3720156304608415,
-      0.48298436953915846
+      0.40916695941422654,
+      0.5208330405857735
     ]
   },
   {
@@ -2362,16 +2362,16 @@
     "historyLength": 128,
     "step": 1,
     "method": "transformer",
-    "label": "小型 Transformer",
+    "label": "滞后特征 Transformer",
     "streams": 400,
-    "accuracy": 0.18,
-    "logLoss": 2.1701757169240867,
+    "accuracy": 0.65,
+    "logLoss": 1.4525795587707973,
     "oracleAccuracy": 0.64,
     "oracleLogLoss": 1.4444190426347405,
-    "advantage": 0.055,
+    "advantage": 0.525,
     "advantageInterval": [
-      0.010359549458351075,
-      0.09964045054164893
+      0.47086550212988837,
+      0.5791344978701116
     ]
   },
   {
@@ -2476,16 +2476,16 @@
     "historyLength": 128,
     "step": 5,
     "method": "transformer",
-    "label": "小型 Transformer",
+    "label": "滞后特征 Transformer",
     "streams": 400,
-    "accuracy": 0.65,
-    "logLoss": 1.7268837083217918,
+    "accuracy": 0.6725,
+    "logLoss": 1.4040793283937347,
     "oracleAccuracy": 0.64,
     "oracleLogLoss": 1.4444190426347405,
-    "advantage": 0.515,
+    "advantage": 0.5375,
     "advantageInterval": [
-      0.4626374782481733,
-      0.5673625217518268
+      0.48524619127455115,
+      0.5897538087254488
     ]
   },
   {
@@ -2590,16 +2590,16 @@
     "historyLength": 512,
     "step": 1,
     "method": "transformer",
-    "label": "小型 Transformer",
+    "label": "滞后特征 Transformer",
     "streams": 400,
-    "accuracy": 0.2325,
-    "logLoss": 2.1046509889900555,
+    "accuracy": 0.675,
+    "logLoss": 1.3653888668218166,
     "oracleAccuracy": 0.64,
     "oracleLogLoss": 1.4444190426347405,
-    "advantage": 0.115,
+    "advantage": 0.5575,
     "advantageInterval": [
-      0.06479653328528559,
-      0.16520346671471442
+      0.5018466982111573,
+      0.6131533017888426
     ]
   },
   {
@@ -2704,16 +2704,16 @@
     "historyLength": 512,
     "step": 5,
     "method": "transformer",
-    "label": "小型 Transformer",
+    "label": "滞后特征 Transformer",
     "streams": 400,
-    "accuracy": 0.58,
-    "logLoss": 1.7782893956780512,
+    "accuracy": 0.6275,
+    "logLoss": 1.4837075610469734,
     "oracleAccuracy": 0.64,
     "oracleLogLoss": 1.4444190426347405,
-    "advantage": 0.485,
+    "advantage": 0.5325,
     "advantageInterval": [
-      0.42951291915814205,
-      0.5404870808418579
+      0.477521163561418,
+      0.587478836438582
     ]
   },
   {
@@ -2818,16 +2818,16 @@
     "historyLength": 32,
     "step": 1,
     "method": "transformer",
-    "label": "小型 Transformer",
+    "label": "滞后特征 Transformer",
     "streams": 400,
-    "accuracy": 0.135,
-    "logLoss": 2.3147990737112343,
+    "accuracy": 0.6375,
+    "logLoss": 1.5985723203808107,
     "oracleAccuracy": 0.64,
     "oracleLogLoss": 1.4444190426347405,
-    "advantage": -0.0575,
+    "advantage": 0.445,
     "advantageInterval": [
-      -0.10074015555743965,
-      -0.014259844442560357
+      0.39019382158020455,
+      0.49980617841979547
     ]
   },
   {
@@ -2932,16 +2932,16 @@
     "historyLength": 32,
     "step": 5,
     "method": "transformer",
-    "label": "小型 Transformer",
+    "label": "滞后特征 Transformer",
     "streams": 400,
-    "accuracy": 0.1125,
-    "logLoss": 2.310698471680885,
+    "accuracy": 0.685,
+    "logLoss": 1.4064474818213584,
     "oracleAccuracy": 0.64,
     "oracleLogLoss": 1.4444190426347405,
-    "advantage": -0.1,
+    "advantage": 0.4725,
     "advantageInterval": [
-      -0.1465436976343058,
-      -0.0534563023656942
+      0.4174949013527565,
+      0.5275050986472434
     ]
   },
   {
@@ -3046,16 +3046,16 @@
     "historyLength": 128,
     "step": 1,
     "method": "transformer",
-    "label": "小型 Transformer",
+    "label": "滞后特征 Transformer",
     "streams": 400,
-    "accuracy": 0.1175,
-    "logLoss": 2.3154790353961774,
+    "accuracy": 0.635,
+    "logLoss": 1.5001096430121643,
     "oracleAccuracy": 0.64,
     "oracleLogLoss": 1.4444190426347405,
-    "advantage": -0.0275,
+    "advantage": 0.49,
     "advantageInterval": [
-      -0.07046652511783744,
-      0.015466525117837433
+      0.43493749644044855,
+      0.5450625035595514
     ]
   },
   {
@@ -3160,16 +3160,16 @@
     "historyLength": 128,
     "step": 5,
     "method": "transformer",
-    "label": "小型 Transformer",
+    "label": "滞后特征 Transformer",
     "streams": 400,
-    "accuracy": 0.1,
-    "logLoss": 2.345338189362225,
+    "accuracy": 0.6175,
+    "logLoss": 1.5426845469095993,
     "oracleAccuracy": 0.64,
     "oracleLogLoss": 1.4444190426347405,
-    "advantage": -0.05,
+    "advantage": 0.4675,
     "advantageInterval": [
-      -0.09133984102703288,
-      -0.008660158972967125
+      0.41208508497689866,
+      0.5229149150231014
     ]
   },
   {
@@ -3274,16 +3274,16 @@
     "historyLength": 512,
     "step": 1,
     "method": "transformer",
-    "label": "小型 Transformer",
+    "label": "滞后特征 Transformer",
     "streams": 400,
-    "accuracy": 0.1125,
-    "logLoss": 2.328230758666072,
+    "accuracy": 0.585,
+    "logLoss": 1.598367083871804,
     "oracleAccuracy": 0.64,
     "oracleLogLoss": 1.4444190426347405,
-    "advantage": -0.035,
+    "advantage": 0.4375,
     "advantageInterval": [
-      -0.08141682241934245,
-      0.01141682241934245
+      0.37813017335557164,
+      0.49686982664442836
     ]
   },
   {
@@ -3388,16 +3388,16 @@
     "historyLength": 512,
     "step": 5,
     "method": "transformer",
-    "label": "小型 Transformer",
+    "label": "滞后特征 Transformer",
     "streams": 400,
-    "accuracy": 0.0975,
-    "logLoss": 2.332282115248105,
+    "accuracy": 0.6725,
+    "logLoss": 1.3691587146780002,
     "oracleAccuracy": 0.64,
     "oracleLogLoss": 1.4444190426347405,
-    "advantage": -0.0125,
+    "advantage": 0.5625,
     "advantageInterval": [
-      -0.053234969243860314,
-      0.02823496924386031
+      0.5095597407200193,
+      0.6154402592799807
     ]
   },
   {

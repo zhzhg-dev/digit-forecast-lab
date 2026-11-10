@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-zh="六种方法验收 | 数列预测实验室">Method acceptance | Digit Forecast Lab</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css?v=0.4.0">
+  <script type="module" src="./acceptance.mjs?v=0.4.0"></script>
+  <style>
+    #acceptance-results { display: grid; gap: .75rem; margin-block: 1rem; }
+    #acceptance-results summary { cursor: pointer; font-weight: 750; }
+    #acceptance-results .method-status { float: right; color: var(--cobalt-dark); font-size: .88rem; }
+    #acceptance-results .method-status.error { color: var(--coral-dark); }
+    #acceptance-results caption { text-align: left; font-weight: 700; margin-bottom: .4rem; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="./" data-zh="返回数列预测实验室">Back to Digit Forecast Lab</a>
+      <div class="language-choice">
+        <label for="language" class="sr-only" data-zh="显示语言">Display language</label>
+        <select id="language"><option value="en">English</option><option value="zh" lang="zh-Hans">简体中文</option></select>
+      </div>
+    </div>
+  </header>
+  <main class="shell">
+    <section class="section" aria-labelledby="acceptance-title">
+      <div class="section-heading"><h2 id="acceptance-title" data-zh="六种方法逐项验收">Acceptance by method</h2></div>
+      <p class="section-description" data-zh="每种方法都用独立的合成序列检查。验收条件随任务而定，确定性序列看是否全中，随机序列与已知规则的参照比较。">Each method is checked on independent synthetic sequences. Deterministic tests require exact matches. Stochastic tests compare against a reference that knows the generating rule.</p>
+      <p id="acceptance-status" class="message benchmark-status" role="status"></p>
+      <div id="acceptance-results"></div>
+      <p class="help" data-zh="滞后特征 Transformer 的验收覆盖整个混合模型，包括统计滞后预测和注意力加权。八位滞后未出现在训练数据中，验收仍属于同类带噪复制任务。">The lag-aware Transformer is scored as a complete hybrid, including statistical lag forecasts and attention weights. Lag eight was absent from training and belongs to the same noisy-copy task family.</p>
+      <p class="help"><span data-zh="在项目目录重跑全部验收">Rerun the full acceptance suite from the repository with</span> <code>npm run acceptance -- --json</code></p>
+      <p><a href="./acceptance-results.json?v=0.4.0" download="acceptance-results.json" data-zh="下载完整验收数据">Download the complete acceptance results</a></p>
+    </section>
+  </main>
+</body>
+</html>

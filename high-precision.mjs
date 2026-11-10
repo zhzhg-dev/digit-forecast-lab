@@ -1,4 +1,4 @@
-import { createStaticLocalizer, createTranslator } from './i18n.mjs?v=0.3.0';
+import { createStaticLocalizer, createTranslator } from './i18n.mjs?v=0.4.0';
 
 const localizeStatic = createStaticLocalizer(document);
 const language = document.querySelector('#language');
@@ -107,7 +107,7 @@ history.addEventListener('change', renderReport);
 setLanguage();
 
 try {
-  const response = await fetch('./high-precision-results.json?v=0.3.0');
+  const response = await fetch('./high-precision-results.json?v=0.4.0');
   if (!response.ok) throw new Error(`Accuracy report request failed (${response.status})`);
   report = await response.json();
 } catch {

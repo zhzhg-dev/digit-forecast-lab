@@ -1,5 +1,5 @@
-import { METHODS } from "./forecast.mjs?v=0.3.0";
-import { TRANSFORMER_CONTEXT_LENGTH } from "./transformer.mjs?v=0.2.0";
+import { METHODS } from "./forecast.mjs?v=0.4.0";
+import { TRANSFORMER_CONTEXT_LENGTH } from "./transformer.mjs?v=0.4.0";
 
 export const DEFAULT_LANGUAGE = "en";
 
@@ -8,7 +8,7 @@ const englishMethods = {
   frequency: ["Smoothed frequency", "Estimates probabilities from the observed digit counts and gives unseen digits some probability."],
   markov: ["First-order Markov", "Estimates the next digit from the previous one. For later positions it carries the probabilities forward."],
   lag: ["Lag mixture (MTD)", "Combines digit frequencies with transitions from 1 to 12 positions back. Uses smoothed frequencies if the mixture does not improve enough on validation data."],
-  transformer: ["Small Transformer", `Uses up to ${TRANSFORMER_CONTEXT_LENGTH} recent digits and forecasts every requested position from that same history. It was trained on synthetic uniform, biased, and lag-dependent sequences. The model stays fixed when you enter new data, and its performance on other sources may differ.`],
+  transformer: ["Lag-aware Transformer", `This hybrid uses up to ${TRANSFORMER_CONTEXT_LENGTH.toLocaleString("en")} recent digits. Its attention model, trained on synthetic sequences, reads lag statistics and adjusts how frequency and lag forecasts are combined. Learned parameters stay fixed when you enter new data.`],
   periodic: ["Verified cycle", "Looks for a repeating pattern across the full history. It requires two full cycles to fit and at least one more full cycle to check against held-out digits. If no cycle passes, it uses smoothed frequency."],
 };
 

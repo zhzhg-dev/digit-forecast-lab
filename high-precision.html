@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title data-zh="长历史精度验证 | 数列预测实验室">Long-history accuracy audit | Digit Forecast Lab</title>
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./styles.css?v=0.3.0">
-  <script type="module" src="./high-precision.mjs?v=0.3.0"></script>
+  <link rel="stylesheet" href="./styles.css?v=0.4.0">
+  <script type="module" src="./high-precision.mjs?v=0.4.0"></script>
 </head>
 <body>
   <header class="site-header">
@@ -22,6 +22,7 @@
     <section class="section" aria-labelledby="precision-title">
       <div class="section-heading"><h2 id="precision-title" data-zh="长历史精度验证">Long-history accuracy audit</h2></div>
       <p class="section-description" data-zh="使用独立生成的合成数字序列，分别测下一位、第 5 位和五位整段全中。每次先用固定长度的历史提交五个预测，再揭晓答案。">Independent synthetic digit sequences test the next digit, position +5, and all five digits together. Every forecast uses one fixed history before the future is revealed.</p>
+      <p><a class="button button-primary" href="./acceptance.html" data-zh-href="./acceptance.html?lang=zh" data-zh="查看各方法是否通过">View pass/fail by method</a></p>
       <div class="panel benchmark-panel">
         <div class="benchmark-controls">
           <label for="precision-dataset"><span data-zh="合成机制">Synthetic process</span><select id="precision-dataset"></select></label>
@@ -46,7 +47,7 @@
       </div>
       <p class="help" data-zh="周期续写先在历史前段寻找两次完整重复，再检查后段是否至少完整重复一次。因此周期 P 至少需要 3×P 位历史。表中的首次达标长度只来自本次测试网格。">Verified cycle requires two full copies in the fit portion and one full copy in the validation portion, so a period P needs at least 3×P historical digits. The first tested length refers to this benchmark grid.</p>
       <p class="help"><span data-zh="在项目目录复跑实验">Run the experiment again from the repository with</span> <code>npm run high-precision -- --json</code></p>
-      <p><a href="./high-precision-results.json?v=0.3.0" download="high-precision-results.json" data-zh="下载完整结果和区间 JSON">Download the results and intervals as JSON</a></p>
+      <p><a href="./high-precision-results.json?v=0.4.0" download="high-precision-results.json" data-zh="下载完整结果和区间 JSON">Download the results and intervals as JSON</a></p>
     </section>
     <section class="section" aria-labelledby="papers-title">
       <div class="section-heading"><h2 id="papers-title" data-zh="论文逐项对照">Comparison with published experiments</h2></div>
@@ -72,7 +73,7 @@
             <tr>
               <th scope="row"><a href="https://arxiv.org/html/2510.26792v2#S3" data-zh="ICLR 2026，按变体训练与混合训练">ICLR 2026, separate and mixed training</a></th>
               <td data-zh="指定小规模生成器上，按变体训练的下一值准确率接近满分，混合训练的各测试变体超过 90%。">On specified small generator variants, separate training was near perfect and mixed training exceeded 90% for each test variant.</td>
-              <td data-zh="文献核对。应用的 Transformer 使用固定合成权重、最多 32 位十进制历史，成绩单独报告。">Literature audit. The app Transformer uses fixed synthetic weights and up to 32 decimal digits, with scores reported separately.</td>
+              <td data-zh="文献核对。应用的滞后特征 Transformer 从最近最多 1,024 位十进制数字计算滞后统计量。注意力模型在合成序列上训练，学到的参数在评估时保持固定，成绩单独报告。">Literature audit. The app’s Lag-aware Transformer computes lag statistics from up to 1,024 recent decimal digits. Its attention model was trained on synthetic sequences, and learned parameters remain fixed during evaluation. Scores are reported separately.</td>
             </tr>
             <tr>
               <th scope="row"><a href="https://arxiv.org/html/2510.26792v2#S4.SS1" data-zh="ICLR 2026，截断实验">ICLR 2026, truncation study</a></th>

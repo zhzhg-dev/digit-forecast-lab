@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { backtest, METHODS, parseSequence, predict, syntheticSequence } from '../forecast.mjs';
+import { TRANSFORMER_CONTEXT_LENGTH } from '../transformer.mjs';
 
 function bestDigit(probabilities) {
   return probabilities.indexOf(Math.max(...probabilities));
@@ -40,13 +41,28 @@ test('all six methods return normalized distributions at horizons from 1 through
   }
 });
 
-test('short histories and the 32-digit context boundary remain valid', () => {
-  const sequence = syntheticSequence('short', 33, 829);
-  for (const length of [0, 1, 7, 31, 32, 33]) {
+test('short histories and the Transformer context boundary remain valid', () => {
+  const limit = TRANSFORMER_CONTEXT_LENGTH;
+  const sequence = syntheticSequence('short', limit + 1, 829);
+  for (const length of [0, 1, 7, limit - 1, limit, limit + 1]) {
     const history = sequence.slice(0, length);
     verifyDistributions(predict(history), 1);
     verifyDistributions(predict(history, 20), 20);
   }
+});
+
+test('Transformer forecasts ignore digits outside their declared context', () => {
+  const limit = TRANSFORMER_CONTEXT_LENGTH;
+  const recent = syntheticSequence('long', limit, 853);
+  const expected = predict(recent, 5).transformer;
+  assert.deepEqual(predict([1, 7, ...recent], 5).transformer, expected);
+  assert.deepEqual(predict([4, 9, ...recent], 5).transformer, expected);
+
+  const sharedSuffix = syntheticSequence('uniform', Math.min(32, Math.floor(limit / 2)), 621);
+  const priorLength = limit - sharedSuffix.length;
+  const favorsOne = predict([...Array(priorLength).fill(1), ...sharedSuffix], 5).transformer;
+  const favorsNine = predict([...Array(priorLength).fill(9), ...sharedSuffix], 5).transformer;
+  assert.notDeepEqual(favorsOne, favorsNine);
 });
 
 test('the frequency model learns a skewed history', () => {

@@ -148,21 +148,21 @@
       "period": 8,
       "historyLength": 8,
       "method": "transformer",
-      "label": "小型 Transformer",
+      "label": "滞后特征 Transformer",
       "streams": 400,
-      "nextAccuracy": 0.18,
-      "fifthAccuracy": 0.0925,
+      "nextAccuracy": 0.2925,
+      "fifthAccuracy": 0.2825,
       "blockAccuracy": 0.0025,
-      "nextLogLoss": 2.226973040652283,
-      "fifthLogLoss": 2.241179141630781,
-      "meanLogLoss": 2.1868102709459056,
+      "nextLogLoss": 1.9380483340447918,
+      "fifthLogLoss": 1.9487371780588827,
+      "meanLogLoss": 1.9376665854633013,
       "nextInterval": [
-        0.1454497374118191,
-        0.22063835257197656
+        0.25006128808159916,
+        0.3388864577672683
       ],
       "fifthInterval": [
-        0.06785354688500786,
-        0.12489925520373191
+        0.24060954581038724,
+        0.3285284528504738
       ],
       "blockInterval": [
         0.00044143642943440895,
@@ -352,21 +352,21 @@
       "period": 8,
       "historyLength": 16,
       "method": "transformer",
-      "label": "小型 Transformer",
+      "label": "滞后特征 Transformer",
       "streams": 400,
-      "nextAccuracy": 0.185,
-      "fifthAccuracy": 0.09,
+      "nextAccuracy": 0.345,
+      "fifthAccuracy": 0.31,
       "blockAccuracy": 0.0025,
-      "nextLogLoss": 2.218928058293359,
-      "fifthLogLoss": 2.254952483693955,
-      "meanLogLoss": 2.1609034691307354,
+      "nextLogLoss": 1.8287324001633392,
+      "fifthLogLoss": 1.8446288995069664,
+      "meanLogLoss": 1.8306018372622936,
       "nextInterval": [
-        0.15000638716506282,
-        0.225986576412736
+        0.30008703653936986,
+        0.39286188204653105
       ],
       "fifthInterval": [
-        0.06571691296712198,
-        0.12208345232461618
+        0.2666629610237808,
+        0.3569518424040979
       ],
       "blockInterval": [
         0.00044143642943440895,
@@ -556,25 +556,25 @@
       "period": 8,
       "historyLength": 23,
       "method": "transformer",
-      "label": "小型 Transformer",
+      "label": "滞后特征 Transformer",
       "streams": 400,
-      "nextAccuracy": 0.135,
-      "fifthAccuracy": 0.1475,
-      "blockAccuracy": 0.0025,
-      "nextLogLoss": 2.2962374508639343,
-      "fifthLogLoss": 2.186100393306361,
-      "meanLogLoss": 2.1494516924456324,
+      "nextAccuracy": 1,
+      "fifthAccuracy": 1,
+      "blockAccuracy": 1,
+      "nextLogLoss": 0.3244542381042544,
+      "fifthLogLoss": 0.31222148651357584,
+      "meanLogLoss": 0.31508456237854976,
       "nextInterval": [
-        0.10496250056538574,
-        0.17198172707238119
+        0.9904873594003194,
+        1
       ],
       "fifthInterval": [
-        0.1161055571050416,
-        0.18560085451773328
+        0.9904873594003194,
+        1
       ],
       "blockInterval": [
-        0.00044143642943440895,
-        0.014023640967247855
+        0.9904873594003194,
+        1
       ],
       "oracleNextAccuracy": 1,
       "oracleFifthAccuracy": 1,
@@ -760,25 +760,25 @@
       "period": 8,
       "historyLength": 24,
       "method": "transformer",
-      "label": "小型 Transformer",
+      "label": "滞后特征 Transformer",
       "streams": 400,
-      "nextAccuracy": 0.205,
-      "fifthAccuracy": 0.095,
-      "blockAccuracy": 0.0025,
-      "nextLogLoss": 2.1928375380973635,
-      "fifthLogLoss": 2.244503321280592,
-      "meanLogLoss": 2.139554480964846,
+      "nextAccuracy": 1,
+      "fifthAccuracy": 1,
+      "blockAccuracy": 1,
+      "nextLogLoss": 0.2982068240109632,
+      "fifthLogLoss": 0.29958000469088514,
+      "meanLogLoss": 0.2982306592522584,
       "nextInterval": [
-        0.1683322182508118,
-        0.24728023970299978
+        0.9904873594003194,
+        1
       ],
       "fifthInterval": [
-        0.0699962171700798,
-        0.12770902171566156
+        0.9904873594003194,
+        1
       ],
       "blockInterval": [
-        0.00044143642943440895,
-        0.014023640967247855
+        0.9904873594003194,
+        1
       ],
       "oracleNextAccuracy": 1,
       "oracleFifthAccuracy": 1,
@@ -964,25 +964,25 @@
       "period": 8,
       "historyLength": 25,
       "method": "transformer",
-      "label": "小型 Transformer",
+      "label": "滞后特征 Transformer",
       "streams": 400,
-      "nextAccuracy": 0.145,
-      "fifthAccuracy": 0.1,
-      "blockAccuracy": 0,
-      "nextLogLoss": 2.234056142042677,
-      "fifthLogLoss": 2.2660414797368698,
-      "meanLogLoss": 2.174500526443548,
+      "nextAccuracy": 1,
+      "fifthAccuracy": 1,
+      "blockAccuracy": 1,
+      "nextLogLoss": 0.28581237643316376,
+      "fifthLogLoss": 0.2865234389255137,
+      "meanLogLoss": 0.2858722797376923,
       "nextInterval": [
-        0.1138699785258184,
-        0.18288399629995486
+        0.9904873594003194,
+        1
       ],
       "fifthInterval": [
-        0.07429885168964503,
-        0.13331126079009953
+        0.9904873594003194,
+        1
       ],
       "blockInterval": [
-        0,
-        0.009512640599680667
+        0.9904873594003194,
+        1
       ],
       "oracleNextAccuracy": 1,
       "oracleFifthAccuracy": 1,
@@ -1168,25 +1168,25 @@
       "period": 8,
       "historyLength": 32,
       "method": "transformer",
-      "label": "小型 Transformer",
+      "label": "滞后特征 Transformer",
       "streams": 400,
-      "nextAccuracy": 0.2125,
-      "fifthAccuracy": 0.095,
-      "blockAccuracy": 0.0025,
-      "nextLogLoss": 2.156961906899932,
-      "fifthLogLoss": 2.250331886438696,
-      "meanLogLoss": 2.1201993690711185,
+      "nextAccuracy": 1,
+      "fifthAccuracy": 1,
+      "blockAccuracy": 1,
+      "nextLogLoss": 0.21259243108622347,
+      "fifthLogLoss": 0.21352346916251083,
+      "meanLogLoss": 0.21253717842857345,
       "nextInterval": [
-        0.17524287819884765,
-        0.2552268901459687
+        0.9904873594003194,
+        1
       ],
       "fifthInterval": [
-        0.0699962171700798,
-        0.12770902171566156
+        0.9904873594003194,
+        1
       ],
       "blockInterval": [
-        0.00044143642943440895,
-        0.014023640967247855
+        0.9904873594003194,
+        1
       ],
       "oracleNextAccuracy": 1,
       "oracleFifthAccuracy": 1,
@@ -1372,25 +1372,25 @@
       "period": 8,
       "historyLength": 128,
       "method": "transformer",
-      "label": "小型 Transformer",
+      "label": "滞后特征 Transformer",
       "streams": 400,
-      "nextAccuracy": 0.2125,
-      "fifthAccuracy": 0.095,
-      "blockAccuracy": 0.0025,
-      "nextLogLoss": 2.156961906899932,
-      "fifthLogLoss": 2.250331886438696,
-      "meanLogLoss": 2.1201993690711185,
+      "nextAccuracy": 1,
+      "fifthAccuracy": 1,
+      "blockAccuracy": 1,
+      "nextLogLoss": 0.04822452506683935,
+      "fifthLogLoss": 0.048454148121922974,
+      "meanLogLoss": 0.04819210422037941,
       "nextInterval": [
-        0.17524287819884765,
-        0.2552268901459687
+        0.9904873594003194,
+        1
       ],
       "fifthInterval": [
-        0.0699962171700798,
-        0.12770902171566156
+        0.9904873594003194,
+        1
       ],
       "blockInterval": [
-        0.00044143642943440895,
-        0.014023640967247855
+        0.9904873594003194,
+        1
       ],
       "oracleNextAccuracy": 1,
       "oracleFifthAccuracy": 1,
@@ -1576,25 +1576,25 @@
       "period": 8,
       "historyLength": 512,
       "method": "transformer",
-      "label": "小型 Transformer",
+      "label": "滞后特征 Transformer",
       "streams": 400,
-      "nextAccuracy": 0.2125,
-      "fifthAccuracy": 0.095,
-      "blockAccuracy": 0.0025,
-      "nextLogLoss": 2.156961906899932,
-      "fifthLogLoss": 2.250331886438696,
-      "meanLogLoss": 2.1201993690711185,
+      "nextAccuracy": 1,
+      "fifthAccuracy": 1,
+      "blockAccuracy": 1,
+      "nextLogLoss": 0.01180633495849854,
+      "fifthLogLoss": 0.011865149373940875,
+      "meanLogLoss": 0.011797562115561397,
       "nextInterval": [
-        0.17524287819884765,
-        0.2552268901459687
+        0.9904873594003194,
+        1
       ],
       "fifthInterval": [
-        0.0699962171700798,
-        0.12770902171566156
+        0.9904873594003194,
+        1
       ],
       "blockInterval": [
-        0.00044143642943440895,
-        0.014023640967247855
+        0.9904873594003194,
+        1
       ],
       "oracleNextAccuracy": 1,
       "oracleFifthAccuracy": 1,
@@ -1780,25 +1780,25 @@
       "period": 8,
       "historyLength": 2048,
       "method": "transformer",
-      "label": "小型 Transformer",
+      "label": "滞后特征 Transformer",
       "streams": 400,
-      "nextAccuracy": 0.2125,
-      "fifthAccuracy": 0.095,
-      "blockAccuracy": 0.0025,
-      "nextLogLoss": 2.156961906899932,
-      "fifthLogLoss": 2.250331886438696,
-      "meanLogLoss": 2.1201993690711185,
+      "nextAccuracy": 1,
+      "fifthAccuracy": 1,
+      "blockAccuracy": 1,
+      "nextLogLoss": 0.005883357811077168,
+      "fifthLogLoss": 0.005912901014889688,
+      "meanLogLoss": 0.005878908131368236,
       "nextInterval": [
-        0.17524287819884765,
-        0.2552268901459687
+        0.9904873594003194,
+        1
       ],
       "fifthInterval": [
-        0.0699962171700798,
-        0.12770902171566156
+        0.9904873594003194,
+        1
       ],
       "blockInterval": [
-        0.00044143642943440895,
-        0.014023640967247855
+        0.9904873594003194,
+        1
       ],
       "oracleNextAccuracy": 1,
       "oracleFifthAccuracy": 1,
@@ -1984,25 +1984,25 @@
       "period": 8,
       "historyLength": 8192,
       "method": "transformer",
-      "label": "小型 Transformer",
+      "label": "滞后特征 Transformer",
       "streams": 400,
-      "nextAccuracy": 0.2125,
-      "fifthAccuracy": 0.095,
-      "blockAccuracy": 0.0025,
-      "nextLogLoss": 2.156961906899932,
-      "fifthLogLoss": 2.250331886438696,
-      "meanLogLoss": 2.1201993690711185,
+      "nextAccuracy": 1,
+      "fifthAccuracy": 1,
+      "blockAccuracy": 1,
+      "nextLogLoss": 0.005883357811077168,
+      "fifthLogLoss": 0.005912901014889688,
+      "meanLogLoss": 0.005878908131368236,
       "nextInterval": [
-        0.17524287819884765,
-        0.2552268901459687
+        0.9904873594003194,
+        1
       ],
       "fifthInterval": [
-        0.0699962171700798,
-        0.12770902171566156
+        0.9904873594003194,
+        1
       ],
       "blockInterval": [
-        0.00044143642943440895,
-        0.014023640967247855
+        0.9904873594003194,
+        1
       ],
       "oracleNextAccuracy": 1,
       "oracleFifthAccuracy": 1,
@@ -2188,25 +2188,25 @@
       "period": 8,
       "historyLength": 16384,
       "method": "transformer",
-      "label": "小型 Transformer",
+      "label": "滞后特征 Transformer",
       "streams": 400,
-      "nextAccuracy": 0.2125,
-      "fifthAccuracy": 0.095,
-      "blockAccuracy": 0.0025,
-      "nextLogLoss": 2.156961906899932,
-      "fifthLogLoss": 2.250331886438696,
-      "meanLogLoss": 2.1201993690711185,
+      "nextAccuracy": 1,
+      "fifthAccuracy": 1,
+      "blockAccuracy": 1,
+      "nextLogLoss": 0.005883357811077168,
+      "fifthLogLoss": 0.005912901014889688,
+      "meanLogLoss": 0.005878908131368236,
       "nextInterval": [
-        0.17524287819884765,
-        0.2552268901459687
+        0.9904873594003194,
+        1
       ],
       "fifthInterval": [
-        0.0699962171700798,
-        0.12770902171566156
+        0.9904873594003194,
+        1
       ],
       "blockInterval": [
-        0.00044143642943440895,
-        0.014023640967247855
+        0.9904873594003194,
+        1
       ],
       "oracleNextAccuracy": 1,
       "oracleFifthAccuracy": 1,
@@ -2392,21 +2392,21 @@
       "period": 64,
       "historyLength": 32,
       "method": "transformer",
-      "label": "小型 Transformer",
+      "label": "滞后特征 Transformer",
       "streams": 400,
-      "nextAccuracy": 0.1,
-      "fifthAccuracy": 0.0875,
+      "nextAccuracy": 0.1025,
+      "fifthAccuracy": 0.1075,
       "blockAccuracy": 0,
-      "nextLogLoss": 2.3539732388232824,
-      "fifthLogLoss": 2.4006789490794596,
-      "meanLogLoss": 2.347524420034795,
+      "nextLogLoss": 2.375243144663436,
+      "fifthLogLoss": 2.3649971635963354,
+      "meanLogLoss": 2.389238772453652,
       "nextInterval": [
-        0.07429885168964503,
-        0.13331126079009953
+        0.07645843910823481,
+        0.13610411016851132
       ],
       "fifthInterval": [
-        0.06358653632567662,
-        0.11926139216905993
+        0.08079329401678037,
+        0.14167412885396896
       ],
       "blockInterval": [
         0,
@@ -2596,21 +2596,21 @@
       "period": 64,
       "historyLength": 64,
       "method": "transformer",
-      "label": "小型 Transformer",
+      "label": "滞后特征 Transformer",
       "streams": 400,
-      "nextAccuracy": 0.095,
-      "fifthAccuracy": 0.115,
+      "nextAccuracy": 0.165,
+      "fifthAccuracy": 0.1625,
       "blockAccuracy": 0,
-      "nextLogLoss": 2.3842050423846746,
-      "fifthLogLoss": 2.373012291067473,
-      "meanLogLoss": 2.3454670740359918,
+      "nextLogLoss": 2.235949352420052,
+      "fifthLogLoss": 2.2258817452106996,
+      "meanLogLoss": 2.2244258181536516,
       "nextInterval": [
-        0.0699962171700798,
-        0.12770902171566156
+        0.13184448183586026,
+        0.2045289873659258
       ],
       "fifthInterval": [
-        0.08733247792422089,
-        0.14999225533753324
+        0.12958686265103322,
+        0.20183416975375126
       ],
       "blockInterval": [
         0,
@@ -2800,21 +2800,21 @@
       "period": 64,
       "historyLength": 128,
       "method": "transformer",
-      "label": "小型 Transformer",
+      "label": "滞后特征 Transformer",
       "streams": 400,
-      "nextAccuracy": 0.095,
-      "fifthAccuracy": 0.115,
+      "nextAccuracy": 0.1675,
+      "fifthAccuracy": 0.1625,
       "blockAccuracy": 0,
-      "nextLogLoss": 2.3842050423846746,
-      "fifthLogLoss": 2.373012291067473,
-      "meanLogLoss": 2.3454670740359918,
+      "nextLogLoss": 2.2348113032888794,
+      "fifthLogLoss": 2.2233196414490806,
+      "meanLogLoss": 2.2215966052695286,
       "nextInterval": [
-        0.0699962171700798,
-        0.12770902171566156
+        0.13410501884963513,
+        0.20722088714915257
       ],
       "fifthInterval": [
-        0.08733247792422089,
-        0.14999225533753324
+        0.12958686265103322,
+        0.20183416975375126
       ],
       "blockInterval": [
         0,
@@ -3004,21 +3004,21 @@
       "period": 64,
       "historyLength": 191,
       "method": "transformer",
-      "label": "小型 Transformer",
+      "label": "滞后特征 Transformer",
       "streams": 400,
-      "nextAccuracy": 0.0725,
-      "fifthAccuracy": 0.09,
+      "nextAccuracy": 0.1125,
+      "fifthAccuracy": 0.19,
       "blockAccuracy": 0,
-      "nextLogLoss": 2.390514456317824,
-      "fifthLogLoss": 2.3932736029199497,
-      "meanLogLoss": 2.353706860337874,
+      "nextLogLoss": 2.286195381729944,
+      "fifthLogLoss": 2.2217874675334413,
+      "meanLogLoss": 2.232290530393977,
       "nextInterval": [
-        0.05095018845006176,
-        0.1021831192626652
+        0.0851480200886654,
+        0.14722427637608715
       ],
       "fifthInterval": [
-        0.06571691296712198,
-        0.12208345232461618
+        0.15457325560638852,
+        0.23132458156541352
       ],
       "blockInterval": [
         0,
@@ -3208,21 +3208,21 @@
       "period": 64,
       "historyLength": 192,
       "method": "transformer",
-      "label": "小型 Transformer",
+      "label": "滞后特征 Transformer",
       "streams": 400,
-      "nextAccuracy": 0.095,
-      "fifthAccuracy": 0.115,
+      "nextAccuracy": 0.175,
+      "fifthAccuracy": 0.1675,
       "blockAccuracy": 0,
-      "nextLogLoss": 2.3842050423846746,
-      "fifthLogLoss": 2.373012291067473,
-      "meanLogLoss": 2.3454670740359918,
+      "nextLogLoss": 2.2332190634949685,
+      "fifthLogLoss": 2.2214355535224093,
+      "meanLogLoss": 2.2194128581259376,
       "nextInterval": [
-        0.0699962171700798,
-        0.12770902171566156
+        0.140903632613942,
+        0.21527958377585044
       ],
       "fifthInterval": [
-        0.08733247792422089,
-        0.14999225533753324
+        0.13410501884963513,
+        0.20722088714915257
       ],
       "blockInterval": [
         0,
@@ -3412,21 +3412,21 @@
       "period": 64,
       "historyLength": 193,
       "method": "transformer",
-      "label": "小型 Transformer",
+      "label": "滞后特征 Transformer",
       "streams": 400,
-      "nextAccuracy": 0.085,
-      "fifthAccuracy": 0.1125,
+      "nextAccuracy": 0.1725,
+      "fifthAccuracy": 0.195,
       "blockAccuracy": 0,
-      "nextLogLoss": 2.3794429238407484,
-      "fifthLogLoss": 2.3682214571691835,
-      "meanLogLoss": 2.339782935808995,
+      "nextLogLoss": 2.2246085041688985,
+      "fifthLogLoss": 2.22314145188615,
+      "meanLogLoss": 2.2179233353260623,
       "nextInterval": [
-        0.061462653163424086,
-        0.11643283853431088
+        0.13863464284363428,
+        0.21259613674915653
       ],
       "fifthInterval": [
-        0.0851480200886654,
-        0.14722427637608715
+        0.15915003771249597,
+        0.23665267305330928
       ],
       "blockInterval": [
         0,
@@ -3616,21 +3616,21 @@
       "period": 64,
       "historyLength": 512,
       "method": "transformer",
-      "label": "小型 Transformer",
+      "label": "滞后特征 Transformer",
       "streams": 400,
-      "nextAccuracy": 0.095,
-      "fifthAccuracy": 0.115,
+      "nextAccuracy": 0.1675,
+      "fifthAccuracy": 0.1675,
       "blockAccuracy": 0,
-      "nextLogLoss": 2.3842050423846746,
-      "fifthLogLoss": 2.373012291067473,
-      "meanLogLoss": 2.3454670740359918,
+      "nextLogLoss": 2.2359887435019474,
+      "fifthLogLoss": 2.2222111003318057,
+      "meanLogLoss": 2.2180470688666225,
       "nextInterval": [
-        0.0699962171700798,
-        0.12770902171566156
+        0.13410501884963513,
+        0.20722088714915257
       ],
       "fifthInterval": [
-        0.08733247792422089,
-        0.14999225533753324
+        0.13410501884963513,
+        0.20722088714915257
       ],
       "blockInterval": [
         0,
@@ -3820,21 +3820,21 @@
       "period": 64,
       "historyLength": 2048,
       "method": "transformer",
-      "label": "小型 Transformer",
+      "label": "滞后特征 Transformer",
       "streams": 400,
-      "nextAccuracy": 0.095,
-      "fifthAccuracy": 0.115,
+      "nextAccuracy": 0.1725,
+      "fifthAccuracy": 0.18,
       "blockAccuracy": 0,
-      "nextLogLoss": 2.3842050423846746,
-      "fifthLogLoss": 2.373012291067473,
-      "meanLogLoss": 2.3454670740359918,
+      "nextLogLoss": 2.23416875534943,
+      "fifthLogLoss": 2.21652683622707,
+      "meanLogLoss": 2.2132965226198698,
       "nextInterval": [
-        0.0699962171700798,
-        0.12770902171566156
+        0.13863464284363428,
+        0.21259613674915653
       ],
       "fifthInterval": [
-        0.08733247792422089,
-        0.14999225533753324
+        0.1454497374118191,
+        0.22063835257197656
       ],
       "blockInterval": [
         0,
@@ -4024,21 +4024,21 @@
       "period": 64,
       "historyLength": 8192,
       "method": "transformer",
-      "label": "小型 Transformer",
+      "label": "滞后特征 Transformer",
       "streams": 400,
-      "nextAccuracy": 0.095,
-      "fifthAccuracy": 0.115,
+      "nextAccuracy": 0.1725,
+      "fifthAccuracy": 0.18,
       "blockAccuracy": 0,
-      "nextLogLoss": 2.3842050423846746,
-      "fifthLogLoss": 2.373012291067473,
-      "meanLogLoss": 2.3454670740359918,
+      "nextLogLoss": 2.23416875534943,
+      "fifthLogLoss": 2.21652683622707,
+      "meanLogLoss": 2.2132965226198698,
       "nextInterval": [
-        0.0699962171700798,
-        0.12770902171566156
+        0.13863464284363428,
+        0.21259613674915653
       ],
       "fifthInterval": [
-        0.08733247792422089,
-        0.14999225533753324
+        0.1454497374118191,
+        0.22063835257197656
       ],
       "blockInterval": [
         0,
@@ -4228,21 +4228,21 @@
       "period": 64,
       "historyLength": 16384,
       "method": "transformer",
-      "label": "小型 Transformer",
+      "label": "滞后特征 Transformer",
       "streams": 400,
-      "nextAccuracy": 0.095,
-      "fifthAccuracy": 0.115,
+      "nextAccuracy": 0.1725,
+      "fifthAccuracy": 0.18,
       "blockAccuracy": 0,
-      "nextLogLoss": 2.3842050423846746,
-      "fifthLogLoss": 2.373012291067473,
-      "meanLogLoss": 2.3454670740359918,
+      "nextLogLoss": 2.23416875534943,
+      "fifthLogLoss": 2.21652683622707,
+      "meanLogLoss": 2.2132965226198698,
       "nextInterval": [
-        0.0699962171700798,
-        0.12770902171566156
+        0.13863464284363428,
+        0.21259613674915653
       ],
       "fifthInterval": [
-        0.08733247792422089,
-        0.14999225533753324
+        0.1454497374118191,
+        0.22063835257197656
       ],
       "blockInterval": [
         0,
@@ -4432,21 +4432,21 @@
       "period": 257,
       "historyLength": 32,
       "method": "transformer",
-      "label": "小型 Transformer",
+      "label": "滞后特征 Transformer",
       "streams": 400,
-      "nextAccuracy": 0.0925,
-      "fifthAccuracy": 0.1125,
+      "nextAccuracy": 0.115,
+      "fifthAccuracy": 0.1,
       "blockAccuracy": 0,
-      "nextLogLoss": 2.35808368860149,
-      "fifthLogLoss": 2.3668760377903273,
-      "meanLogLoss": 2.340267501095488,
+      "nextLogLoss": 2.376781230618262,
+      "fifthLogLoss": 2.3943831805946223,
+      "meanLogLoss": 2.387118696517732,
       "nextInterval": [
-        0.06785354688500786,
-        0.12489925520373191
+        0.08733247792422089,
+        0.14999225533753324
       ],
       "fifthInterval": [
-        0.0851480200886654,
-        0.14722427637608715
+        0.07429885168964503,
+        0.13331126079009953
       ],
       "blockInterval": [
         0,
@@ -4636,21 +4636,21 @@
       "period": 257,
       "historyLength": 128,
       "method": "transformer",
-      "label": "小型 Transformer",
+      "label": "滞后特征 Transformer",
       "streams": 400,
-      "nextAccuracy": 0.0825,
-      "fifthAccuracy": 0.0875,
+      "nextAccuracy": 0.1025,
+      "fifthAccuracy": 0.0925,
       "blockAccuracy": 0,
-      "nextLogLoss": 2.388021013673533,
-      "fifthLogLoss": 2.4110685815445776,
-      "meanLogLoss": 2.3548770065580333,
+      "nextLogLoss": 2.3392116225939823,
+      "fifthLogLoss": 2.3541332858988833,
+      "meanLogLoss": 2.3362801088569,
       "nextInterval": [
-        0.059345516507342,
-        0.11359753839339136
+        0.07645843910823481,
+        0.13610411016851132
       ],
       "fifthInterval": [
-        0.06358653632567662,
-        0.11926139216905993
+        0.06785354688500786,
+        0.12489925520373191
       ],
       "blockInterval": [
         0,
@@ -4840,21 +4840,21 @@
       "period": 257,
       "historyLength": 257,
       "method": "transformer",
-      "label": "小型 Transformer",
+      "label": "滞后特征 Transformer",
       "streams": 400,
-      "nextAccuracy": 0.1,
-      "fifthAccuracy": 0.1125,
+      "nextAccuracy": 0.1475,
+      "fifthAccuracy": 0.115,
       "blockAccuracy": 0,
-      "nextLogLoss": 2.3622398350683227,
-      "fifthLogLoss": 2.372534889485576,
-      "meanLogLoss": 2.344829974160024,
+      "nextLogLoss": 2.2788339725666638,
+      "fifthLogLoss": 2.287722041187914,
+      "meanLogLoss": 2.288726663230581,
       "nextInterval": [
-        0.07429885168964503,
-        0.13331126079009953
+        0.1161055571050416,
+        0.18560085451773328
       ],
       "fifthInterval": [
-        0.0851480200886654,
-        0.14722427637608715
+        0.08733247792422089,
+        0.14999225533753324
       ],
       "blockInterval": [
         0,
@@ -5044,21 +5044,21 @@
       "period": 257,
       "historyLength": 512,
       "method": "transformer",
-      "label": "小型 Transformer",
+      "label": "滞后特征 Transformer",
       "streams": 400,
-      "nextAccuracy": 0.095,
-      "fifthAccuracy": 0.125,
+      "nextAccuracy": 0.1325,
+      "fifthAccuracy": 0.14,
       "blockAccuracy": 0,
-      "nextLogLoss": 2.3749744841561444,
-      "fifthLogLoss": 2.3512801454563768,
-      "meanLogLoss": 2.33471798780873,
+      "nextLogLoss": 2.279400939575696,
+      "fifthLogLoss": 2.278568439536606,
+      "meanLogLoss": 2.2859140612314235,
       "nextInterval": [
-        0.0699962171700798,
-        0.12770902171566156
+        0.10274473201637832,
+        0.16924705882438698
       ],
       "fifthInterval": [
-        0.09611465529837437,
-        0.16101982515138613
+        0.10940912065943276,
+        0.17743998057233734
       ],
       "blockInterval": [
         0,
@@ -5248,21 +5248,21 @@
       "period": 257,
       "historyLength": 514,
       "method": "transformer",
-      "label": "小型 Transformer",
+      "label": "滞后特征 Transformer",
       "streams": 400,
-      "nextAccuracy": 0.1,
-      "fifthAccuracy": 0.1125,
+      "nextAccuracy": 0.15,
+      "fifthAccuracy": 0.115,
       "blockAccuracy": 0,
-      "nextLogLoss": 2.3622398350683227,
-      "fifthLogLoss": 2.372534889485576,
-      "meanLogLoss": 2.344829974160024,
+      "nextLogLoss": 2.278641673057896,
+      "fifthLogLoss": 2.287813481264744,
+      "meanLogLoss": 2.2884422444600894,
       "nextInterval": [
-        0.07429885168964503,
-        0.13331126079009953
+        0.11834447398799032,
+        0.18831437443178617
       ],
       "fifthInterval": [
-        0.0851480200886654,
-        0.14722427637608715
+        0.08733247792422089,
+        0.14999225533753324
       ],
       "blockInterval": [
         0,
@@ -5452,21 +5452,21 @@
       "period": 257,
       "historyLength": 770,
       "method": "transformer",
-      "label": "小型 Transformer",
+      "label": "滞后特征 Transformer",
       "streams": 400,
-      "nextAccuracy": 0.1025,
-      "fifthAccuracy": 0.09,
+      "nextAccuracy": 0.12,
+      "fifthAccuracy": 0.1075,
       "blockAccuracy": 0,
-      "nextLogLoss": 2.367057936555451,
-      "fifthLogLoss": 2.402631230517615,
-      "meanLogLoss": 2.3489403028864597,
+      "nextLogLoss": 2.294616725287994,
+      "fifthLogLoss": 2.3031353744539733,
+      "meanLogLoss": 2.289180186429517,
       "nextInterval": [
-        0.07645843910823481,
-        0.13610411016851132
+        0.09171493428788874,
+        0.15551467256786858
       ],
       "fifthInterval": [
-        0.06571691296712198,
-        0.12208345232461618
+        0.08079329401678037,
+        0.14167412885396896
       ],
       "blockInterval": [
         0,
@@ -5656,21 +5656,21 @@
       "period": 257,
       "historyLength": 771,
       "method": "transformer",
-      "label": "小型 Transformer",
+      "label": "滞后特征 Transformer",
       "streams": 400,
-      "nextAccuracy": 0.1,
-      "fifthAccuracy": 0.1125,
+      "nextAccuracy": 0.1475,
+      "fifthAccuracy": 0.115,
       "blockAccuracy": 0,
-      "nextLogLoss": 2.3622398350683227,
-      "fifthLogLoss": 2.372534889485576,
-      "meanLogLoss": 2.344829974160024,
+      "nextLogLoss": 2.278164539259304,
+      "fifthLogLoss": 2.2875000991490055,
+      "meanLogLoss": 2.2877721402991766,
       "nextInterval": [
-        0.07429885168964503,
-        0.13331126079009953
+        0.1161055571050416,
+        0.18560085451773328
       ],
       "fifthInterval": [
-        0.0851480200886654,
-        0.14722427637608715
+        0.08733247792422089,
+        0.14999225533753324
       ],
       "blockInterval": [
         0,
@@ -5860,21 +5860,21 @@
       "period": 257,
       "historyLength": 772,
       "method": "transformer",
-      "label": "小型 Transformer",
+      "label": "滞后特征 Transformer",
       "streams": 400,
-      "nextAccuracy": 0.0725,
-      "fifthAccuracy": 0.105,
+      "nextAccuracy": 0.1125,
+      "fifthAccuracy": 0.13,
       "blockAccuracy": 0,
-      "nextLogLoss": 2.3913014171486613,
-      "fifthLogLoss": 2.387244205195614,
-      "meanLogLoss": 2.35100895825413,
+      "nextLogLoss": 2.2926824613446786,
+      "fifthLogLoss": 2.2926304060471985,
+      "meanLogLoss": 2.2907237949666777,
       "nextInterval": [
-        0.05095018845006176,
-        0.1021831192626652
+        0.0851480200886654,
+        0.14722427637608715
       ],
       "fifthInterval": [
-        0.07862330722943671,
-        0.138891678844311
+        0.10053077315766948,
+        0.16650858088609424
       ],
       "blockInterval": [
         0,
@@ -6064,21 +6064,21 @@
       "period": 257,
       "historyLength": 2048,
       "method": "transformer",
-      "label": "小型 Transformer",
+      "label": "滞后特征 Transformer",
       "streams": 400,
-      "nextAccuracy": 0.1225,
-      "fifthAccuracy": 0.0975,
+      "nextAccuracy": 0.135,
+      "fifthAccuracy": 0.155,
       "blockAccuracy": 0,
-      "nextLogLoss": 2.348675345492344,
-      "fifthLogLoss": 2.3812118539672182,
-      "meanLogLoss": 2.341760442446985,
+      "nextLogLoss": 2.282493891275393,
+      "fifthLogLoss": 2.2603158766296336,
+      "meanLogLoss": 2.28739343608559,
       "nextInterval": [
-        0.09391269296642377,
-        0.15826935068633516
+        0.10496250056538574,
+        0.17198172707238119
       ],
       "fifthInterval": [
-        0.07214471685094813,
-        0.1305129588317948
+        0.12283205544731421,
+        0.19373166656646548
       ],
       "blockInterval": [
         0,
@@ -6268,21 +6268,21 @@
       "period": 257,
       "historyLength": 8192,
       "method": "transformer",
-      "label": "小型 Transformer",
+      "label": "滞后特征 Transformer",
       "streams": 400,
-      "nextAccuracy": 0.075,
-      "fifthAccuracy": 0.1175,
+      "nextAccuracy": 0.12,
+      "fifthAccuracy": 0.135,
       "blockAccuracy": 0,
-      "nextLogLoss": 2.3742129030367365,
-      "fifthLogLoss": 2.374444754038545,
-      "meanLogLoss": 2.3375479477127237,
+      "nextLogLoss": 2.2992937501788226,
+      "fifthLogLoss": 2.2830744776467355,
+      "meanLogLoss": 2.29469667100275,
       "nextInterval": [
-        0.053037406335715714,
-        0.10504833817401285
+        0.09171493428788874,
+        0.15551467256786858
       ],
       "fifthInterval": [
-        0.08952149033047882,
-        0.1527556797282769
+        0.10496250056538574,
+        0.17198172707238119
       ],
       "blockInterval": [
         0,
@@ -6472,21 +6472,21 @@
       "period": 257,
       "historyLength": 16384,
       "method": "transformer",
-      "label": "小型 Transformer",
+      "label": "滞后特征 Transformer",
       "streams": 400,
-      "nextAccuracy": 0.1,
-      "fifthAccuracy": 0.1225,
+      "nextAccuracy": 0.1125,
+      "fifthAccuracy": 0.115,
       "blockAccuracy": 0,
-      "nextLogLoss": 2.355523354515037,
-      "fifthLogLoss": 2.3627942893546114,
-      "meanLogLoss": 2.341716738093942,
+      "nextLogLoss": 2.287522582851183,
+      "fifthLogLoss": 2.2983097965973323,
+      "meanLogLoss": 2.297835109290709,
       "nextInterval": [
-        0.07429885168964503,
-        0.13331126079009953
+        0.0851480200886654,
+        0.14722427637608715
       ],
       "fifthInterval": [
-        0.09391269296642377,
-        0.15826935068633516
+        0.08733247792422089,
+        0.14999225533753324
       ],
       "blockInterval": [
         0,
@@ -6676,21 +6676,21 @@
       "period": null,
       "historyLength": 32,
       "method": "transformer",
-      "label": "小型 Transformer",
+      "label": "滞后特征 Transformer",
       "streams": 400,
-      "nextAccuracy": 0.1075,
-      "fifthAccuracy": 0.1025,
+      "nextAccuracy": 0.1275,
+      "fifthAccuracy": 0.1175,
       "blockAccuracy": 0,
-      "nextLogLoss": 2.351706346437581,
-      "fifthLogLoss": 2.382536143658753,
-      "meanLogLoss": 2.3477386429008544,
+      "nextLogLoss": 2.3524543618045315,
+      "fifthLogLoss": 2.3612156755065197,
+      "meanLogLoss": 2.3900632406787157,
       "nextInterval": [
-        0.08079329401678037,
-        0.14167412885396896
+        0.09832071558850791,
+        0.16376620165825423
       ],
       "fifthInterval": [
-        0.07645843910823481,
-        0.13610411016851132
+        0.08952149033047882,
+        0.1527556797282769
       ],
       "blockInterval": [
         0,
@@ -6880,21 +6880,21 @@
       "period": null,
       "historyLength": 512,
       "method": "transformer",
-      "label": "小型 Transformer",
+      "label": "滞后特征 Transformer",
       "streams": 400,
-      "nextAccuracy": 0.1075,
-      "fifthAccuracy": 0.105,
+      "nextAccuracy": 0.12,
+      "fifthAccuracy": 0.1375,
       "blockAccuracy": 0,
-      "nextLogLoss": 2.3494637770384106,
-      "fifthLogLoss": 2.379886367708254,
-      "meanLogLoss": 2.33941655859309,
+      "nextLogLoss": 2.3003924556646402,
+      "fifthLogLoss": 2.2997023437039945,
+      "meanLogLoss": 2.306351413706538,
       "nextInterval": [
-        0.08079329401678037,
-        0.14167412885396896
+        0.09171493428788874,
+        0.15551467256786858
       ],
       "fifthInterval": [
-        0.07862330722943671,
-        0.138891678844311
+        0.1071839913205175,
+        0.17471267311425104
       ],
       "blockInterval": [
         0,
@@ -7084,21 +7084,21 @@
       "period": null,
       "historyLength": 2048,
       "method": "transformer",
-      "label": "小型 Transformer",
+      "label": "滞后特征 Transformer",
       "streams": 400,
-      "nextAccuracy": 0.0875,
-      "fifthAccuracy": 0.1075,
+      "nextAccuracy": 0.115,
+      "fifthAccuracy": 0.11,
       "blockAccuracy": 0,
-      "nextLogLoss": 2.3894316474577444,
-      "fifthLogLoss": 2.377871170994678,
-      "meanLogLoss": 2.3479089176992938,
+      "nextLogLoss": 2.3068317788263277,
+      "fifthLogLoss": 2.307004149712831,
+      "meanLogLoss": 2.304804970665074,
       "nextInterval": [
-        0.06358653632567662,
-        0.11926139216905993
+        0.08733247792422089,
+        0.14999225533753324
       ],
       "fifthInterval": [
-        0.08079329401678037,
-        0.14167412885396896
+        0.08296824650193972,
+        0.14445161316581123
       ],
       "blockInterval": [
         0,
@@ -7288,21 +7288,21 @@
       "period": null,
       "historyLength": 16384,
       "method": "transformer",
-      "label": "小型 Transformer",
+      "label": "滞后特征 Transformer",
       "streams": 400,
-      "nextAccuracy": 0.1175,
-      "fifthAccuracy": 0.0825,
+      "nextAccuracy": 0.115,
+      "fifthAccuracy": 0.0925,
       "blockAccuracy": 0,
-      "nextLogLoss": 2.3387507821091877,
-      "fifthLogLoss": 2.42630068306383,
-      "meanLogLoss": 2.3475266990803,
+      "nextLogLoss": 2.3019615012580825,
+      "fifthLogLoss": 2.310050580887725,
+      "meanLogLoss": 2.305389318831193,
       "nextInterval": [
-        0.08952149033047882,
-        0.1527556797282769
+        0.08733247792422089,
+        0.14999225533753324
       ],
       "fifthInterval": [
-        0.059345516507342,
-        0.11359753839339136
+        0.06785354688500786,
+        0.12489925520373191
       ],
       "blockInterval": [
         0,
@@ -7492,25 +7492,25 @@
       "period": null,
       "historyLength": 32,
       "method": "transformer",
-      "label": "小型 Transformer",
+      "label": "滞后特征 Transformer",
       "streams": 400,
-      "nextAccuracy": 0.19,
-      "fifthAccuracy": 0.6075,
-      "blockAccuracy": 0.0025,
-      "nextLogLoss": 2.1735203953564515,
-      "fifthLogLoss": 1.779333979381896,
-      "meanLogLoss": 2.110195808359611,
+      "nextAccuracy": 0.64,
+      "fifthAccuracy": 0.625,
+      "blockAccuracy": 0.1025,
+      "nextLogLoss": 1.5801097942043147,
+      "fifthLogLoss": 1.612794606642535,
+      "meanLogLoss": 1.565891499908602,
       "nextInterval": [
-        0.15457325560638852,
-        0.23132458156541352
+        0.5918335636186343,
+        0.6855028970134551
       ],
       "fifthInterval": [
-        0.5588404787053632,
-        0.6541143035657054
+        0.576578102393425,
+        0.6710437374566548
       ],
       "blockInterval": [
-        0.00044143642943440895,
-        0.014023640967247855
+        0.07645843910823481,
+        0.13610411016851132
       ],
       "oracleNextAccuracy": 0.64,
       "oracleFifthAccuracy": 0.64,
@@ -7696,25 +7696,25 @@
       "period": null,
       "historyLength": 512,
       "method": "transformer",
-      "label": "小型 Transformer",
+      "label": "滞后特征 Transformer",
       "streams": 400,
-      "nextAccuracy": 0.21,
-      "fifthAccuracy": 0.575,
-      "blockAccuracy": 0,
-      "nextLogLoss": 2.1603947090893585,
-      "fifthLogLoss": 1.8385678824771974,
-      "meanLogLoss": 2.1341643250537436,
+      "nextAccuracy": 0.65,
+      "fifthAccuracy": 0.6025,
+      "blockAccuracy": 0.105,
+      "nextLogLoss": 1.4400090030555095,
+      "fifthLogLoss": 1.5547368405560988,
+      "meanLogLoss": 1.4873205739603639,
       "nextInterval": [
-        0.1729370973424763,
-        0.2525802342053385
+        0.6020310608857149,
+        0.695115146934381
       ],
       "fifthInterval": [
-        0.5260666333045342,
-        0.6225064706055136
+        0.5537843145893452,
+        0.6492655940877204
       ],
       "blockInterval": [
-        0,
-        0.009512640599680667
+        0.07862330722943671,
+        0.138891678844311
       ],
       "oracleNextAccuracy": 0.64,
       "oracleFifthAccuracy": 0.64,
@@ -7900,25 +7900,25 @@
       "period": null,
       "historyLength": 2048,
       "method": "transformer",
-      "label": "小型 Transformer",
+      "label": "滞后特征 Transformer",
       "streams": 400,
-      "nextAccuracy": 0.1675,
-      "fifthAccuracy": 0.6175,
-      "blockAccuracy": 0,
-      "nextLogLoss": 2.184226034089998,
-      "fifthLogLoss": 1.7809829676138684,
-      "meanLogLoss": 2.118824738079985,
+      "nextAccuracy": 0.62,
+      "fifthAccuracy": 0.64,
+      "blockAccuracy": 0.1225,
+      "nextLogLoss": 1.5095993034158277,
+      "fifthLogLoss": 1.4503421410016955,
+      "meanLogLoss": 1.4335274033754295,
       "nextInterval": [
-        0.13410501884963513,
-        0.20722088714915257
+        0.5715036398060113,
+        0.6662133264500655
       ],
       "fifthInterval": [
-        0.5689683892522508,
-        0.6637961402068244
+        0.5918335636186343,
+        0.6855028970134551
       ],
       "blockInterval": [
-        0,
-        0.009512640599680667
+        0.09391269296642377,
+        0.15826935068633516
       ],
       "oracleNextAccuracy": 0.64,
       "oracleFifthAccuracy": 0.64,
@@ -8104,25 +8104,25 @@
       "period": null,
       "historyLength": 16384,
       "method": "transformer",
-      "label": "小型 Transformer",
+      "label": "滞后特征 Transformer",
       "streams": 400,
-      "nextAccuracy": 0.1925,
-      "fifthAccuracy": 0.6175,
-      "blockAccuracy": 0.0025,
-      "nextLogLoss": 2.146990601594692,
-      "fifthLogLoss": 1.7670252053644895,
-      "meanLogLoss": 2.11847434165993,
+      "nextAccuracy": 0.6375,
+      "fifthAccuracy": 0.6575,
+      "blockAccuracy": 0.0825,
+      "nextLogLoss": 1.4544261568849004,
+      "fifthLogLoss": 1.4116277703710771,
+      "meanLogLoss": 1.4597009481377181,
       "nextInterval": [
-        0.15686042573701753,
-        0.2339898482317861
+        0.589287613174928,
+        0.6830964106601597
       ],
       "fifthInterval": [
-        0.5689683892522508,
-        0.6637961402068244
+        0.6096937475435955,
+        0.702309770667505
       ],
       "blockInterval": [
-        0.00044143642943440895,
-        0.014023640967247855
+        0.059345516507342,
+        0.11359753839339136
       ],
       "oracleNextAccuracy": 0.64,
       "oracleFifthAccuracy": 0.64,
@@ -8199,9 +8199,9 @@
     {
       "datasetId": "period8",
       "method": "transformer",
-      "nextMinHistory": null,
-      "fifthMinHistory": null,
-      "blockMinHistory": null
+      "nextMinHistory": 23,
+      "fifthMinHistory": 23,
+      "blockMinHistory": 23
     },
     {
       "datasetId": "period8",

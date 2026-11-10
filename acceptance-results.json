@@ -1,0 +1,829 @@
+{
+  "protocol": {
+    "version": 1,
+    "streamsPerCase": 400,
+    "horizon": 5,
+    "accuracyGapTolerance": 0.03,
+    "lossExcessTolerances": {
+      "frequency": 0.02,
+      "markov": 0.04,
+      "lag": 0.04,
+      "transformer": 0.06
+    }
+  },
+  "pass": true,
+  "methods": [
+    {
+      "id": "uniform",
+      "label": "均匀基线",
+      "checks": [
+        {
+          "id": "uniform:uniformForecastRate",
+          "caseId": "uniform",
+          "label": "全部概率恰为 0.1 的比例",
+          "samples": 400,
+          "metric": "uniformForecastRate",
+          "actual": 1,
+          "operator": "===",
+          "bound": 1,
+          "pass": true
+        },
+        {
+          "id": "uniform:nextAccuracyGap",
+          "caseId": "uniform",
+          "label": "下一位准确率距同样本理论预测的差值",
+          "samples": 400,
+          "metric": "nextAccuracyGap",
+          "actual": 0,
+          "operator": "<=",
+          "bound": 1e-12,
+          "pass": true
+        },
+        {
+          "id": "uniform:fifthAccuracyGap",
+          "caseId": "uniform",
+          "label": "第 5 位准确率距同样本理论预测的差值",
+          "samples": 400,
+          "metric": "fifthAccuracyGap",
+          "actual": 0,
+          "operator": "<=",
+          "bound": 1e-12,
+          "pass": true
+        },
+        {
+          "id": "uniform:meanLogLossExcess",
+          "caseId": "uniform",
+          "label": "平均对数损失超过同样本理论预测的数值",
+          "samples": 400,
+          "metric": "meanLogLossExcess",
+          "actual": 0,
+          "operator": "<=",
+          "bound": 1e-12,
+          "pass": true
+        },
+        {
+          "id": "all:validForecastCount",
+          "caseId": "all",
+          "label": "十类概率有效且归一化的预测数",
+          "samples": 4800,
+          "metric": "validForecastCount",
+          "actual": 4800,
+          "operator": "===",
+          "bound": 4800,
+          "pass": true
+        },
+        {
+          "id": "locked:fixedForecastCount",
+          "caseId": "locked",
+          "label": "替换整段真值后预测仍固定的测试数",
+          "samples": 2,
+          "metric": "fixedForecastCount",
+          "actual": 2,
+          "operator": "===",
+          "bound": 2,
+          "pass": true
+        }
+      ],
+      "scores": [
+        {
+          "caseId": "uniform",
+          "caseLabel": "独立均匀",
+          "historyLength": 1024,
+          "streams": 400,
+          "nextAccuracy": 0.095,
+          "fifthAccuracy": 0.1125,
+          "blockAccuracy": 0,
+          "meanLogLoss": 2.302585092994049,
+          "oracleNextAccuracy": 0.095,
+          "oracleFifthAccuracy": 0.1125,
+          "oracleBlockAccuracy": 0,
+          "oracleMeanLogLoss": 2.302585092994049,
+          "expectedOracleNextAccuracy": 0.1,
+          "expectedOracleFifthAccuracy": 0.1,
+          "expectedOracleBlockAccuracy": 0.000010000000000000003,
+          "detectorAcceptanceRate": null
+        }
+      ],
+      "pass": true
+    },
+    {
+      "id": "frequency",
+      "label": "平滑频率",
+      "checks": [
+        {
+          "id": "biased:nextAccuracyGap",
+          "caseId": "biased",
+          "label": "下一位准确率距同样本理论预测的差值",
+          "samples": 400,
+          "metric": "nextAccuracyGap",
+          "actual": 0,
+          "operator": "<=",
+          "bound": 0.03,
+          "pass": true
+        },
+        {
+          "id": "biased:fifthAccuracyGap",
+          "caseId": "biased",
+          "label": "第 5 位准确率距同样本理论预测的差值",
+          "samples": 400,
+          "metric": "fifthAccuracyGap",
+          "actual": 0,
+          "operator": "<=",
+          "bound": 0.03,
+          "pass": true
+        },
+        {
+          "id": "biased:meanLogLossExcess",
+          "caseId": "biased",
+          "label": "平均对数损失超过同样本理论预测的数值",
+          "samples": 400,
+          "metric": "meanLogLossExcess",
+          "actual": 0.0006595068103045776,
+          "operator": "<=",
+          "bound": 0.02,
+          "pass": true
+        },
+        {
+          "id": "all:validForecastCount",
+          "caseId": "all",
+          "label": "十类概率有效且归一化的预测数",
+          "samples": 4800,
+          "metric": "validForecastCount",
+          "actual": 4800,
+          "operator": "===",
+          "bound": 4800,
+          "pass": true
+        },
+        {
+          "id": "locked:fixedForecastCount",
+          "caseId": "locked",
+          "label": "替换整段真值后预测仍固定的测试数",
+          "samples": 2,
+          "metric": "fixedForecastCount",
+          "actual": 2,
+          "operator": "===",
+          "bound": 2,
+          "pass": true
+        }
+      ],
+      "scores": [
+        {
+          "caseId": "biased",
+          "caseLabel": "独立偏置，优势数字轮换",
+          "historyLength": 1024,
+          "streams": 400,
+          "nextAccuracy": 0.435,
+          "fifthAccuracy": 0.46,
+          "blockAccuracy": 0.0125,
+          "meanLogLoss": 1.8781229779939506,
+          "oracleNextAccuracy": 0.435,
+          "oracleFifthAccuracy": 0.46,
+          "oracleBlockAccuracy": 0.0125,
+          "oracleMeanLogLoss": 1.877463471183646,
+          "expectedOracleNextAccuracy": 0.46,
+          "expectedOracleFifthAccuracy": 0.46,
+          "expectedOracleBlockAccuracy": 0.020596297600000004,
+          "detectorAcceptanceRate": null
+        }
+      ],
+      "pass": true
+    },
+    {
+      "id": "markov",
+      "label": "一阶转移",
+      "checks": [
+        {
+          "id": "lag1:nextAccuracyGap",
+          "caseId": "lag1",
+          "label": "下一位准确率距同样本理论预测的差值",
+          "samples": 400,
+          "metric": "nextAccuracyGap",
+          "actual": 0,
+          "operator": "<=",
+          "bound": 0.03,
+          "pass": true
+        },
+        {
+          "id": "lag1:fifthAccuracyGap",
+          "caseId": "lag1",
+          "label": "第 5 位准确率距同样本理论预测的差值",
+          "samples": 400,
+          "metric": "fifthAccuracyGap",
+          "actual": 0,
+          "operator": "<=",
+          "bound": 0.03,
+          "pass": true
+        },
+        {
+          "id": "lag1:meanLogLossExcess",
+          "caseId": "lag1",
+          "label": "平均对数损失超过同样本理论预测的数值",
+          "samples": 400,
+          "metric": "meanLogLossExcess",
+          "actual": 0.002195485190498836,
+          "operator": "<=",
+          "bound": 0.04,
+          "pass": true
+        },
+        {
+          "id": "markov-cycle:blockAccuracy",
+          "caseId": "markov-cycle",
+          "label": "未来五位全部正确率",
+          "samples": 400,
+          "metric": "blockAccuracy",
+          "actual": 1,
+          "operator": "===",
+          "bound": 1,
+          "pass": true
+        },
+        {
+          "id": "all:validForecastCount",
+          "caseId": "all",
+          "label": "十类概率有效且归一化的预测数",
+          "samples": 4800,
+          "metric": "validForecastCount",
+          "actual": 4800,
+          "operator": "===",
+          "bound": 4800,
+          "pass": true
+        },
+        {
+          "id": "locked:fixedForecastCount",
+          "caseId": "locked",
+          "label": "替换整段真值后预测仍固定的测试数",
+          "samples": 2,
+          "metric": "fixedForecastCount",
+          "actual": 2,
+          "operator": "===",
+          "bound": 2,
+          "pass": true
+        }
+      ],
+      "scores": [
+        {
+          "caseId": "lag1",
+          "caseLabel": "滞后 1，60% 复制",
+          "historyLength": 8192,
+          "streams": 400,
+          "nextAccuracy": 0.6675,
+          "fifthAccuracy": 0.1575,
+          "blockAccuracy": 0.1125,
+          "meanLogLoss": 2.004912946619003,
+          "oracleNextAccuracy": 0.6675,
+          "oracleFifthAccuracy": 0.1575,
+          "oracleBlockAccuracy": 0.1125,
+          "oracleMeanLogLoss": 2.0027174614285044,
+          "expectedOracleNextAccuracy": 0.64,
+          "expectedOracleFifthAccuracy": 0.169984,
+          "expectedOracleBlockAccuracy": 0.10737418240000002,
+          "detectorAcceptanceRate": null
+        },
+        {
+          "caseId": "markov-cycle",
+          "caseLabel": "十个不同数字构成的确定性转移环",
+          "historyLength": 8192,
+          "streams": 400,
+          "nextAccuracy": 1,
+          "fifthAccuracy": 1,
+          "blockAccuracy": 1,
+          "meanLogLoss": 0.032694425186702354,
+          "oracleNextAccuracy": 1,
+          "oracleFifthAccuracy": 1,
+          "oracleBlockAccuracy": 1,
+          "oracleMeanLogLoss": 0,
+          "expectedOracleNextAccuracy": 1,
+          "expectedOracleFifthAccuracy": 1,
+          "expectedOracleBlockAccuracy": 1,
+          "detectorAcceptanceRate": null
+        }
+      ],
+      "pass": true
+    },
+    {
+      "id": "lag",
+      "label": "滞后混合（MTD）",
+      "checks": [
+        {
+          "id": "lag8:nextAccuracyGap",
+          "caseId": "lag8",
+          "label": "下一位准确率距同样本理论预测的差值",
+          "samples": 400,
+          "metric": "nextAccuracyGap",
+          "actual": 0,
+          "operator": "<=",
+          "bound": 0.03,
+          "pass": true
+        },
+        {
+          "id": "lag8:fifthAccuracyGap",
+          "caseId": "lag8",
+          "label": "第 5 位准确率距同样本理论预测的差值",
+          "samples": 400,
+          "metric": "fifthAccuracyGap",
+          "actual": 0,
+          "operator": "<=",
+          "bound": 0.03,
+          "pass": true
+        },
+        {
+          "id": "lag8:meanLogLossExcess",
+          "caseId": "lag8",
+          "label": "平均对数损失超过同样本理论预测的数值",
+          "samples": 400,
+          "metric": "meanLogLossExcess",
+          "actual": 0.004864886048009831,
+          "operator": "<=",
+          "bound": 0.04,
+          "pass": true
+        },
+        {
+          "id": "mtd-cycle:blockAccuracy",
+          "caseId": "mtd-cycle",
+          "label": "未来五位全部正确率",
+          "samples": 400,
+          "metric": "blockAccuracy",
+          "actual": 1,
+          "operator": "===",
+          "bound": 1,
+          "pass": true
+        },
+        {
+          "id": "all:validForecastCount",
+          "caseId": "all",
+          "label": "十类概率有效且归一化的预测数",
+          "samples": 4800,
+          "metric": "validForecastCount",
+          "actual": 4800,
+          "operator": "===",
+          "bound": 4800,
+          "pass": true
+        },
+        {
+          "id": "locked:fixedForecastCount",
+          "caseId": "locked",
+          "label": "替换整段真值后预测仍固定的测试数",
+          "samples": 2,
+          "metric": "fixedForecastCount",
+          "actual": 2,
+          "operator": "===",
+          "bound": 2,
+          "pass": true
+        }
+      ],
+      "scores": [
+        {
+          "caseId": "lag8",
+          "caseLabel": "滞后 8，60% 复制",
+          "historyLength": 8192,
+          "streams": 400,
+          "nextAccuracy": 0.625,
+          "fifthAccuracy": 0.6275,
+          "blockAccuracy": 0.095,
+          "meanLogLoss": 1.4881001707941357,
+          "oracleNextAccuracy": 0.625,
+          "oracleFifthAccuracy": 0.6275,
+          "oracleBlockAccuracy": 0.095,
+          "oracleMeanLogLoss": 1.4832352847461259,
+          "expectedOracleNextAccuracy": 0.64,
+          "expectedOracleFifthAccuracy": 0.64,
+          "expectedOracleBlockAccuracy": 0.10737418240000002,
+          "detectorAcceptanceRate": null
+        },
+        {
+          "caseId": "mtd-cycle",
+          "caseLabel": "精确重复 8 位，长历史",
+          "historyLength": 8192,
+          "streams": 400,
+          "nextAccuracy": 1,
+          "fifthAccuracy": 1,
+          "blockAccuracy": 1,
+          "meanLogLoss": 0.03224594412631994,
+          "oracleNextAccuracy": 1,
+          "oracleFifthAccuracy": 1,
+          "oracleBlockAccuracy": 1,
+          "oracleMeanLogLoss": 0,
+          "expectedOracleNextAccuracy": 1,
+          "expectedOracleFifthAccuracy": 1,
+          "expectedOracleBlockAccuracy": 1,
+          "detectorAcceptanceRate": null
+        }
+      ],
+      "pass": true
+    },
+    {
+      "id": "transformer",
+      "label": "滞后特征 Transformer",
+      "checks": [
+        {
+          "id": "transformer-cycle:meanLogLossExcess",
+          "caseId": "transformer-cycle",
+          "label": "平均对数损失超过同样本理论预测的数值",
+          "samples": 400,
+          "metric": "meanLogLossExcess",
+          "actual": 0.0058716222737157965,
+          "operator": "<=",
+          "bound": 0.06,
+          "pass": true
+        },
+        {
+          "id": "transformer-cycle:blockAccuracy",
+          "caseId": "transformer-cycle",
+          "label": "未来五位全部正确率",
+          "samples": 400,
+          "metric": "blockAccuracy",
+          "actual": 1,
+          "operator": "===",
+          "bound": 1,
+          "pass": true
+        },
+        {
+          "id": "lag5:nextAccuracyGap",
+          "caseId": "lag5",
+          "label": "下一位准确率距同样本理论预测的差值",
+          "samples": 400,
+          "metric": "nextAccuracyGap",
+          "actual": 0,
+          "operator": "<=",
+          "bound": 0.03,
+          "pass": true
+        },
+        {
+          "id": "lag5:fifthAccuracyGap",
+          "caseId": "lag5",
+          "label": "第 5 位准确率距同样本理论预测的差值",
+          "samples": 400,
+          "metric": "fifthAccuracyGap",
+          "actual": 0,
+          "operator": "<=",
+          "bound": 0.03,
+          "pass": true
+        },
+        {
+          "id": "lag5:meanLogLossExcess",
+          "caseId": "lag5",
+          "label": "平均对数损失超过同样本理论预测的数值",
+          "samples": 400,
+          "metric": "meanLogLossExcess",
+          "actual": 0.005309733181151799,
+          "operator": "<=",
+          "bound": 0.06,
+          "pass": true
+        },
+        {
+          "id": "transformer-lag8:nextAccuracyGap",
+          "caseId": "transformer-lag8",
+          "label": "下一位准确率距同样本理论预测的差值",
+          "samples": 400,
+          "metric": "nextAccuracyGap",
+          "actual": 0,
+          "operator": "<=",
+          "bound": 0.03,
+          "pass": true
+        },
+        {
+          "id": "transformer-lag8:fifthAccuracyGap",
+          "caseId": "transformer-lag8",
+          "label": "第 5 位准确率距同样本理论预测的差值",
+          "samples": 400,
+          "metric": "fifthAccuracyGap",
+          "actual": 0,
+          "operator": "<=",
+          "bound": 0.03,
+          "pass": true
+        },
+        {
+          "id": "transformer-lag8:meanLogLossExcess",
+          "caseId": "transformer-lag8",
+          "label": "平均对数损失超过同样本理论预测的数值",
+          "samples": 400,
+          "metric": "meanLogLossExcess",
+          "actual": 0.006958298180238076,
+          "operator": "<=",
+          "bound": 0.06,
+          "pass": true
+        },
+        {
+          "id": "all:validForecastCount",
+          "caseId": "all",
+          "label": "十类概率有效且归一化的预测数",
+          "samples": 4800,
+          "metric": "validForecastCount",
+          "actual": 4800,
+          "operator": "===",
+          "bound": 4800,
+          "pass": true
+        },
+        {
+          "id": "locked:fixedForecastCount",
+          "caseId": "locked",
+          "label": "替换整段真值后预测仍固定的测试数",
+          "samples": 2,
+          "metric": "fixedForecastCount",
+          "actual": 2,
+          "operator": "===",
+          "bound": 2,
+          "pass": true
+        }
+      ],
+      "scores": [
+        {
+          "caseId": "transformer-cycle",
+          "caseLabel": "精确重复 5 位",
+          "historyLength": 1024,
+          "streams": 400,
+          "nextAccuracy": 1,
+          "fifthAccuracy": 1,
+          "blockAccuracy": 1,
+          "meanLogLoss": 0.0058716222737157965,
+          "oracleNextAccuracy": 1,
+          "oracleFifthAccuracy": 1,
+          "oracleBlockAccuracy": 1,
+          "oracleMeanLogLoss": 0,
+          "expectedOracleNextAccuracy": 1,
+          "expectedOracleFifthAccuracy": 1,
+          "expectedOracleBlockAccuracy": 1,
+          "detectorAcceptanceRate": null
+        },
+        {
+          "caseId": "lag5",
+          "caseLabel": "滞后 5，60% 复制",
+          "historyLength": 1024,
+          "streams": 400,
+          "nextAccuracy": 0.63,
+          "fifthAccuracy": 0.6225,
+          "blockAccuracy": 0.09,
+          "meanLogLoss": 1.4358658322047233,
+          "oracleNextAccuracy": 0.63,
+          "oracleFifthAccuracy": 0.6225,
+          "oracleBlockAccuracy": 0.09,
+          "oracleMeanLogLoss": 1.4305560990235715,
+          "expectedOracleNextAccuracy": 0.64,
+          "expectedOracleFifthAccuracy": 0.64,
+          "expectedOracleBlockAccuracy": 0.10737418240000002,
+          "detectorAcceptanceRate": null
+        },
+        {
+          "caseId": "transformer-lag8",
+          "caseLabel": "训练未见滞后 8，60% 复制",
+          "historyLength": 1024,
+          "streams": 400,
+          "nextAccuracy": 0.6275,
+          "fifthAccuracy": 0.6525,
+          "blockAccuracy": 0.1025,
+          "meanLogLoss": 1.4721717562318024,
+          "oracleNextAccuracy": 0.6275,
+          "oracleFifthAccuracy": 0.6525,
+          "oracleBlockAccuracy": 0.1025,
+          "oracleMeanLogLoss": 1.4652134580515643,
+          "expectedOracleNextAccuracy": 0.64,
+          "expectedOracleFifthAccuracy": 0.64,
+          "expectedOracleBlockAccuracy": 0.10737418240000002,
+          "detectorAcceptanceRate": null
+        }
+      ],
+      "pass": true
+    },
+    {
+      "id": "periodic",
+      "label": "周期续写",
+      "checks": [
+        {
+          "id": "uniform:detectorAcceptanceRate",
+          "caseId": "uniform",
+          "label": "周期验证通过率",
+          "samples": 400,
+          "metric": "detectorAcceptanceRate",
+          "actual": 0,
+          "operator": "===",
+          "bound": 0,
+          "pass": true
+        },
+        {
+          "id": "lag8:detectorAcceptanceRate",
+          "caseId": "lag8",
+          "label": "周期验证通过率",
+          "samples": 400,
+          "metric": "detectorAcceptanceRate",
+          "actual": 0,
+          "operator": "===",
+          "bound": 0,
+          "pass": true
+        },
+        {
+          "id": "period8:blockAccuracy",
+          "caseId": "period8",
+          "label": "未来五位全部正确率",
+          "samples": 400,
+          "metric": "blockAccuracy",
+          "actual": 1,
+          "operator": "===",
+          "bound": 1,
+          "pass": true
+        },
+        {
+          "id": "period8:detectorAcceptanceRate",
+          "caseId": "period8",
+          "label": "周期验证通过率",
+          "samples": 400,
+          "metric": "detectorAcceptanceRate",
+          "actual": 1,
+          "operator": "===",
+          "bound": 1,
+          "pass": true
+        },
+        {
+          "id": "period8:correctPeriodRate",
+          "caseId": "period8",
+          "label": "识别出真实周期的比例",
+          "samples": 400,
+          "metric": "correctPeriodRate",
+          "actual": 1,
+          "operator": "===",
+          "bound": 1,
+          "pass": true
+        },
+        {
+          "id": "period64:blockAccuracy",
+          "caseId": "period64",
+          "label": "未来五位全部正确率",
+          "samples": 400,
+          "metric": "blockAccuracy",
+          "actual": 1,
+          "operator": "===",
+          "bound": 1,
+          "pass": true
+        },
+        {
+          "id": "period64:detectorAcceptanceRate",
+          "caseId": "period64",
+          "label": "周期验证通过率",
+          "samples": 400,
+          "metric": "detectorAcceptanceRate",
+          "actual": 1,
+          "operator": "===",
+          "bound": 1,
+          "pass": true
+        },
+        {
+          "id": "period64:correctPeriodRate",
+          "caseId": "period64",
+          "label": "识别出真实周期的比例",
+          "samples": 400,
+          "metric": "correctPeriodRate",
+          "actual": 1,
+          "operator": "===",
+          "bound": 1,
+          "pass": true
+        },
+        {
+          "id": "period257:blockAccuracy",
+          "caseId": "period257",
+          "label": "未来五位全部正确率",
+          "samples": 400,
+          "metric": "blockAccuracy",
+          "actual": 1,
+          "operator": "===",
+          "bound": 1,
+          "pass": true
+        },
+        {
+          "id": "period257:detectorAcceptanceRate",
+          "caseId": "period257",
+          "label": "周期验证通过率",
+          "samples": 400,
+          "metric": "detectorAcceptanceRate",
+          "actual": 1,
+          "operator": "===",
+          "bound": 1,
+          "pass": true
+        },
+        {
+          "id": "period257:correctPeriodRate",
+          "caseId": "period257",
+          "label": "识别出真实周期的比例",
+          "samples": 400,
+          "metric": "correctPeriodRate",
+          "actual": 1,
+          "operator": "===",
+          "bound": 1,
+          "pass": true
+        },
+        {
+          "id": "all:validForecastCount",
+          "caseId": "all",
+          "label": "十类概率有效且归一化的预测数",
+          "samples": 4800,
+          "metric": "validForecastCount",
+          "actual": 4800,
+          "operator": "===",
+          "bound": 4800,
+          "pass": true
+        },
+        {
+          "id": "locked:fixedForecastCount",
+          "caseId": "locked",
+          "label": "替换整段真值后预测仍固定的测试数",
+          "samples": 2,
+          "metric": "fixedForecastCount",
+          "actual": 2,
+          "operator": "===",
+          "bound": 2,
+          "pass": true
+        }
+      ],
+      "scores": [
+        {
+          "caseId": "uniform",
+          "caseLabel": "独立均匀",
+          "historyLength": 1024,
+          "streams": 400,
+          "nextAccuracy": 0.0975,
+          "fifthAccuracy": 0.1,
+          "blockAccuracy": 0,
+          "meanLogLoss": 2.3113984941844024,
+          "oracleNextAccuracy": 0.095,
+          "oracleFifthAccuracy": 0.1125,
+          "oracleBlockAccuracy": 0,
+          "oracleMeanLogLoss": 2.302585092994049,
+          "expectedOracleNextAccuracy": 0.1,
+          "expectedOracleFifthAccuracy": 0.1,
+          "expectedOracleBlockAccuracy": 0.000010000000000000003,
+          "detectorAcceptanceRate": 0
+        },
+        {
+          "caseId": "lag8",
+          "caseLabel": "滞后 8，60% 复制",
+          "historyLength": 8192,
+          "streams": 400,
+          "nextAccuracy": 0.1025,
+          "fifthAccuracy": 0.09,
+          "blockAccuracy": 0,
+          "meanLogLoss": 2.302754029889621,
+          "oracleNextAccuracy": 0.625,
+          "oracleFifthAccuracy": 0.6275,
+          "oracleBlockAccuracy": 0.095,
+          "oracleMeanLogLoss": 1.4832352847461259,
+          "expectedOracleNextAccuracy": 0.64,
+          "expectedOracleFifthAccuracy": 0.64,
+          "expectedOracleBlockAccuracy": 0.10737418240000002,
+          "detectorAcceptanceRate": 0
+        },
+        {
+          "caseId": "period8",
+          "caseLabel": "精确重复 8 位，三次完整循环",
+          "historyLength": 24,
+          "streams": 400,
+          "nextAccuracy": 1,
+          "fifthAccuracy": 1,
+          "blockAccuracy": 1,
+          "meanLogLoss": 0.01005033585350156,
+          "oracleNextAccuracy": 1,
+          "oracleFifthAccuracy": 1,
+          "oracleBlockAccuracy": 1,
+          "oracleMeanLogLoss": 0,
+          "expectedOracleNextAccuracy": 1,
+          "expectedOracleFifthAccuracy": 1,
+          "expectedOracleBlockAccuracy": 1,
+          "detectorAcceptanceRate": 1
+        },
+        {
+          "caseId": "period64",
+          "caseLabel": "精确重复 64 位，三次完整循环",
+          "historyLength": 192,
+          "streams": 400,
+          "nextAccuracy": 1,
+          "fifthAccuracy": 1,
+          "blockAccuracy": 1,
+          "meanLogLoss": 0.01005033585350156,
+          "oracleNextAccuracy": 1,
+          "oracleFifthAccuracy": 1,
+          "oracleBlockAccuracy": 1,
+          "oracleMeanLogLoss": 0,
+          "expectedOracleNextAccuracy": 1,
+          "expectedOracleFifthAccuracy": 1,
+          "expectedOracleBlockAccuracy": 1,
+          "detectorAcceptanceRate": 1
+        },
+        {
+          "caseId": "period257",
+          "caseLabel": "精确重复 257 位，三次完整循环",
+          "historyLength": 771,
+          "streams": 400,
+          "nextAccuracy": 1,
+          "fifthAccuracy": 1,
+          "blockAccuracy": 1,
+          "meanLogLoss": 0.01005033585350156,
+          "oracleNextAccuracy": 1,
+          "oracleFifthAccuracy": 1,
+          "oracleBlockAccuracy": 1,
+          "oracleMeanLogLoss": 0,
+          "expectedOracleNextAccuracy": 1,
+          "expectedOracleFifthAccuracy": 1,
+          "expectedOracleBlockAccuracy": 1,
+          "detectorAcceptanceRate": 1
+        }
+      ],
+      "pass": true
+    }
+  ]
+}
