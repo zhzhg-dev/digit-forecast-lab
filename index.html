@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="输入 0–9 的数字序列，对比统计预测模型，并用后续真值做盲测。">
+  <meta name="theme-color" content="#f5f7fc">
+  <title>数列预测实验室 | Digit Forecast Lab</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.mjs"></script>
+</head>
+<body>
+  <a class="skip-link" href="#forecast">跳到预测工作台</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="#">
+        <svg class="brand-mark" width="34" height="34" viewBox="0 0 34 34" aria-hidden="true">
+          <rect width="34" height="34" rx="8" fill="currentColor"/>
+          <path d="M8 23V16m6 7V12m6 11V9m6 14V14" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+        </svg>
+        <span>数列预测实验室</span>
+      </a>
+      <nav aria-label="主导航">
+        <a href="#forecast">预测</a>
+        <a href="#backtest">盲测</a>
+        <a href="#methods">方法</a>
+      </nav>
+    </div>
+  </header>
+  <main class="shell">
+    <section class="intro" aria-labelledby="page-title">
+      <div class="intro-copy">
+        <p class="intro-name">Digit Forecast Lab</p>
+        <h1 id="page-title">下一位，<br class="hero-break">会是什么？</h1>
+        <p>输入一段 0–9 的数字，看看统计模型会怎么猜。用隐藏的后续数字做盲测，比较每种方法猜得有多准。</p>
+      </div>
+      <div class="tape-wrap" aria-hidden="true">
+        <div class="tape">
+          <div class="tape-heading"><span>观测记录</span><span>待预测</span></div>
+          <div class="tape-digits">
+            <span>0</span><span>3</span><span>1</span><span>7</span><span>5</span><span>0</span>
+            <span class="tape-unknown">?</span><span class="tape-unknown">?</span><span class="tape-unknown">?</span>
+          </div>
+          <div class="tape-axis"><span>已知历史</span><span>未来</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="forecast" class="section" aria-labelledby="forecast-title">
+      <div class="section-heading">
+        <h2 id="forecast-title">预测工作台</h2>
+        <span class="local-note"><span aria-hidden="true"></span> 浏览器内计算</span>
+      </div>
+      <noscript><p class="error">请在浏览器中启用 JavaScript，或用本地服务器打开项目。</p></noscript>
+      <div class="workbench">
+        <form id="forecast-form" class="panel input-panel">
+          <label class="field-title" for="sequence">数字序列</label>
+          <p id="sequence-help" class="help">每个数字是一位。可以连续输入，也可以用空格、逗号或换行分隔。</p>
+          <textarea id="sequence" name="sequence" rows="6" spellcheck="false" autocomplete="off" autocapitalize="off" aria-describedby="sequence-help sequence-count" placeholder="例如 03175029"></textarea>
+          <div class="editor-meta">
+            <span id="sequence-count">最多 20,000 位</span>
+            <label for="import-file" class="text-action">导入文本<span class="sr-only">或 CSV 文件</span></label>
+            <input id="import-file" class="sr-only file-input" type="file" accept=".txt,.csv,text/plain,text/csv">
+          </div>
+          <div class="sample-line">
+            <label for="sample">合成示例</label>
+            <select id="sample">
+              <option value="short">依赖上一位</option>
+              <option value="long">依赖更早的数字</option>
+              <option value="uniform">独立均匀</option>
+              <option value="biased">独立但有偏</option>
+            </select>
+            <button id="load-sample" class="button button-outline" type="button">载入示例</button>
+          </div>
+          <div class="forecast-actions">
+            <fieldset class="horizon-group">
+              <legend>预测范围</legend>
+              <div class="segments">
+                <label><input type="radio" name="horizon" value="1" checked><span>下一位</span></label>
+                <label><input type="radio" name="horizon" value="5"><span>未来五位</span></label>
+              </div>
+            </fieldset>
+            <button class="button button-primary" type="submit">计算预测</button>
+          </div>
+          <p id="input-status" class="message" role="status"></p>
+        </form>
+
+        <section class="panel result-panel" aria-labelledby="result-title">
+          <div class="result-heading">
+            <h3 id="result-title">预测结果</h3>
+            <label for="method"><span class="sr-only">查看预测方法</span><select id="method"></select></label>
+          </div>
+          <p id="result-status" class="help result-status" role="status">计算预测后，选一个位置查看各数字的概率。</p>
+          <div id="steps" class="forecast-steps" aria-label="预测位置"></div>
+          <p id="chart-title" class="chart-title">数字概率</p>
+          <div id="probabilities" class="probability-grid" role="list" aria-labelledby="chart-title"></div>
+          <p class="help result-note">概率来自所选模型。任意新序列上的实际表现，可以用下方盲测检查。</p>
+        </section>
+      </div>
+    </section>
+
+    <section id="backtest" class="section backtest" aria-labelledby="backtest-title">
+      <div class="section-heading"><h2 id="backtest-title">盲测比较</h2></div>
+      <p class="section-description">从上面的完整序列切出多段。每轮只给模型固定长度的历史，等所有预测提交后，再用后续数字评分。</p>
+      <div class="panel benchmark-panel">
+        <form id="backtest-form" class="benchmark-controls">
+          <label for="history-length">历史长度<input id="history-length" name="history-length" type="number" min="1" max="20000" step="1" value="64" required><span class="sr-only">位</span></label>
+          <label for="test-horizon">预测范围<select id="test-horizon"><option value="1">下一位</option><option value="5" selected>未来五位</option></select></label>
+          <button class="button button-primary" type="submit">运行盲测</button>
+          <button id="export-csv" class="button button-outline" type="button" disabled>导出 CSV</button>
+        </form>
+        <p id="backtest-status" class="message benchmark-status" role="status">载入示例或输入包含后续真值的完整序列。</p>
+        <div id="benchmark-results" hidden>
+          <div class="table-scroll" tabindex="0" role="region" aria-label="各方法的盲测成绩">
+            <table>
+              <caption class="sr-only">各方法在相同盲测窗口上的成绩</caption>
+              <thead id="benchmark-head"></thead>
+              <tbody id="benchmark-body"></tbody>
+            </table>
+          </div>
+          <p class="help benchmark-note">命中率越高越好。对数损失越低，表示模型平均给真值的概率越高。相邻测试窗口仍可能共享历史。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="methods" class="section method-section" aria-labelledby="methods-title">
+      <div class="section-heading"><h2 id="methods-title">方法说明</h2></div>
+      <dl id="method-notes" class="method-notes"></dl>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="shell footer-inner"><span>数列预测实验室 <span class="footer-version">v0.1</span></span><span>输入和计算都留在浏览器里。</span></div>
+  </footer>
+</body>
+</html>
