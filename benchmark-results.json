@@ -1,0 +1,2852 @@
+[
+  {
+    "datasetId": "uniform",
+    "dataset": "独立均匀",
+    "distribution": "baseline",
+    "historyLength": 32,
+    "step": 1,
+    "method": "uniform",
+    "label": "均匀基线",
+    "streams": 400,
+    "accuracy": 0.0925,
+    "logLoss": 2.302585092994038,
+    "oracleAccuracy": 0.1,
+    "oracleLogLoss": 2.3025850929940455,
+    "advantage": -0.0175,
+    "advantageInterval": [
+      -0.057017246956456165,
+      0.02201724695645616
+    ]
+  },
+  {
+    "datasetId": "uniform",
+    "dataset": "独立均匀",
+    "distribution": "baseline",
+    "historyLength": 32,
+    "step": 1,
+    "method": "frequency",
+    "label": "平滑频率",
+    "streams": 400,
+    "accuracy": 0.11,
+    "logLoss": 2.402157641186243,
+    "oracleAccuracy": 0.1,
+    "oracleLogLoss": 2.3025850929940455,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "uniform",
+    "dataset": "独立均匀",
+    "distribution": "baseline",
+    "historyLength": 32,
+    "step": 1,
+    "method": "markov",
+    "label": "一阶转移",
+    "streams": 400,
+    "accuracy": 0.095,
+    "logLoss": 2.477985690093846,
+    "oracleAccuracy": 0.1,
+    "oracleLogLoss": 2.3025850929940455,
+    "advantage": -0.015,
+    "advantageInterval": [
+      -0.04895882956262123,
+      0.01895882956262123
+    ]
+  },
+  {
+    "datasetId": "uniform",
+    "dataset": "独立均匀",
+    "distribution": "baseline",
+    "historyLength": 32,
+    "step": 1,
+    "method": "lag",
+    "label": "滞后混合（MTD）",
+    "streams": 400,
+    "accuracy": 0.11,
+    "logLoss": 2.402157641186243,
+    "oracleAccuracy": 0.1,
+    "oracleLogLoss": 2.3025850929940455,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "uniform",
+    "dataset": "独立均匀",
+    "distribution": "baseline",
+    "historyLength": 32,
+    "step": 1,
+    "method": "transformer",
+    "label": "小型 Transformer",
+    "streams": 400,
+    "accuracy": 0.0925,
+    "logLoss": 2.3738484556512547,
+    "oracleAccuracy": 0.1,
+    "oracleLogLoss": 2.3025850929940455,
+    "advantage": -0.0175,
+    "advantageInterval": [
+      -0.057017246956456165,
+      0.02201724695645616
+    ]
+  },
+  {
+    "datasetId": "uniform",
+    "dataset": "独立均匀",
+    "distribution": "baseline",
+    "historyLength": 32,
+    "step": 5,
+    "method": "uniform",
+    "label": "均匀基线",
+    "streams": 400,
+    "accuracy": 0.1125,
+    "logLoss": 2.302585092994038,
+    "oracleAccuracy": 0.1,
+    "oracleLogLoss": 2.3025850929940455,
+    "advantage": 0.01,
+    "advantageInterval": [
+      -0.03103595342725949,
+      0.051035953427259494
+    ]
+  },
+  {
+    "datasetId": "uniform",
+    "dataset": "独立均匀",
+    "distribution": "baseline",
+    "historyLength": 32,
+    "step": 5,
+    "method": "frequency",
+    "label": "平滑频率",
+    "streams": 400,
+    "accuracy": 0.1025,
+    "logLoss": 2.3682642500027082,
+    "oracleAccuracy": 0.1,
+    "oracleLogLoss": 2.3025850929940455,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "uniform",
+    "dataset": "独立均匀",
+    "distribution": "baseline",
+    "historyLength": 32,
+    "step": 5,
+    "method": "markov",
+    "label": "一阶转移",
+    "streams": 400,
+    "accuracy": 0.0975,
+    "logLoss": 2.3886339008505972,
+    "oracleAccuracy": 0.1,
+    "oracleLogLoss": 2.3025850929940455,
+    "advantage": -0.005,
+    "advantageInterval": [
+      -0.02335052463516956,
+      0.013350524635169558
+    ]
+  },
+  {
+    "datasetId": "uniform",
+    "dataset": "独立均匀",
+    "distribution": "baseline",
+    "historyLength": 32,
+    "step": 5,
+    "method": "lag",
+    "label": "滞后混合（MTD）",
+    "streams": 400,
+    "accuracy": 0.1025,
+    "logLoss": 2.3682642500027082,
+    "oracleAccuracy": 0.1,
+    "oracleLogLoss": 2.3025850929940455,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "uniform",
+    "dataset": "独立均匀",
+    "distribution": "baseline",
+    "historyLength": 32,
+    "step": 5,
+    "method": "transformer",
+    "label": "小型 Transformer",
+    "streams": 400,
+    "accuracy": 0.1225,
+    "logLoss": 2.3601338903899403,
+    "oracleAccuracy": 0.1,
+    "oracleLogLoss": 2.3025850929940455,
+    "advantage": 0.02,
+    "advantageInterval": [
+      -0.021000744537527347,
+      0.06100074453752735
+    ]
+  },
+  {
+    "datasetId": "uniform",
+    "dataset": "独立均匀",
+    "distribution": "baseline",
+    "historyLength": 128,
+    "step": 1,
+    "method": "uniform",
+    "label": "均匀基线",
+    "streams": 400,
+    "accuracy": 0.12,
+    "logLoss": 2.302585092994038,
+    "oracleAccuracy": 0.1,
+    "oracleLogLoss": 2.3025850929940455,
+    "advantage": 0.02,
+    "advantageInterval": [
+      -0.024922639156353333,
+      0.06492263915635334
+    ]
+  },
+  {
+    "datasetId": "uniform",
+    "dataset": "独立均匀",
+    "distribution": "baseline",
+    "historyLength": 128,
+    "step": 1,
+    "method": "frequency",
+    "label": "平滑频率",
+    "streams": 400,
+    "accuracy": 0.1,
+    "logLoss": 2.3613838810932686,
+    "oracleAccuracy": 0.1,
+    "oracleLogLoss": 2.3025850929940455,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "uniform",
+    "dataset": "独立均匀",
+    "distribution": "baseline",
+    "historyLength": 128,
+    "step": 1,
+    "method": "markov",
+    "label": "一阶转移",
+    "streams": 400,
+    "accuracy": 0.0825,
+    "logLoss": 2.4889524205539773,
+    "oracleAccuracy": 0.1,
+    "oracleLogLoss": 2.3025850929940455,
+    "advantage": -0.0175,
+    "advantageInterval": [
+      -0.0518,
+      0.016799999999999995
+    ]
+  },
+  {
+    "datasetId": "uniform",
+    "dataset": "独立均匀",
+    "distribution": "baseline",
+    "historyLength": 128,
+    "step": 1,
+    "method": "lag",
+    "label": "滞后混合（MTD）",
+    "streams": 400,
+    "accuracy": 0.0975,
+    "logLoss": 2.362747377179738,
+    "oracleAccuracy": 0.1,
+    "oracleLogLoss": 2.3025850929940455,
+    "advantage": -0.0025,
+    "advantageInterval": [
+      -0.0074,
+      0.0024
+    ]
+  },
+  {
+    "datasetId": "uniform",
+    "dataset": "独立均匀",
+    "distribution": "baseline",
+    "historyLength": 128,
+    "step": 1,
+    "method": "transformer",
+    "label": "小型 Transformer",
+    "streams": 400,
+    "accuracy": 0.115,
+    "logLoss": 2.3717316930740595,
+    "oracleAccuracy": 0.1,
+    "oracleLogLoss": 2.3025850929940455,
+    "advantage": 0.015,
+    "advantageInterval": [
+      -0.02660392187990783,
+      0.05660392187990783
+    ]
+  },
+  {
+    "datasetId": "uniform",
+    "dataset": "独立均匀",
+    "distribution": "baseline",
+    "historyLength": 128,
+    "step": 5,
+    "method": "uniform",
+    "label": "均匀基线",
+    "streams": 400,
+    "accuracy": 0.1025,
+    "logLoss": 2.302585092994038,
+    "oracleAccuracy": 0.1,
+    "oracleLogLoss": 2.3025850929940455,
+    "advantage": 0.01,
+    "advantageInterval": [
+      -0.03103595342725949,
+      0.051035953427259494
+    ]
+  },
+  {
+    "datasetId": "uniform",
+    "dataset": "独立均匀",
+    "distribution": "baseline",
+    "historyLength": 128,
+    "step": 5,
+    "method": "frequency",
+    "label": "平滑频率",
+    "streams": 400,
+    "accuracy": 0.0925,
+    "logLoss": 2.3488290672491776,
+    "oracleAccuracy": 0.1,
+    "oracleLogLoss": 2.3025850929940455,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "uniform",
+    "dataset": "独立均匀",
+    "distribution": "baseline",
+    "historyLength": 128,
+    "step": 5,
+    "method": "markov",
+    "label": "一阶转移",
+    "streams": 400,
+    "accuracy": 0.0925,
+    "logLoss": 2.3484634248169947,
+    "oracleAccuracy": 0.1,
+    "oracleLogLoss": 2.3025850929940455,
+    "advantage": 0,
+    "advantageInterval": [
+      -0.009812273016706475,
+      0.009812273016706475
+    ]
+  },
+  {
+    "datasetId": "uniform",
+    "dataset": "独立均匀",
+    "distribution": "baseline",
+    "historyLength": 128,
+    "step": 5,
+    "method": "lag",
+    "label": "滞后混合（MTD）",
+    "streams": 400,
+    "accuracy": 0.095,
+    "logLoss": 2.348522504793025,
+    "oracleAccuracy": 0.1,
+    "oracleLogLoss": 2.3025850929940455,
+    "advantage": 0.0025,
+    "advantageInterval": [
+      -0.0059941362643410045,
+      0.010994136264341006
+    ]
+  },
+  {
+    "datasetId": "uniform",
+    "dataset": "独立均匀",
+    "distribution": "baseline",
+    "historyLength": 128,
+    "step": 5,
+    "method": "transformer",
+    "label": "小型 Transformer",
+    "streams": 400,
+    "accuracy": 0.1,
+    "logLoss": 2.380256084230304,
+    "oracleAccuracy": 0.1,
+    "oracleLogLoss": 2.3025850929940455,
+    "advantage": 0.0075,
+    "advantageInterval": [
+      -0.032651714476951,
+      0.047651714476951
+    ]
+  },
+  {
+    "datasetId": "uniform",
+    "dataset": "独立均匀",
+    "distribution": "baseline",
+    "historyLength": 512,
+    "step": 1,
+    "method": "uniform",
+    "label": "均匀基线",
+    "streams": 400,
+    "accuracy": 0.09,
+    "logLoss": 2.302585092994038,
+    "oracleAccuracy": 0.1,
+    "oracleLogLoss": 2.3025850929940455,
+    "advantage": -0.0225,
+    "advantageInterval": [
+      -0.06075449635308338,
+      0.015754496353083382
+    ]
+  },
+  {
+    "datasetId": "uniform",
+    "dataset": "独立均匀",
+    "distribution": "baseline",
+    "historyLength": 512,
+    "step": 1,
+    "method": "frequency",
+    "label": "平滑频率",
+    "streams": 400,
+    "accuracy": 0.1125,
+    "logLoss": 2.3128843936774164,
+    "oracleAccuracy": 0.1,
+    "oracleLogLoss": 2.3025850929940455,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "uniform",
+    "dataset": "独立均匀",
+    "distribution": "baseline",
+    "historyLength": 512,
+    "step": 1,
+    "method": "markov",
+    "label": "一阶转移",
+    "streams": 400,
+    "accuracy": 0.1,
+    "logLoss": 2.387163346392697,
+    "oracleAccuracy": 0.1,
+    "oracleLogLoss": 2.3025850929940455,
+    "advantage": -0.0125,
+    "advantageInterval": [
+      -0.05203551590081834,
+      0.027035515900818336
+    ]
+  },
+  {
+    "datasetId": "uniform",
+    "dataset": "独立均匀",
+    "distribution": "baseline",
+    "historyLength": 512,
+    "step": 1,
+    "method": "lag",
+    "label": "滞后混合（MTD）",
+    "streams": 400,
+    "accuracy": 0.1125,
+    "logLoss": 2.3128843936774164,
+    "oracleAccuracy": 0.1,
+    "oracleLogLoss": 2.3025850929940455,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "uniform",
+    "dataset": "独立均匀",
+    "distribution": "baseline",
+    "historyLength": 512,
+    "step": 1,
+    "method": "transformer",
+    "label": "小型 Transformer",
+    "streams": 400,
+    "accuracy": 0.09,
+    "logLoss": 2.3571492407423227,
+    "oracleAccuracy": 0.1,
+    "oracleLogLoss": 2.3025850929940455,
+    "advantage": -0.0225,
+    "advantageInterval": [
+      -0.06378084598956318,
+      0.018780845989563186
+    ]
+  },
+  {
+    "datasetId": "uniform",
+    "dataset": "独立均匀",
+    "distribution": "baseline",
+    "historyLength": 512,
+    "step": 5,
+    "method": "uniform",
+    "label": "均匀基线",
+    "streams": 400,
+    "accuracy": 0.095,
+    "logLoss": 2.302585092994038,
+    "oracleAccuracy": 0.1,
+    "oracleLogLoss": 2.3025850929940455,
+    "advantage": -0.015,
+    "advantageInterval": [
+      -0.05660392187990783,
+      0.02660392187990783
+    ]
+  },
+  {
+    "datasetId": "uniform",
+    "dataset": "独立均匀",
+    "distribution": "baseline",
+    "historyLength": 512,
+    "step": 5,
+    "method": "frequency",
+    "label": "平滑频率",
+    "streams": 400,
+    "accuracy": 0.11,
+    "logLoss": 2.31896460865254,
+    "oracleAccuracy": 0.1,
+    "oracleLogLoss": 2.3025850929940455,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "uniform",
+    "dataset": "独立均匀",
+    "distribution": "baseline",
+    "historyLength": 512,
+    "step": 5,
+    "method": "markov",
+    "label": "一阶转移",
+    "streams": 400,
+    "accuracy": 0.1075,
+    "logLoss": 2.3189688235082815,
+    "oracleAccuracy": 0.1,
+    "oracleLogLoss": 2.3025850929940455,
+    "advantage": -0.0025,
+    "advantageInterval": [
+      -0.013467711782973965,
+      0.008467711782973964
+    ]
+  },
+  {
+    "datasetId": "uniform",
+    "dataset": "独立均匀",
+    "distribution": "baseline",
+    "historyLength": 512,
+    "step": 5,
+    "method": "lag",
+    "label": "滞后混合（MTD）",
+    "streams": 400,
+    "accuracy": 0.11,
+    "logLoss": 2.31896460865254,
+    "oracleAccuracy": 0.1,
+    "oracleLogLoss": 2.3025850929940455,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "uniform",
+    "dataset": "独立均匀",
+    "distribution": "baseline",
+    "historyLength": 512,
+    "step": 5,
+    "method": "transformer",
+    "label": "小型 Transformer",
+    "streams": 400,
+    "accuracy": 0.1225,
+    "logLoss": 2.349104427925003,
+    "oracleAccuracy": 0.1,
+    "oracleLogLoss": 2.3025850929940455,
+    "advantage": 0.0125,
+    "advantageInterval": [
+      -0.029970681321705033,
+      0.05497068132170503
+    ]
+  },
+  {
+    "datasetId": "biased",
+    "dataset": "独立有偏",
+    "distribution": "baseline",
+    "historyLength": 32,
+    "step": 1,
+    "method": "uniform",
+    "label": "均匀基线",
+    "streams": 400,
+    "accuracy": 0.0775,
+    "logLoss": 2.302585092994038,
+    "oracleAccuracy": 0.46,
+    "oracleLogLoss": 1.876445030219958,
+    "advantage": -0.395,
+    "advantageInterval": [
+      -0.45658911387062184,
+      -0.3334108861293782
+    ]
+  },
+  {
+    "datasetId": "biased",
+    "dataset": "独立有偏",
+    "distribution": "baseline",
+    "historyLength": 32,
+    "step": 1,
+    "method": "frequency",
+    "label": "平滑频率",
+    "streams": 400,
+    "accuracy": 0.4725,
+    "logLoss": 1.9593671034462892,
+    "oracleAccuracy": 0.46,
+    "oracleLogLoss": 1.876445030219958,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "biased",
+    "dataset": "独立有偏",
+    "distribution": "baseline",
+    "historyLength": 32,
+    "step": 1,
+    "method": "markov",
+    "label": "一阶转移",
+    "streams": 400,
+    "accuracy": 0.4625,
+    "logLoss": 2.0374770471333736,
+    "oracleAccuracy": 0.46,
+    "oracleLogLoss": 1.876445030219958,
+    "advantage": -0.01,
+    "advantageInterval": [
+      -0.01976308838108322,
+      -0.00023691161891678351
+    ]
+  },
+  {
+    "datasetId": "biased",
+    "dataset": "独立有偏",
+    "distribution": "baseline",
+    "historyLength": 32,
+    "step": 1,
+    "method": "lag",
+    "label": "滞后混合（MTD）",
+    "streams": 400,
+    "accuracy": 0.4725,
+    "logLoss": 1.9593671034462892,
+    "oracleAccuracy": 0.46,
+    "oracleLogLoss": 1.876445030219958,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "biased",
+    "dataset": "独立有偏",
+    "distribution": "baseline",
+    "historyLength": 32,
+    "step": 1,
+    "method": "transformer",
+    "label": "小型 Transformer",
+    "streams": 400,
+    "accuracy": 0.4675,
+    "logLoss": 1.9056292277653804,
+    "oracleAccuracy": 0.46,
+    "oracleLogLoss": 1.876445030219958,
+    "advantage": -0.005,
+    "advantageInterval": [
+      -0.018867973959969277,
+      0.008867973959969275
+    ]
+  },
+  {
+    "datasetId": "biased",
+    "dataset": "独立有偏",
+    "distribution": "baseline",
+    "historyLength": 32,
+    "step": 5,
+    "method": "uniform",
+    "label": "均匀基线",
+    "streams": 400,
+    "accuracy": 0.06,
+    "logLoss": 2.302585092994038,
+    "oracleAccuracy": 0.46,
+    "oracleLogLoss": 1.876445030219958,
+    "advantage": -0.4,
+    "advantageInterval": [
+      -0.45887363810023885,
+      -0.3411263618997612
+    ]
+  },
+  {
+    "datasetId": "biased",
+    "dataset": "独立有偏",
+    "distribution": "baseline",
+    "historyLength": 32,
+    "step": 5,
+    "method": "frequency",
+    "label": "平滑频率",
+    "streams": 400,
+    "accuracy": 0.46,
+    "logLoss": 1.9592358941104038,
+    "oracleAccuracy": 0.46,
+    "oracleLogLoss": 1.876445030219958,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "biased",
+    "dataset": "独立有偏",
+    "distribution": "baseline",
+    "historyLength": 32,
+    "step": 5,
+    "method": "markov",
+    "label": "一阶转移",
+    "streams": 400,
+    "accuracy": 0.46,
+    "logLoss": 1.9922141897660768,
+    "oracleAccuracy": 0.46,
+    "oracleLogLoss": 1.876445030219958,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "biased",
+    "dataset": "独立有偏",
+    "distribution": "baseline",
+    "historyLength": 32,
+    "step": 5,
+    "method": "lag",
+    "label": "滞后混合（MTD）",
+    "streams": 400,
+    "accuracy": 0.46,
+    "logLoss": 1.9592358941104038,
+    "oracleAccuracy": 0.46,
+    "oracleLogLoss": 1.876445030219958,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "biased",
+    "dataset": "独立有偏",
+    "distribution": "baseline",
+    "historyLength": 32,
+    "step": 5,
+    "method": "transformer",
+    "label": "小型 Transformer",
+    "streams": 400,
+    "accuracy": 0.3575,
+    "logLoss": 1.9642132306087359,
+    "oracleAccuracy": 0.46,
+    "oracleLogLoss": 1.876445030219958,
+    "advantage": -0.1025,
+    "advantageInterval": [
+      -0.13947466415633392,
+      -0.06552533584366607
+    ]
+  },
+  {
+    "datasetId": "biased",
+    "dataset": "独立有偏",
+    "distribution": "baseline",
+    "historyLength": 128,
+    "step": 1,
+    "method": "uniform",
+    "label": "均匀基线",
+    "streams": 400,
+    "accuracy": 0.0525,
+    "logLoss": 2.302585092994038,
+    "oracleAccuracy": 0.46,
+    "oracleLogLoss": 1.876445030219958,
+    "advantage": -0.4125,
+    "advantageInterval": [
+      -0.47032949074650404,
+      -0.3546705092534959
+    ]
+  },
+  {
+    "datasetId": "biased",
+    "dataset": "独立有偏",
+    "distribution": "baseline",
+    "historyLength": 128,
+    "step": 1,
+    "method": "frequency",
+    "label": "平滑频率",
+    "streams": 400,
+    "accuracy": 0.465,
+    "logLoss": 1.9029492209254943,
+    "oracleAccuracy": 0.46,
+    "oracleLogLoss": 1.876445030219958,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "biased",
+    "dataset": "独立有偏",
+    "distribution": "baseline",
+    "historyLength": 128,
+    "step": 1,
+    "method": "markov",
+    "label": "一阶转移",
+    "streams": 400,
+    "accuracy": 0.46,
+    "logLoss": 1.9902857095564637,
+    "oracleAccuracy": 0.46,
+    "oracleLogLoss": 1.876445030219958,
+    "advantage": -0.005,
+    "advantageInterval": [
+      -0.011920957240353896,
+      0.0019209572403538957
+    ]
+  },
+  {
+    "datasetId": "biased",
+    "dataset": "独立有偏",
+    "distribution": "baseline",
+    "historyLength": 128,
+    "step": 1,
+    "method": "lag",
+    "label": "滞后混合（MTD）",
+    "streams": 400,
+    "accuracy": 0.465,
+    "logLoss": 1.9026794626367387,
+    "oracleAccuracy": 0.46,
+    "oracleLogLoss": 1.876445030219958,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "biased",
+    "dataset": "独立有偏",
+    "distribution": "baseline",
+    "historyLength": 128,
+    "step": 1,
+    "method": "transformer",
+    "label": "小型 Transformer",
+    "streams": 400,
+    "accuracy": 0.4325,
+    "logLoss": 1.9474998532448051,
+    "oracleAccuracy": 0.46,
+    "oracleLogLoss": 1.876445030219958,
+    "advantage": -0.0325,
+    "advantageInterval": [
+      -0.04989950090028296,
+      -0.015100499099717047
+    ]
+  },
+  {
+    "datasetId": "biased",
+    "dataset": "独立有偏",
+    "distribution": "baseline",
+    "historyLength": 128,
+    "step": 5,
+    "method": "uniform",
+    "label": "均匀基线",
+    "streams": 400,
+    "accuracy": 0.0525,
+    "logLoss": 2.302585092994038,
+    "oracleAccuracy": 0.46,
+    "oracleLogLoss": 1.876445030219958,
+    "advantage": -0.38,
+    "advantageInterval": [
+      -0.43726535341508327,
+      -0.32273464658491674
+    ]
+  },
+  {
+    "datasetId": "biased",
+    "dataset": "独立有偏",
+    "distribution": "baseline",
+    "historyLength": 128,
+    "step": 5,
+    "method": "frequency",
+    "label": "平滑频率",
+    "streams": 400,
+    "accuracy": 0.4325,
+    "logLoss": 1.9524716613941713,
+    "oracleAccuracy": 0.46,
+    "oracleLogLoss": 1.876445030219958,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "biased",
+    "dataset": "独立有偏",
+    "distribution": "baseline",
+    "historyLength": 128,
+    "step": 5,
+    "method": "markov",
+    "label": "一阶转移",
+    "streams": 400,
+    "accuracy": 0.4325,
+    "logLoss": 1.9557797609738075,
+    "oracleAccuracy": 0.46,
+    "oracleLogLoss": 1.876445030219958,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "biased",
+    "dataset": "独立有偏",
+    "distribution": "baseline",
+    "historyLength": 128,
+    "step": 5,
+    "method": "lag",
+    "label": "滞后混合（MTD）",
+    "streams": 400,
+    "accuracy": 0.4325,
+    "logLoss": 1.9521015178063,
+    "oracleAccuracy": 0.46,
+    "oracleLogLoss": 1.876445030219958,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "biased",
+    "dataset": "独立有偏",
+    "distribution": "baseline",
+    "historyLength": 128,
+    "step": 5,
+    "method": "transformer",
+    "label": "小型 Transformer",
+    "streams": 400,
+    "accuracy": 0.35,
+    "logLoss": 2.0277100044223375,
+    "oracleAccuracy": 0.46,
+    "oracleLogLoss": 1.876445030219958,
+    "advantage": -0.0825,
+    "advantageInterval": [
+      -0.11440026398174886,
+      -0.05059973601825114
+    ]
+  },
+  {
+    "datasetId": "biased",
+    "dataset": "独立有偏",
+    "distribution": "baseline",
+    "historyLength": 512,
+    "step": 1,
+    "method": "uniform",
+    "label": "均匀基线",
+    "streams": 400,
+    "accuracy": 0.0675,
+    "logLoss": 2.302585092994038,
+    "oracleAccuracy": 0.46,
+    "oracleLogLoss": 1.876445030219958,
+    "advantage": -0.4025,
+    "advantageInterval": [
+      -0.46262719996339924,
+      -0.3423728000366008
+    ]
+  },
+  {
+    "datasetId": "biased",
+    "dataset": "独立有偏",
+    "distribution": "baseline",
+    "historyLength": 512,
+    "step": 1,
+    "method": "frequency",
+    "label": "平滑频率",
+    "streams": 400,
+    "accuracy": 0.47,
+    "logLoss": 1.867652630243351,
+    "oracleAccuracy": 0.46,
+    "oracleLogLoss": 1.876445030219958,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "biased",
+    "dataset": "独立有偏",
+    "distribution": "baseline",
+    "historyLength": 512,
+    "step": 1,
+    "method": "markov",
+    "label": "一阶转移",
+    "streams": 400,
+    "accuracy": 0.47,
+    "logLoss": 1.9227806132304763,
+    "oracleAccuracy": 0.46,
+    "oracleLogLoss": 1.876445030219958,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "biased",
+    "dataset": "独立有偏",
+    "distribution": "baseline",
+    "historyLength": 512,
+    "step": 1,
+    "method": "lag",
+    "label": "滞后混合（MTD）",
+    "streams": 400,
+    "accuracy": 0.47,
+    "logLoss": 1.867652630243351,
+    "oracleAccuracy": 0.46,
+    "oracleLogLoss": 1.876445030219958,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "biased",
+    "dataset": "独立有偏",
+    "distribution": "baseline",
+    "historyLength": 512,
+    "step": 1,
+    "method": "transformer",
+    "label": "小型 Transformer",
+    "streams": 400,
+    "accuracy": 0.445,
+    "logLoss": 1.9475790380927718,
+    "oracleAccuracy": 0.46,
+    "oracleLogLoss": 1.876445030219958,
+    "advantage": -0.025,
+    "advantageInterval": [
+      -0.04031940633726763,
+      -0.009680593662732367
+    ]
+  },
+  {
+    "datasetId": "biased",
+    "dataset": "独立有偏",
+    "distribution": "baseline",
+    "historyLength": 512,
+    "step": 5,
+    "method": "uniform",
+    "label": "均匀基线",
+    "streams": 400,
+    "accuracy": 0.075,
+    "logLoss": 2.302585092994038,
+    "oracleAccuracy": 0.46,
+    "oracleLogLoss": 1.876445030219958,
+    "advantage": -0.3425,
+    "advantageInterval": [
+      -0.4026031759093142,
+      -0.28239682409068584
+    ]
+  },
+  {
+    "datasetId": "biased",
+    "dataset": "独立有偏",
+    "distribution": "baseline",
+    "historyLength": 512,
+    "step": 5,
+    "method": "frequency",
+    "label": "平滑频率",
+    "streams": 400,
+    "accuracy": 0.4175,
+    "logLoss": 1.970508989642579,
+    "oracleAccuracy": 0.46,
+    "oracleLogLoss": 1.876445030219958,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "biased",
+    "dataset": "独立有偏",
+    "distribution": "baseline",
+    "historyLength": 512,
+    "step": 5,
+    "method": "markov",
+    "label": "一阶转移",
+    "streams": 400,
+    "accuracy": 0.4175,
+    "logLoss": 1.9715241015864635,
+    "oracleAccuracy": 0.46,
+    "oracleLogLoss": 1.876445030219958,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "biased",
+    "dataset": "独立有偏",
+    "distribution": "baseline",
+    "historyLength": 512,
+    "step": 5,
+    "method": "lag",
+    "label": "滞后混合（MTD）",
+    "streams": 400,
+    "accuracy": 0.4175,
+    "logLoss": 1.970508989642579,
+    "oracleAccuracy": 0.46,
+    "oracleLogLoss": 1.876445030219958,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "biased",
+    "dataset": "独立有偏",
+    "distribution": "baseline",
+    "historyLength": 512,
+    "step": 5,
+    "method": "transformer",
+    "label": "小型 Transformer",
+    "streams": 400,
+    "accuracy": 0.3375,
+    "logLoss": 2.0350096291230853,
+    "oracleAccuracy": 0.46,
+    "oracleLogLoss": 1.876445030219958,
+    "advantage": -0.08,
+    "advantageInterval": [
+      -0.11233586895465517,
+      -0.04766413104534484
+    ]
+  },
+  {
+    "datasetId": "short",
+    "dataset": "依赖上一位",
+    "distribution": "baseline",
+    "historyLength": 32,
+    "step": 1,
+    "method": "uniform",
+    "label": "均匀基线",
+    "streams": 400,
+    "accuracy": 0.0925,
+    "logLoss": 2.302585092994038,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": -0.08,
+    "advantageInterval": [
+      -0.12691456961440936,
+      -0.033085430385590635
+    ]
+  },
+  {
+    "datasetId": "short",
+    "dataset": "依赖上一位",
+    "distribution": "baseline",
+    "historyLength": 32,
+    "step": 1,
+    "method": "frequency",
+    "label": "平滑频率",
+    "streams": 400,
+    "accuracy": 0.1725,
+    "logLoss": 2.332670769382364,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "short",
+    "dataset": "依赖上一位",
+    "distribution": "baseline",
+    "historyLength": 32,
+    "step": 1,
+    "method": "markov",
+    "label": "一阶转移",
+    "streams": 400,
+    "accuracy": 0.395,
+    "logLoss": 2.105956068130554,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0.2225,
+    "advantageInterval": [
+      0.17616427432656084,
+      0.26883572567343916
+    ]
+  },
+  {
+    "datasetId": "short",
+    "dataset": "依赖上一位",
+    "distribution": "baseline",
+    "historyLength": 32,
+    "step": 1,
+    "method": "lag",
+    "label": "滞后混合（MTD）",
+    "streams": 400,
+    "accuracy": 0.1725,
+    "logLoss": 2.332670769382364,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "short",
+    "dataset": "依赖上一位",
+    "distribution": "baseline",
+    "historyLength": 32,
+    "step": 1,
+    "method": "transformer",
+    "label": "小型 Transformer",
+    "streams": 400,
+    "accuracy": 0.4525,
+    "logLoss": 1.875681362188515,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0.28,
+    "advantageInterval": [
+      0.23029524361776288,
+      0.3297047563822372
+    ]
+  },
+  {
+    "datasetId": "short",
+    "dataset": "依赖上一位",
+    "distribution": "baseline",
+    "historyLength": 32,
+    "step": 5,
+    "method": "uniform",
+    "label": "均匀基线",
+    "streams": 400,
+    "accuracy": 0.1025,
+    "logLoss": 2.302585092994038,
+    "oracleAccuracy": 0.169984,
+    "oracleLogLoss": 2.2795923968662573,
+    "advantage": 0.0025,
+    "advantageInterval": [
+      -0.03825269230154692,
+      0.04325269230154692
+    ]
+  },
+  {
+    "datasetId": "short",
+    "dataset": "依赖上一位",
+    "distribution": "baseline",
+    "historyLength": 32,
+    "step": 5,
+    "method": "frequency",
+    "label": "平滑频率",
+    "streams": 400,
+    "accuracy": 0.1,
+    "logLoss": 2.620316357842279,
+    "oracleAccuracy": 0.169984,
+    "oracleLogLoss": 2.2795923968662573,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "short",
+    "dataset": "依赖上一位",
+    "distribution": "baseline",
+    "historyLength": 32,
+    "step": 5,
+    "method": "markov",
+    "label": "一阶转移",
+    "streams": 400,
+    "accuracy": 0.1,
+    "logLoss": 2.782605367327047,
+    "oracleAccuracy": 0.169984,
+    "oracleLogLoss": 2.2795923968662573,
+    "advantage": 0,
+    "advantageInterval": [
+      -0.009812273016706475,
+      0.009812273016706475
+    ]
+  },
+  {
+    "datasetId": "short",
+    "dataset": "依赖上一位",
+    "distribution": "baseline",
+    "historyLength": 32,
+    "step": 5,
+    "method": "lag",
+    "label": "滞后混合（MTD）",
+    "streams": 400,
+    "accuracy": 0.1,
+    "logLoss": 2.620316357842279,
+    "oracleAccuracy": 0.169984,
+    "oracleLogLoss": 2.2795923968662573,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "short",
+    "dataset": "依赖上一位",
+    "distribution": "baseline",
+    "historyLength": 32,
+    "step": 5,
+    "method": "transformer",
+    "label": "小型 Transformer",
+    "streams": 400,
+    "accuracy": 0.1775,
+    "logLoss": 2.3596995178591347,
+    "oracleAccuracy": 0.169984,
+    "oracleLogLoss": 2.2795923968662573,
+    "advantage": 0.0775,
+    "advantageInterval": [
+      0.0351257753784131,
+      0.1198742246215869
+    ]
+  },
+  {
+    "datasetId": "short",
+    "dataset": "依赖上一位",
+    "distribution": "baseline",
+    "historyLength": 128,
+    "step": 1,
+    "method": "uniform",
+    "label": "均匀基线",
+    "streams": 400,
+    "accuracy": 0.1,
+    "logLoss": 2.302585092994038,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": -0.0575,
+    "advantageInterval": [
+      -0.1034392294996068,
+      -0.011560770500393204
+    ]
+  },
+  {
+    "datasetId": "short",
+    "dataset": "依赖上一位",
+    "distribution": "baseline",
+    "historyLength": 128,
+    "step": 1,
+    "method": "frequency",
+    "label": "平滑频率",
+    "streams": 400,
+    "accuracy": 0.1575,
+    "logLoss": 2.2852112435092358,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "short",
+    "dataset": "依赖上一位",
+    "distribution": "baseline",
+    "historyLength": 128,
+    "step": 1,
+    "method": "markov",
+    "label": "一阶转移",
+    "streams": 400,
+    "accuracy": 0.635,
+    "logLoss": 1.5839903906960922,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0.4775,
+    "advantageInterval": [
+      0.42335494304202403,
+      0.5316450569579759
+    ]
+  },
+  {
+    "datasetId": "short",
+    "dataset": "依赖上一位",
+    "distribution": "baseline",
+    "historyLength": 128,
+    "step": 1,
+    "method": "lag",
+    "label": "滞后混合（MTD）",
+    "streams": 400,
+    "accuracy": 0.61,
+    "logLoss": 1.6323198149860314,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0.4525,
+    "advantageInterval": [
+      0.398510759681438,
+      0.506489240318562
+    ]
+  },
+  {
+    "datasetId": "short",
+    "dataset": "依赖上一位",
+    "distribution": "baseline",
+    "historyLength": 128,
+    "step": 1,
+    "method": "transformer",
+    "label": "小型 Transformer",
+    "streams": 400,
+    "accuracy": 0.5275,
+    "logLoss": 1.7336709939397503,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0.37,
+    "advantageInterval": [
+      0.31509509337108543,
+      0.42490490662891456
+    ]
+  },
+  {
+    "datasetId": "short",
+    "dataset": "依赖上一位",
+    "distribution": "baseline",
+    "historyLength": 128,
+    "step": 5,
+    "method": "uniform",
+    "label": "均匀基线",
+    "streams": 400,
+    "accuracy": 0.1,
+    "logLoss": 2.302585092994038,
+    "oracleAccuracy": 0.169984,
+    "oracleLogLoss": 2.2795923968662573,
+    "advantage": -0.0025,
+    "advantageInterval": [
+      -0.04325269230154692,
+      0.03825269230154692
+    ]
+  },
+  {
+    "datasetId": "short",
+    "dataset": "依赖上一位",
+    "distribution": "baseline",
+    "historyLength": 128,
+    "step": 5,
+    "method": "frequency",
+    "label": "平滑频率",
+    "streams": 400,
+    "accuracy": 0.1025,
+    "logLoss": 2.467726820193084,
+    "oracleAccuracy": 0.169984,
+    "oracleLogLoss": 2.2795923968662573,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "short",
+    "dataset": "依赖上一位",
+    "distribution": "baseline",
+    "historyLength": 128,
+    "step": 5,
+    "method": "markov",
+    "label": "一阶转移",
+    "streams": 400,
+    "accuracy": 0.105,
+    "logLoss": 2.5382033398011914,
+    "oracleAccuracy": 0.169984,
+    "oracleLogLoss": 2.2795923968662573,
+    "advantage": 0.0025,
+    "advantageInterval": [
+      -0.010478098960617419,
+      0.01547809896061742
+    ]
+  },
+  {
+    "datasetId": "short",
+    "dataset": "依赖上一位",
+    "distribution": "baseline",
+    "historyLength": 128,
+    "step": 5,
+    "method": "lag",
+    "label": "滞后混合（MTD）",
+    "streams": 400,
+    "accuracy": 0.1125,
+    "logLoss": 2.531035100432913,
+    "oracleAccuracy": 0.169984,
+    "oracleLogLoss": 2.2795923968662573,
+    "advantage": 0.01,
+    "advantageInterval": [
+      -0.006967006166251425,
+      0.026967006166251424
+    ]
+  },
+  {
+    "datasetId": "short",
+    "dataset": "依赖上一位",
+    "distribution": "baseline",
+    "historyLength": 128,
+    "step": 5,
+    "method": "transformer",
+    "label": "小型 Transformer",
+    "streams": 400,
+    "accuracy": 0.145,
+    "logLoss": 2.377597334640613,
+    "oracleAccuracy": 0.169984,
+    "oracleLogLoss": 2.2795923968662573,
+    "advantage": 0.0425,
+    "advantageInterval": [
+      -0.0003487200160931722,
+      0.08534872001609317
+    ]
+  },
+  {
+    "datasetId": "short",
+    "dataset": "依赖上一位",
+    "distribution": "baseline",
+    "historyLength": 512,
+    "step": 1,
+    "method": "uniform",
+    "label": "均匀基线",
+    "streams": 400,
+    "accuracy": 0.1,
+    "logLoss": 2.302585092994038,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": -0.0325,
+    "advantageInterval": [
+      -0.07708312362633087,
+      0.012083123626330863
+    ]
+  },
+  {
+    "datasetId": "short",
+    "dataset": "依赖上一位",
+    "distribution": "baseline",
+    "historyLength": 512,
+    "step": 1,
+    "method": "frequency",
+    "label": "平滑频率",
+    "streams": 400,
+    "accuracy": 0.1325,
+    "logLoss": 2.28337658733073,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "short",
+    "dataset": "依赖上一位",
+    "distribution": "baseline",
+    "historyLength": 512,
+    "step": 1,
+    "method": "markov",
+    "label": "一阶转移",
+    "streams": 400,
+    "accuracy": 0.6525,
+    "logLoss": 1.459059374609288,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0.52,
+    "advantageInterval": [
+      0.4623993664752189,
+      0.5776006335247812
+    ]
+  },
+  {
+    "datasetId": "short",
+    "dataset": "依赖上一位",
+    "distribution": "baseline",
+    "historyLength": 512,
+    "step": 1,
+    "method": "lag",
+    "label": "滞后混合（MTD）",
+    "streams": 400,
+    "accuracy": 0.6525,
+    "logLoss": 1.4713282250532524,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0.52,
+    "advantageInterval": [
+      0.4623993664752189,
+      0.5776006335247812
+    ]
+  },
+  {
+    "datasetId": "short",
+    "dataset": "依赖上一位",
+    "distribution": "baseline",
+    "historyLength": 512,
+    "step": 1,
+    "method": "transformer",
+    "label": "小型 Transformer",
+    "streams": 400,
+    "accuracy": 0.475,
+    "logLoss": 1.7939467311694373,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0.3425,
+    "advantageInterval": [
+      0.2852688083450501,
+      0.39973119165494997
+    ]
+  },
+  {
+    "datasetId": "short",
+    "dataset": "依赖上一位",
+    "distribution": "baseline",
+    "historyLength": 512,
+    "step": 5,
+    "method": "uniform",
+    "label": "均匀基线",
+    "streams": 400,
+    "accuracy": 0.095,
+    "logLoss": 2.302585092994038,
+    "oracleAccuracy": 0.169984,
+    "oracleLogLoss": 2.2795923968662573,
+    "advantage": 0.0175,
+    "advantageInterval": [
+      -0.020779656545783662,
+      0.055779656545783665
+    ]
+  },
+  {
+    "datasetId": "short",
+    "dataset": "依赖上一位",
+    "distribution": "baseline",
+    "historyLength": 512,
+    "step": 5,
+    "method": "frequency",
+    "label": "平滑频率",
+    "streams": 400,
+    "accuracy": 0.0775,
+    "logLoss": 2.3573987634004645,
+    "oracleAccuracy": 0.169984,
+    "oracleLogLoss": 2.2795923968662573,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "short",
+    "dataset": "依赖上一位",
+    "distribution": "baseline",
+    "historyLength": 512,
+    "step": 5,
+    "method": "markov",
+    "label": "一阶转移",
+    "streams": 400,
+    "accuracy": 0.115,
+    "logLoss": 2.3572260479330196,
+    "oracleAccuracy": 0.169984,
+    "oracleLogLoss": 2.2795923968662573,
+    "advantage": 0.0375,
+    "advantageInterval": [
+      0.007082942804718061,
+      0.06791705719528193
+    ]
+  },
+  {
+    "datasetId": "short",
+    "dataset": "依赖上一位",
+    "distribution": "baseline",
+    "historyLength": 512,
+    "step": 5,
+    "method": "lag",
+    "label": "滞后混合（MTD）",
+    "streams": 400,
+    "accuracy": 0.11,
+    "logLoss": 2.3552101434576205,
+    "oracleAccuracy": 0.169984,
+    "oracleLogLoss": 2.2795923968662573,
+    "advantage": 0.0325,
+    "advantageInterval": [
+      0.003650624075587524,
+      0.061349375924412475
+    ]
+  },
+  {
+    "datasetId": "short",
+    "dataset": "依赖上一位",
+    "distribution": "baseline",
+    "historyLength": 512,
+    "step": 5,
+    "method": "transformer",
+    "label": "小型 Transformer",
+    "streams": 400,
+    "accuracy": 0.1825,
+    "logLoss": 2.3242045743604764,
+    "oracleAccuracy": 0.169984,
+    "oracleLogLoss": 2.2795923968662573,
+    "advantage": 0.105,
+    "advantageInterval": [
+      0.05908369933600195,
+      0.15091630066399803
+    ]
+  },
+  {
+    "datasetId": "long",
+    "dataset": "依赖五位之前",
+    "distribution": "baseline",
+    "historyLength": 32,
+    "step": 1,
+    "method": "uniform",
+    "label": "均匀基线",
+    "streams": 400,
+    "accuracy": 0.09,
+    "logLoss": 2.302585092994038,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": -0.1225,
+    "advantageInterval": [
+      -0.17031847437160735,
+      -0.07468152562839264
+    ]
+  },
+  {
+    "datasetId": "long",
+    "dataset": "依赖五位之前",
+    "distribution": "baseline",
+    "historyLength": 32,
+    "step": 1,
+    "method": "frequency",
+    "label": "平滑频率",
+    "streams": 400,
+    "accuracy": 0.2125,
+    "logLoss": 2.2152435218356104,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "long",
+    "dataset": "依赖五位之前",
+    "distribution": "baseline",
+    "historyLength": 32,
+    "step": 1,
+    "method": "markov",
+    "label": "一阶转移",
+    "streams": 400,
+    "accuracy": 0.2775,
+    "logLoss": 2.133163244365465,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0.065,
+    "advantageInterval": [
+      0.026272585529383094,
+      0.10372741447061691
+    ]
+  },
+  {
+    "datasetId": "long",
+    "dataset": "依赖五位之前",
+    "distribution": "baseline",
+    "historyLength": 32,
+    "step": 1,
+    "method": "lag",
+    "label": "滞后混合（MTD）",
+    "streams": 400,
+    "accuracy": 0.2125,
+    "logLoss": 2.2152435218356104,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "long",
+    "dataset": "依赖五位之前",
+    "distribution": "baseline",
+    "historyLength": 32,
+    "step": 1,
+    "method": "transformer",
+    "label": "小型 Transformer",
+    "streams": 400,
+    "accuracy": 0.22,
+    "logLoss": 2.1608028711636957,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0.0075,
+    "advantageInterval": [
+      -0.028877439027169556,
+      0.043877439027169556
+    ]
+  },
+  {
+    "datasetId": "long",
+    "dataset": "依赖五位之前",
+    "distribution": "baseline",
+    "historyLength": 32,
+    "step": 5,
+    "method": "uniform",
+    "label": "均匀基线",
+    "streams": 400,
+    "accuracy": 0.095,
+    "logLoss": 2.302585092994038,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": -0.075,
+    "advantageInterval": [
+      -0.120431459847331,
+      -0.029568540152669
+    ]
+  },
+  {
+    "datasetId": "long",
+    "dataset": "依赖五位之前",
+    "distribution": "baseline",
+    "historyLength": 32,
+    "step": 5,
+    "method": "frequency",
+    "label": "平滑频率",
+    "streams": 400,
+    "accuracy": 0.17,
+    "logLoss": 2.2349856978721814,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "long",
+    "dataset": "依赖五位之前",
+    "distribution": "baseline",
+    "historyLength": 32,
+    "step": 5,
+    "method": "markov",
+    "label": "一阶转移",
+    "streams": 400,
+    "accuracy": 0.1675,
+    "logLoss": 2.2645739397651337,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": -0.0025,
+    "advantageInterval": [
+      -0.018769964793630158,
+      0.013769964793630159
+    ]
+  },
+  {
+    "datasetId": "long",
+    "dataset": "依赖五位之前",
+    "distribution": "baseline",
+    "historyLength": 32,
+    "step": 5,
+    "method": "lag",
+    "label": "滞后混合（MTD）",
+    "streams": 400,
+    "accuracy": 0.17,
+    "logLoss": 2.2349856978721814,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "long",
+    "dataset": "依赖五位之前",
+    "distribution": "baseline",
+    "historyLength": 32,
+    "step": 5,
+    "method": "transformer",
+    "label": "小型 Transformer",
+    "streams": 400,
+    "accuracy": 0.5975,
+    "logLoss": 1.791839187551672,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0.4275,
+    "advantageInterval": [
+      0.3720156304608415,
+      0.48298436953915846
+    ]
+  },
+  {
+    "datasetId": "long",
+    "dataset": "依赖五位之前",
+    "distribution": "baseline",
+    "historyLength": 128,
+    "step": 1,
+    "method": "uniform",
+    "label": "均匀基线",
+    "streams": 400,
+    "accuracy": 0.09,
+    "logLoss": 2.302585092994038,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": -0.035,
+    "advantageInterval": [
+      -0.07874722447336296,
+      0.008747224473362958
+    ]
+  },
+  {
+    "datasetId": "long",
+    "dataset": "依赖五位之前",
+    "distribution": "baseline",
+    "historyLength": 128,
+    "step": 1,
+    "method": "frequency",
+    "label": "平滑频率",
+    "streams": 400,
+    "accuracy": 0.125,
+    "logLoss": 2.2864275658214974,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "long",
+    "dataset": "依赖五位之前",
+    "distribution": "baseline",
+    "historyLength": 128,
+    "step": 1,
+    "method": "markov",
+    "label": "一阶转移",
+    "streams": 400,
+    "accuracy": 0.17,
+    "logLoss": 2.2781846413495837,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0.045,
+    "advantageInterval": [
+      0.0036048820574976007,
+      0.0863951179425024
+    ]
+  },
+  {
+    "datasetId": "long",
+    "dataset": "依赖五位之前",
+    "distribution": "baseline",
+    "historyLength": 128,
+    "step": 1,
+    "method": "lag",
+    "label": "滞后混合（MTD）",
+    "streams": 400,
+    "accuracy": 0.59,
+    "logLoss": 1.682096087501045,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0.465,
+    "advantageInterval": [
+      0.410918884834502,
+      0.519081115165498
+    ]
+  },
+  {
+    "datasetId": "long",
+    "dataset": "依赖五位之前",
+    "distribution": "baseline",
+    "historyLength": 128,
+    "step": 1,
+    "method": "transformer",
+    "label": "小型 Transformer",
+    "streams": 400,
+    "accuracy": 0.18,
+    "logLoss": 2.1701757169240867,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0.055,
+    "advantageInterval": [
+      0.010359549458351075,
+      0.09964045054164893
+    ]
+  },
+  {
+    "datasetId": "long",
+    "dataset": "依赖五位之前",
+    "distribution": "baseline",
+    "historyLength": 128,
+    "step": 5,
+    "method": "uniform",
+    "label": "均匀基线",
+    "streams": 400,
+    "accuracy": 0.1025,
+    "logLoss": 2.302585092994038,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": -0.0325,
+    "advantageInterval": [
+      -0.07867440811653444,
+      0.013674408116534434
+    ]
+  },
+  {
+    "datasetId": "long",
+    "dataset": "依赖五位之前",
+    "distribution": "baseline",
+    "historyLength": 128,
+    "step": 5,
+    "method": "frequency",
+    "label": "平滑频率",
+    "streams": 400,
+    "accuracy": 0.135,
+    "logLoss": 2.2961837706059893,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "long",
+    "dataset": "依赖五位之前",
+    "distribution": "baseline",
+    "historyLength": 128,
+    "step": 5,
+    "method": "markov",
+    "label": "一阶转移",
+    "streams": 400,
+    "accuracy": 0.1375,
+    "logLoss": 2.3072677991413912,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0.0025,
+    "advantageInterval": [
+      -0.010478098960617419,
+      0.01547809896061742
+    ]
+  },
+  {
+    "datasetId": "long",
+    "dataset": "依赖五位之前",
+    "distribution": "baseline",
+    "historyLength": 128,
+    "step": 5,
+    "method": "lag",
+    "label": "滞后混合（MTD）",
+    "streams": 400,
+    "accuracy": 0.61,
+    "logLoss": 1.6643062654939889,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0.475,
+    "advantageInterval": [
+      0.422674265832763,
+      0.5273257341672369
+    ]
+  },
+  {
+    "datasetId": "long",
+    "dataset": "依赖五位之前",
+    "distribution": "baseline",
+    "historyLength": 128,
+    "step": 5,
+    "method": "transformer",
+    "label": "小型 Transformer",
+    "streams": 400,
+    "accuracy": 0.65,
+    "logLoss": 1.7268837083217918,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0.515,
+    "advantageInterval": [
+      0.4626374782481733,
+      0.5673625217518268
+    ]
+  },
+  {
+    "datasetId": "long",
+    "dataset": "依赖五位之前",
+    "distribution": "baseline",
+    "historyLength": 512,
+    "step": 1,
+    "method": "uniform",
+    "label": "均匀基线",
+    "streams": 400,
+    "accuracy": 0.12,
+    "logLoss": 2.302585092994038,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0.0025,
+    "advantageInterval": [
+      -0.04430091654523108,
+      0.04930091654523108
+    ]
+  },
+  {
+    "datasetId": "long",
+    "dataset": "依赖五位之前",
+    "distribution": "baseline",
+    "historyLength": 512,
+    "step": 1,
+    "method": "frequency",
+    "label": "平滑频率",
+    "streams": 400,
+    "accuracy": 0.1175,
+    "logLoss": 2.3135297383302444,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "long",
+    "dataset": "依赖五位之前",
+    "distribution": "baseline",
+    "historyLength": 512,
+    "step": 1,
+    "method": "markov",
+    "label": "一阶转移",
+    "streams": 400,
+    "accuracy": 0.1225,
+    "logLoss": 2.372443236763904,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0.005,
+    "advantageInterval": [
+      -0.03485462177957511,
+      0.0448546217795751
+    ]
+  },
+  {
+    "datasetId": "long",
+    "dataset": "依赖五位之前",
+    "distribution": "baseline",
+    "historyLength": 512,
+    "step": 1,
+    "method": "lag",
+    "label": "滞后混合（MTD）",
+    "streams": 400,
+    "accuracy": 0.675,
+    "logLoss": 1.4155330109827922,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0.5575,
+    "advantageInterval": [
+      0.5018466982111573,
+      0.6131533017888426
+    ]
+  },
+  {
+    "datasetId": "long",
+    "dataset": "依赖五位之前",
+    "distribution": "baseline",
+    "historyLength": 512,
+    "step": 1,
+    "method": "transformer",
+    "label": "小型 Transformer",
+    "streams": 400,
+    "accuracy": 0.2325,
+    "logLoss": 2.1046509889900555,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0.115,
+    "advantageInterval": [
+      0.06479653328528559,
+      0.16520346671471442
+    ]
+  },
+  {
+    "datasetId": "long",
+    "dataset": "依赖五位之前",
+    "distribution": "baseline",
+    "historyLength": 512,
+    "step": 5,
+    "method": "uniform",
+    "label": "均匀基线",
+    "streams": 400,
+    "accuracy": 0.1125,
+    "logLoss": 2.302585092994038,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0.0175,
+    "advantageInterval": [
+      -0.024953675475787827,
+      0.05995367547578783
+    ]
+  },
+  {
+    "datasetId": "long",
+    "dataset": "依赖五位之前",
+    "distribution": "baseline",
+    "historyLength": 512,
+    "step": 5,
+    "method": "frequency",
+    "label": "平滑频率",
+    "streams": 400,
+    "accuracy": 0.095,
+    "logLoss": 2.312715683988597,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "long",
+    "dataset": "依赖五位之前",
+    "distribution": "baseline",
+    "historyLength": 512,
+    "step": 5,
+    "method": "markov",
+    "label": "一阶转移",
+    "streams": 400,
+    "accuracy": 0.095,
+    "logLoss": 2.314235922069073,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "long",
+    "dataset": "依赖五位之前",
+    "distribution": "baseline",
+    "historyLength": 512,
+    "step": 5,
+    "method": "lag",
+    "label": "滞后混合（MTD）",
+    "streams": 400,
+    "accuracy": 0.6275,
+    "logLoss": 1.5299631878277626,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0.5325,
+    "advantageInterval": [
+      0.477521163561418,
+      0.587478836438582
+    ]
+  },
+  {
+    "datasetId": "long",
+    "dataset": "依赖五位之前",
+    "distribution": "baseline",
+    "historyLength": 512,
+    "step": 5,
+    "method": "transformer",
+    "label": "小型 Transformer",
+    "streams": 400,
+    "accuracy": 0.58,
+    "logLoss": 1.7782893956780512,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0.485,
+    "advantageInterval": [
+      0.42951291915814205,
+      0.5404870808418579
+    ]
+  },
+  {
+    "datasetId": "lag8",
+    "dataset": "依赖八位之前（留出）",
+    "distribution": "holdout",
+    "historyLength": 32,
+    "step": 1,
+    "method": "uniform",
+    "label": "均匀基线",
+    "streams": 400,
+    "accuracy": 0.08,
+    "logLoss": 2.302585092994038,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": -0.1125,
+    "advantageInterval": [
+      -0.1590275338214779,
+      -0.0659724661785221
+    ]
+  },
+  {
+    "datasetId": "lag8",
+    "dataset": "依赖八位之前（留出）",
+    "distribution": "holdout",
+    "historyLength": 32,
+    "step": 1,
+    "method": "frequency",
+    "label": "平滑频率",
+    "streams": 400,
+    "accuracy": 0.1925,
+    "logLoss": 2.240284275646311,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "lag8",
+    "dataset": "依赖八位之前（留出）",
+    "distribution": "holdout",
+    "historyLength": 32,
+    "step": 1,
+    "method": "markov",
+    "label": "一阶转移",
+    "streams": 400,
+    "accuracy": 0.255,
+    "logLoss": 2.1810539150207267,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0.0625,
+    "advantageInterval": [
+      0.020456528345390766,
+      0.10454347165460923
+    ]
+  },
+  {
+    "datasetId": "lag8",
+    "dataset": "依赖八位之前（留出）",
+    "distribution": "holdout",
+    "historyLength": 32,
+    "step": 1,
+    "method": "lag",
+    "label": "滞后混合（MTD）",
+    "streams": 400,
+    "accuracy": 0.1925,
+    "logLoss": 2.240284275646311,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "lag8",
+    "dataset": "依赖八位之前（留出）",
+    "distribution": "holdout",
+    "historyLength": 32,
+    "step": 1,
+    "method": "transformer",
+    "label": "小型 Transformer",
+    "streams": 400,
+    "accuracy": 0.135,
+    "logLoss": 2.3147990737112343,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": -0.0575,
+    "advantageInterval": [
+      -0.10074015555743965,
+      -0.014259844442560357
+    ]
+  },
+  {
+    "datasetId": "lag8",
+    "dataset": "依赖八位之前（留出）",
+    "distribution": "holdout",
+    "historyLength": 32,
+    "step": 5,
+    "method": "uniform",
+    "label": "均匀基线",
+    "streams": 400,
+    "accuracy": 0.1225,
+    "logLoss": 2.302585092994038,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": -0.09,
+    "advantageInterval": [
+      -0.14021545159557333,
+      -0.03978454840442667
+    ]
+  },
+  {
+    "datasetId": "lag8",
+    "dataset": "依赖八位之前（留出）",
+    "distribution": "holdout",
+    "historyLength": 32,
+    "step": 5,
+    "method": "frequency",
+    "label": "平滑频率",
+    "streams": 400,
+    "accuracy": 0.2125,
+    "logLoss": 2.149871293903087,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "lag8",
+    "dataset": "依赖八位之前（留出）",
+    "distribution": "holdout",
+    "historyLength": 32,
+    "step": 5,
+    "method": "markov",
+    "label": "一阶转移",
+    "streams": 400,
+    "accuracy": 0.2125,
+    "logLoss": 2.1533832440541834,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0,
+    "advantageInterval": [
+      -0.01962454603341295,
+      0.01962454603341295
+    ]
+  },
+  {
+    "datasetId": "lag8",
+    "dataset": "依赖八位之前（留出）",
+    "distribution": "holdout",
+    "historyLength": 32,
+    "step": 5,
+    "method": "lag",
+    "label": "滞后混合（MTD）",
+    "streams": 400,
+    "accuracy": 0.2125,
+    "logLoss": 2.149871293903087,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "lag8",
+    "dataset": "依赖八位之前（留出）",
+    "distribution": "holdout",
+    "historyLength": 32,
+    "step": 5,
+    "method": "transformer",
+    "label": "小型 Transformer",
+    "streams": 400,
+    "accuracy": 0.1125,
+    "logLoss": 2.310698471680885,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": -0.1,
+    "advantageInterval": [
+      -0.1465436976343058,
+      -0.0534563023656942
+    ]
+  },
+  {
+    "datasetId": "lag8",
+    "dataset": "依赖八位之前（留出）",
+    "distribution": "holdout",
+    "historyLength": 128,
+    "step": 1,
+    "method": "uniform",
+    "label": "均匀基线",
+    "streams": 400,
+    "accuracy": 0.095,
+    "logLoss": 2.302585092994038,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": -0.05,
+    "advantageInterval": [
+      -0.09576139489960828,
+      -0.004238605100391722
+    ]
+  },
+  {
+    "datasetId": "lag8",
+    "dataset": "依赖八位之前（留出）",
+    "distribution": "holdout",
+    "historyLength": 128,
+    "step": 1,
+    "method": "frequency",
+    "label": "平滑频率",
+    "streams": 400,
+    "accuracy": 0.145,
+    "logLoss": 2.27401822162106,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "lag8",
+    "dataset": "依赖八位之前（留出）",
+    "distribution": "holdout",
+    "historyLength": 128,
+    "step": 1,
+    "method": "markov",
+    "label": "一阶转移",
+    "streams": 400,
+    "accuracy": 0.185,
+    "logLoss": 2.2699329305210285,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0.04,
+    "advantageInterval": [
+      -0.00740455230194003,
+      0.08740455230194003
+    ]
+  },
+  {
+    "datasetId": "lag8",
+    "dataset": "依赖八位之前（留出）",
+    "distribution": "holdout",
+    "historyLength": 128,
+    "step": 1,
+    "method": "lag",
+    "label": "滞后混合（MTD）",
+    "streams": 400,
+    "accuracy": 0.595,
+    "logLoss": 1.6822948260970036,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0.45,
+    "advantageInterval": [
+      0.39558831394868044,
+      0.5044116860513196
+    ]
+  },
+  {
+    "datasetId": "lag8",
+    "dataset": "依赖八位之前（留出）",
+    "distribution": "holdout",
+    "historyLength": 128,
+    "step": 1,
+    "method": "transformer",
+    "label": "小型 Transformer",
+    "streams": 400,
+    "accuracy": 0.1175,
+    "logLoss": 2.3154790353961774,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": -0.0275,
+    "advantageInterval": [
+      -0.07046652511783744,
+      0.015466525117837433
+    ]
+  },
+  {
+    "datasetId": "lag8",
+    "dataset": "依赖八位之前（留出）",
+    "distribution": "holdout",
+    "historyLength": 128,
+    "step": 5,
+    "method": "uniform",
+    "label": "均匀基线",
+    "streams": 400,
+    "accuracy": 0.12,
+    "logLoss": 2.302585092994038,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": -0.03,
+    "advantageInterval": [
+      -0.07432932576531046,
+      0.014329325765310458
+    ]
+  },
+  {
+    "datasetId": "lag8",
+    "dataset": "依赖八位之前（留出）",
+    "distribution": "holdout",
+    "historyLength": 128,
+    "step": 5,
+    "method": "frequency",
+    "label": "平滑频率",
+    "streams": 400,
+    "accuracy": 0.15,
+    "logLoss": 2.301689132088132,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "lag8",
+    "dataset": "依赖八位之前（留出）",
+    "distribution": "holdout",
+    "historyLength": 128,
+    "step": 5,
+    "method": "markov",
+    "label": "一阶转移",
+    "streams": 400,
+    "accuracy": 0.15,
+    "logLoss": 2.3084637151573877,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0,
+    "advantageInterval": [
+      -0.006938324788966929,
+      0.006938324788966929
+    ]
+  },
+  {
+    "datasetId": "lag8",
+    "dataset": "依赖八位之前（留出）",
+    "distribution": "holdout",
+    "historyLength": 128,
+    "step": 5,
+    "method": "lag",
+    "label": "滞后混合（MTD）",
+    "streams": 400,
+    "accuracy": 0.565,
+    "logLoss": 1.7266362366537547,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0.415,
+    "advantageInterval": [
+      0.3605639889572572,
+      0.46943601104274274
+    ]
+  },
+  {
+    "datasetId": "lag8",
+    "dataset": "依赖八位之前（留出）",
+    "distribution": "holdout",
+    "historyLength": 128,
+    "step": 5,
+    "method": "transformer",
+    "label": "小型 Transformer",
+    "streams": 400,
+    "accuracy": 0.1,
+    "logLoss": 2.345338189362225,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": -0.05,
+    "advantageInterval": [
+      -0.09133984102703288,
+      -0.008660158972967125
+    ]
+  },
+  {
+    "datasetId": "lag8",
+    "dataset": "依赖八位之前（留出）",
+    "distribution": "holdout",
+    "historyLength": 512,
+    "step": 1,
+    "method": "uniform",
+    "label": "均匀基线",
+    "streams": 400,
+    "accuracy": 0.085,
+    "logLoss": 2.302585092994038,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": -0.0625,
+    "advantageInterval": [
+      -0.1067743143626268,
+      -0.0182256856373732
+    ]
+  },
+  {
+    "datasetId": "lag8",
+    "dataset": "依赖八位之前（留出）",
+    "distribution": "holdout",
+    "historyLength": 512,
+    "step": 1,
+    "method": "frequency",
+    "label": "平滑频率",
+    "streams": 400,
+    "accuracy": 0.1475,
+    "logLoss": 2.2939322193319502,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "lag8",
+    "dataset": "依赖八位之前（留出）",
+    "distribution": "holdout",
+    "historyLength": 512,
+    "step": 1,
+    "method": "markov",
+    "label": "一阶转移",
+    "streams": 400,
+    "accuracy": 0.125,
+    "logLoss": 2.3637397922708687,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": -0.0225,
+    "advantageInterval": [
+      -0.061992875217973885,
+      0.016992875217973887
+    ]
+  },
+  {
+    "datasetId": "lag8",
+    "dataset": "依赖八位之前（留出）",
+    "distribution": "holdout",
+    "historyLength": 512,
+    "step": 1,
+    "method": "lag",
+    "label": "滞后混合（MTD）",
+    "streams": 400,
+    "accuracy": 0.585,
+    "logLoss": 1.614440084091534,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0.4375,
+    "advantageInterval": [
+      0.37813017335557164,
+      0.49686982664442836
+    ]
+  },
+  {
+    "datasetId": "lag8",
+    "dataset": "依赖八位之前（留出）",
+    "distribution": "holdout",
+    "historyLength": 512,
+    "step": 1,
+    "method": "transformer",
+    "label": "小型 Transformer",
+    "streams": 400,
+    "accuracy": 0.1125,
+    "logLoss": 2.328230758666072,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": -0.035,
+    "advantageInterval": [
+      -0.08141682241934245,
+      0.01141682241934245
+    ]
+  },
+  {
+    "datasetId": "lag8",
+    "dataset": "依赖八位之前（留出）",
+    "distribution": "holdout",
+    "historyLength": 512,
+    "step": 5,
+    "method": "uniform",
+    "label": "均匀基线",
+    "streams": 400,
+    "accuracy": 0.1,
+    "logLoss": 2.302585092994038,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": -0.01,
+    "advantageInterval": [
+      -0.05275944955580917,
+      0.032759449555809166
+    ]
+  },
+  {
+    "datasetId": "lag8",
+    "dataset": "依赖八位之前（留出）",
+    "distribution": "holdout",
+    "historyLength": 512,
+    "step": 5,
+    "method": "frequency",
+    "label": "平滑频率",
+    "streams": 400,
+    "accuracy": 0.11,
+    "logLoss": 2.3136403190725803,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "lag8",
+    "dataset": "依赖八位之前（留出）",
+    "distribution": "holdout",
+    "historyLength": 512,
+    "step": 5,
+    "method": "markov",
+    "label": "一阶转移",
+    "streams": 400,
+    "accuracy": 0.11,
+    "logLoss": 2.3145646210655637,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0,
+    "advantageInterval": [
+      -0.006938324788966929,
+      0.006938324788966929
+    ]
+  },
+  {
+    "datasetId": "lag8",
+    "dataset": "依赖八位之前（留出）",
+    "distribution": "holdout",
+    "historyLength": 512,
+    "step": 5,
+    "method": "lag",
+    "label": "滞后混合（MTD）",
+    "streams": 400,
+    "accuracy": 0.6725,
+    "logLoss": 1.441666653453817,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0.5625,
+    "advantageInterval": [
+      0.5095597407200193,
+      0.6154402592799807
+    ]
+  },
+  {
+    "datasetId": "lag8",
+    "dataset": "依赖八位之前（留出）",
+    "distribution": "holdout",
+    "historyLength": 512,
+    "step": 5,
+    "method": "transformer",
+    "label": "小型 Transformer",
+    "streams": 400,
+    "accuracy": 0.0975,
+    "logLoss": 2.332282115248105,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": -0.0125,
+    "advantageInterval": [
+      -0.053234969243860314,
+      0.02823496924386031
+    ]
+  }
+]

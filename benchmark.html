@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-zh="独立合成基准 | 数列预测实验室">Independent synthetic benchmark | Digit Forecast Lab</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css?v=0.2.0">
+  <script type="module" src="./benchmark.mjs?v=0.2.0"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="./" data-zh="返回数列预测实验室">Back to Digit Forecast Lab</a>
+      <div class="language-choice">
+        <label for="language" class="sr-only" data-zh="显示语言">Display language</label>
+        <select id="language"><option value="en">English</option><option value="zh" lang="zh-Hans">简体中文</option></select>
+      </div>
+    </div>
+  </header>
+  <main class="shell">
+    <section class="section" aria-labelledby="report-title">
+      <div class="section-heading"><h2 id="report-title" data-zh="独立合成基准">Independent synthetic benchmark</h2></div>
+      <p class="section-description" data-zh="每种合成机制使用多条独立初始化的序列。每条序列只取一个切点，所有方法使用同一段历史和同一个预测目标。">Each synthetic process uses independently initialized sequences. Each sequence contributes one forecast, with the same history and target for every method.</p>
+      <div class="panel benchmark-panel">
+        <div class="benchmark-controls">
+          <label for="dataset"><span data-zh="合成机制">Synthetic process</span><select id="dataset"></select></label>
+          <label for="history"><span data-zh="历史长度（位）">History length (digits)</span><select id="history"><option>32</option><option>128</option><option selected>512</option></select></label>
+          <label for="position"><span data-zh="预测位置">Forecast position</span><select id="position"><option value="1" data-zh="下一位">Next digit</option><option value="5" data-zh="第 5 位">Position +5</option></select></label>
+        </div>
+        <p id="report-status" class="message benchmark-status" role="status"></p>
+        <div id="report-table" class="table-scroll" tabindex="0" role="region" aria-label="Benchmark scores" data-zh-aria-label="基准成绩" hidden>
+          <table>
+            <thead><tr>
+              <th scope="col" data-zh="方法">Method</th>
+              <th scope="col" data-zh="命中率">Accuracy</th>
+              <th scope="col" data-zh="对数损失">Log loss</th>
+              <th scope="col" data-zh="相对频率基线（百分点）">vs. frequency (pp)</th>
+              <th scope="col" data-zh="95% 配对区间（百分点）">95% paired interval (pp)</th>
+            </tr></thead>
+            <tbody id="report-results"></tbody>
+          </table>
+        </div>
+        <p id="report-reference" class="help benchmark-note"></p>
+      </div>
+      <p class="help" data-zh="配对区间比较每条序列上模型与平滑频率基线是否命中，用差值均值 ± 1.96 倍标准误计算。每个区间单独对应当前条件。">Each paired interval uses the mean difference in per-sequence hits versus smoothed frequency, plus or minus 1.96 standard errors. Intervals apply to each condition separately.</p>
+      <p class="help" data-zh="Transformer 在单独的合成数据上预训练，最多读取最近 32 位。统计模型从每条测试历史估计概率。成绩反映这些合成设定下的表现。">The Transformer was pretrained on separate synthetic data and reads at most the last 32 digits. The statistical methods estimate probabilities from each test history. Scores describe performance on these synthetic settings.</p>
+      <p class="help"><span data-zh="在项目目录运行以下命令复查基准成绩">Reproduce the benchmark from the repository with</span> <code>npm run benchmark -- --holdout</code></p>
+      <p><a href="./benchmark-results.json" download data-zh="下载完整基准 JSON">Download the complete benchmark JSON</a></p>
+    </section>
+  </main>
+</body>
+</html>

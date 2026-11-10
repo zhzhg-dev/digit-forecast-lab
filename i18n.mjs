@@ -1,4 +1,5 @@
-import { METHODS } from "./forecast.mjs";
+import { METHODS } from "./forecast.mjs?v=0.2.0";
+import { TRANSFORMER_CONTEXT_LENGTH } from "./transformer.mjs?v=0.2.0";
 
 export const DEFAULT_LANGUAGE = "en";
 
@@ -7,6 +8,7 @@ const englishMethods = {
   frequency: ["Smoothed frequency", "Estimates probabilities from the observed digit counts and gives unseen digits some probability."],
   markov: ["First-order Markov", "Estimates the next digit from the previous one. For later positions it carries the probabilities forward."],
   lag: ["Lag mixture (MTD)", "Combines digit frequencies with transitions from 1 to 12 positions back. Uses smoothed frequencies if the mixture does not improve enough on validation data."],
+  transformer: ["Small Transformer", `Uses up to ${TRANSFORMER_CONTEXT_LENGTH} recent digits and forecasts every requested position from that same history. It was trained on synthetic uniform, biased, and lag-dependent sequences. The model stays fixed when you enter new data, and its performance on other sources may differ.`],
 };
 
 const dictionaries = {
@@ -15,6 +17,8 @@ const dictionaries = {
     digitLimit: "Up to 20,000 digits",
     digitCount: ({ count }, integer) => `${integer(count)} ${count === 1 ? "digit" : "digits"}`,
     forecastUsing: ({ methodId, count }, integer, method) => `${method(methodId).label} used ${integer(count)} ${count === 1 ? "digit" : "digits"} of history.`,
+    uniformUsing: "The uniform baseline assigns the same probability to every digit.",
+    transformerUsing: ({ count, context }, integer, method) => `${method("transformer").label} used the last ${integer(context)} of ${integer(count)} ${count === 1 ? "digit" : "digits"}.`,
     positionProbabilities: ({ step }) => `Digit probabilities at position +${step}`,
     digitProbability: ({ digit, probability }) => `Digit ${digit}, ${probability}`,
     stepTied: ({ step }) => `Position +${step}, tied for highest probability`,
@@ -32,6 +36,7 @@ const dictionaries = {
     stepHeader: ({ step }) => `Position +${step}`,
     fullMatch: "All digits correct",
     lossValue: ({ loss }) => `Log loss ${loss}`,
+    accuracyDifference: ({ difference }) => `${difference} pp vs frequency`,
     csvHistoryLength: "History length",
     csvHorizon: "Forecast horizon",
     csvWindows: "Test windows",
@@ -39,6 +44,16 @@ const dictionaries = {
     csvAccuracy: "Accuracy",
     csvLogLoss: "Log loss",
     csvFullMatch: "Exact match rate",
+    csvMethodId: "Method ID",
+    csvAppVersion: "App version",
+    csvContextLength: "Context length used",
+    csvHistoryStart: "History start index (0-based)",
+    csvOrigin: "First target index (0-based)",
+    csvTargetIndex: "Target index (0-based)",
+    csvHorizonStep: "Step ahead (1-based)",
+    csvPrediction: "Predicted digit",
+    csvActual: "Actual digit",
+    csvProbability: ({ digit }) => `Probability of digit ${digit}`,
     textTooLong: "The text is too long. Remove extra separators or use a shorter sequence.",
     fileTooLarge: "The file is too large. Split the digits into smaller text files.",
     enterDigits: "Enter at least one digit from 0 to 9.",
@@ -56,6 +71,8 @@ const dictionaries = {
     digitLimit: "最多 20,000 位",
     digitCount: ({ count }, integer) => `${integer(count)} 位`,
     forecastUsing: ({ methodId, count }, integer, method) => `${method(methodId).label}使用 ${integer(count)} 位历史数字。`,
+    uniformUsing: "均匀基线为每个数字分配相同的概率。",
+    transformerUsing: ({ count, context }, integer, method) => `${method("transformer").label}使用了 ${integer(count)} 位数字中的最后 ${integer(context)} 位。`,
     positionProbabilities: ({ step }) => `第 ${step} 位各数字的概率`,
     digitProbability: ({ digit, probability }) => `数字 ${digit}，概率 ${probability}`,
     stepTied: ({ step }) => `第 ${step} 位，最高概率并列`,
@@ -73,6 +90,7 @@ const dictionaries = {
     stepHeader: ({ step }) => `第 ${step} 位`,
     fullMatch: "整段全中",
     lossValue: ({ loss }) => `对数损失 ${loss}`,
+    accuracyDifference: ({ difference }) => `较频率基线 ${difference} 个百分点`,
     csvHistoryLength: "历史长度",
     csvHorizon: "预测范围",
     csvWindows: "测试区间数",
@@ -80,6 +98,16 @@ const dictionaries = {
     csvAccuracy: "命中率",
     csvLogLoss: "对数损失",
     csvFullMatch: "整段全中率",
+    csvMethodId: "方法 ID",
+    csvAppVersion: "应用版本",
+    csvContextLength: "使用的历史长度",
+    csvHistoryStart: "历史起始索引（从 0 开始）",
+    csvOrigin: "首个目标索引（从 0 开始）",
+    csvTargetIndex: "目标索引（从 0 开始）",
+    csvHorizonStep: "预测步数（从 1 开始）",
+    csvPrediction: "预测数字",
+    csvActual: "实际数字",
+    csvProbability: ({ digit }) => `数字 ${digit} 的概率`,
     textTooLong: "文本太长。请减少分隔符，或分成更短的序列。",
     fileTooLarge: "文件过大。请把数字拆成较短的文本。",
     enterDigits: "请至少输入一个 0–9 的数字。",
@@ -142,6 +170,7 @@ export function createTranslator(requestedLanguage) {
   const { format: integer } = new Intl.NumberFormat(locale);
   const { format: percent } = new Intl.NumberFormat(locale, { style: "percent", maximumFractionDigits: 1 });
   const { format: decimal } = new Intl.NumberFormat(locale, { minimumFractionDigits: 3, maximumFractionDigits: 3 });
+  const { format: signedDecimal } = new Intl.NumberFormat(locale, { signDisplay: "exceptZero", maximumFractionDigits: 1 });
   function method(id) {
     if (language === "zh") return chineseMethods.get(id);
     const [label, description] = englishMethods[id];
@@ -153,6 +182,7 @@ export function createTranslator(requestedLanguage) {
     integer,
     percent,
     decimal,
+    percentagePoints: (difference) => signedDecimal(difference * 100),
     text(key, args = {}) {
       const message = dictionaries[language][key];
       return typeof message === "function" ? message(args, integer, method) : message;

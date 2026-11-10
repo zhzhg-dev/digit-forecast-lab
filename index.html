@@ -7,8 +7,8 @@
   <meta name="theme-color" content="#f5f7fc">
   <title data-zh="数列预测实验室">Digit Forecast Lab</title>
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./styles.css?v=0.1.1">
-  <script type="module" src="./app.mjs?v=0.1.1"></script>
+  <link rel="stylesheet" href="./styles.css?v=0.2.0">
+  <script type="module" src="./app.mjs?v=0.2.0"></script>
 </head>
 <body>
   <a class="skip-link" href="#forecast" data-zh="跳到预测工作台">Skip to the forecast workbench</a>
@@ -118,7 +118,8 @@
           <label for="history-length"><span data-zh="历史长度（位）">History length (digits)</span><input id="history-length" name="history-length" type="number" min="1" max="20000" step="1" value="64" required></label>
           <label for="test-horizon"><span data-zh="预测范围">Forecast horizon</span><select id="test-horizon"><option value="1" data-zh="下一位">Next digit</option><option value="5" data-zh="未来五位" selected>Next five digits</option></select></label>
           <button class="button button-primary" type="submit" data-zh="运行盲测">Run backtest</button>
-          <button id="export-csv" class="button button-outline" type="button" data-zh="导出 CSV" disabled>Export CSV</button>
+          <button id="export-csv" class="button button-outline" type="button" data-zh="导出汇总 CSV" disabled>Export summary CSV</button>
+          <button id="export-details-csv" class="button button-outline" type="button" data-zh="导出明细 CSV" disabled>Export detailed CSV</button>
         </form>
         <p id="backtest-status" class="message benchmark-status" role="status" data-zh="载入示例或输入包含后续真值的完整序列。">Load an example or enter a complete sequence with enough digits to score the forecasts.</p>
         <div id="benchmark-results" hidden>
@@ -129,9 +130,15 @@
               <tbody id="benchmark-body"></tbody>
             </table>
           </div>
-          <p class="help benchmark-note" data-zh="命中率越高越好。对数损失越低，表示模型通常给真值更高的概率。相邻测试窗口仍可能共享历史。">Higher accuracy is better. Lower log loss means the model generally assigns more probability to the observed digits. Adjacent test windows may share some history.</p>
+          <p class="help benchmark-note" data-zh="每列的命中率差值以平滑频率模型为基线，单位是百分点。这些差值只描述当前序列的盲测结果。">Accuracy differences are in percentage points relative to the smoothed frequency baseline at the same position. They describe the results for the current sequence.</p>
+          <p class="help benchmark-note" data-zh="对数损失越低，表示模型通常给真值更高的概率。相邻测试窗口仍可能共享历史。">Lower log loss means the model generally assigns more probability to the observed digits. Adjacent test windows may share some history.</p>
         </div>
       </div>
+      <aside class="benchmark-reference" aria-labelledby="benchmark-reference-title">
+        <h3 id="benchmark-reference-title" data-zh="独立基准测试">Independent benchmark</h3>
+        <p data-zh="用独立生成的合成序列比较预测方法。报告包含测试设置和复现方式。">Compare methods on independently generated synthetic sequences. The report includes the test setup and reproduction instructions.</p>
+        <a href="./benchmark.html" data-zh-href="./benchmark.html?lang=zh" data-zh="查看独立基准报告">View the benchmark report</a>
+      </aside>
     </section>
 
     <section id="methods" class="section method-section" aria-labelledby="methods-title">
@@ -140,7 +147,7 @@
     </section>
   </main>
   <footer class="site-footer">
-    <div class="shell footer-inner"><span><span data-zh="数列预测实验室">Digit Forecast Lab</span> <span class="footer-version">v0.1.1</span></span><span data-zh="输入和计算都留在浏览器里。">Your input and calculations stay in your browser.</span></div>
+    <div class="shell footer-inner"><span><span data-zh="数列预测实验室">Digit Forecast Lab</span> <span class="footer-version">v0.2.0</span></span><span data-zh="输入和计算都留在浏览器里。">Your input and calculations stay in your browser.</span></div>
   </footer>
 </body>
 </html>

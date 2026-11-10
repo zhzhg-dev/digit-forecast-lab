@@ -222,7 +222,7 @@ select, input[type="number"] {
 
 .section-description { margin: -.3rem 0 .8rem; color: var(--muted); max-width: 65ch; }
 .benchmark-controls { display: flex; flex-wrap: wrap; align-items: end; gap: .65rem; }
-.benchmark-controls label { display: grid; gap: .25rem; color: var(--muted); font-size: .82rem; font-weight: 650; }
+.benchmark-controls label { display: grid; gap: .25rem; min-width: 0; max-width: 100%; color: var(--muted); font-size: .82rem; font-weight: 650; }
 .benchmark-controls input { width: 6.6rem; }
 .benchmark-controls select { min-width: 6.6rem; }
 .benchmark-status { margin-top: .8rem; }
@@ -233,8 +233,13 @@ th:first-child, td:first-child { text-align: left; }
 thead th { color: var(--muted); font-weight: 700; background: #f5f7fd; }
 tbody th { font-weight: 700; }
 td span { display: block; }
-.loss-value { color: var(--muted); font-size: .75rem; }
+.loss-value, .delta-value { color: var(--muted); font-size: .75rem; }
+.delta-value { color: var(--cobalt-dark); }
 .benchmark-note { margin: .65rem 0 0; }
+.benchmark-reference { margin-top: 1rem; padding: .7rem 1rem; border-inline-start: 3px solid var(--line); }
+.benchmark-reference h3 { font-size: .96rem; }
+.benchmark-reference p { margin: .2rem 0 .15rem; color: var(--muted); font-size: .85rem; }
+.benchmark-reference a { font-size: .85rem; font-weight: 700; }
 
 .method-notes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 1.5rem; margin: 0; }
 .method-notes > div { border-top: 1px solid var(--line); padding: .8rem 0; }

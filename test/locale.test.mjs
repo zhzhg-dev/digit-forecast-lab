@@ -86,6 +86,19 @@ test('each forecasting method is available in both languages with the same ID', 
   }
 });
 
+test('benchmark comparisons preserve signed percentage points and index labels', () => {
+  const english = createTranslator('en');
+  const chinese = createTranslator('zh');
+  for (const translator of [english, chinese]) {
+    assert.equal(translator.percentagePoints(0.025), '+2.5');
+    assert.match(translator.percentagePoints(-0.025), /^[-−]2\.5$/);
+    assert.equal(translator.percentagePoints(0), '0');
+    assert.match(translator.text('csvProbability', { digit: 9 }), /9/);
+  }
+  assert.match(english.text('csvTargetIndex'), /0-based/);
+  assert.match(chinese.text('csvTargetIndex'), /从 0 开始/);
+});
+
 test('input errors translate and unknown errors use the public fallback message', () => {
   const english = createTranslator('en');
   const chinese = createTranslator('zh');

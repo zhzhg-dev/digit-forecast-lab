@@ -1,8 +1,11 @@
+import { TRANSFORMER_CONTEXT_LENGTH, predictTransformer } from './transformer.mjs?v=0.2.0';
+
 export const METHODS = [
   { id: 'uniform', label: '均匀基线', description: '每个数字的概率都是 10%。' },
   { id: 'frequency', label: '平滑频率', description: '按历史频率估计数字概率，并给未出现的数字保留概率。' },
   { id: 'markov', label: '一阶转移', description: '根据上一位估计下一位的分布，多步预测逐步传播概率。' },
-  { id: 'lag', label: '滞后混合（MTD）', description: '混合频率与相隔 1–12 位的转移。验证优势不足时使用平滑频率。' }
+  { id: 'lag', label: '滞后混合（MTD）', description: '混合频率与相隔 1–12 位的转移。验证优势不足时使用平滑频率。' },
+  { id: 'transformer', label: '小型 Transformer', description: `读取最近最多 ${TRANSFORMER_CONTEXT_LENGTH} 位数字，从同一段历史直接预测各个位置。在均匀、偏置和滞后相关的合成序列上预训练，输入新数据时参数固定。在其他来源上的表现可能不同。` }
 ];
 
 const DIGIT_COUNT = 10;
@@ -184,7 +187,8 @@ function forecast(history, horizon) {
     uniform: repeatDistribution(uniformDistribution(), horizon),
     frequency: repeatDistribution(frequency, horizon),
     markov: forecastMarkov(history, horizon, frequency),
-    lag: forecastMixture(history, horizon, frequency)
+    lag: forecastMixture(history, horizon, frequency),
+    transformer: predictTransformer(history, horizon)
   };
 }
 
@@ -195,7 +199,7 @@ export function predict(history, horizon = 1) {
 }
 
 // Resolve probability ties consistently with the displayed point forecast.
-function mostLikely(distribution) {
+export function mostLikely(distribution) {
   let guess = 0;
   for (let digit = 1; digit < DIGIT_COUNT; digit += 1) {
     if (distribution[digit] > distribution[guess]) guess = digit;
@@ -209,6 +213,7 @@ export function backtest(sequence, historyLength, horizon, options = {}) {
   requireInteger(horizon, 1, MAX_HORIZON, '预测步数');
   const maxOrigins = options.maxOrigins ?? MAX_ORIGINS;
   requireInteger(maxOrigins, 1, MAX_ORIGINS, '回测窗口上限');
+  const details = options.includeDetails === true ? [] : undefined;
 
   const lastOrigin = sequence.length - horizon;
   const origins = Math.max(0, Math.min(maxOrigins, 1 + Math.floor((lastOrigin - historyLength) / horizon)));
@@ -221,12 +226,15 @@ export function backtest(sequence, historyLength, horizon, options = {}) {
   // Align to the end of the sequence, with disjoint target blocks.
   const firstOrigin = lastOrigin - (origins - 1) * horizon;
   for (let origin = firstOrigin; origin <= lastOrigin; origin += horizon) {
-    const locked = forecast(sequence.slice(origin - historyLength, origin), horizon);
+    const start = origin - historyLength;
+    const locked = forecast(sequence.slice(start, origin), horizon);
+    const truth = sequence.slice(origin, origin + horizon);
+    details?.push({ start, origin, truth, forecasts: locked });
     for (const method of totals) {
       let matches = 0;
       for (let step = 0; step < horizon; step += 1) {
         const distribution = locked[method.id][step];
-        const actual = sequence[origin + step];
+        const actual = truth[step];
         const hit = Number(mostLikely(distribution) === actual);
         method.steps[step].hits += hit;
         method.steps[step].loss -= Math.log(distribution[actual]);
@@ -244,7 +252,8 @@ export function backtest(sequence, historyLength, horizon, options = {}) {
     })),
     fullMatchRate: origins === 0 ? null : fullMatches / origins
   }));
-  return { origins, historyLength, horizon, results };
+  const summary = { origins, historyLength, horizon, results };
+  return details === undefined ? summary : { ...summary, details };
 }
 
 function makeToyDigitSampler(seed) {

@@ -1,9 +1,11 @@
-import { METHODS, backtest, parseSequence, predict, syntheticSequence } from "./forecast.mjs";
-import { DEFAULT_LANGUAGE, LocalizedError, createStaticLocalizer, createTranslator, describeError } from "./i18n.mjs";
+import { METHODS, backtest, mostLikely, parseSequence, predict, syntheticSequence } from "./forecast.mjs?v=0.2.0";
+import { DEFAULT_LANGUAGE, LocalizedError, createStaticLocalizer, createTranslator, describeError } from "./i18n.mjs?v=0.2.0";
+import { TRANSFORMER_CONTEXT_LENGTH } from "./transformer.mjs?v=0.2.0";
 
 const MAX_TEXT_LENGTH = 100_000;
 const SAMPLE_LENGTH = 420;
 const DEMO_SEED = 1729;
+const APP_VERSION = "0.2.0";
 
 const elements = {
   language: document.querySelector("#language"),
@@ -23,6 +25,7 @@ const elements = {
   testHorizon: document.querySelector("#test-horizon"),
   testStatus: document.querySelector("#backtest-status"),
   exportButton: document.querySelector("#export-csv"),
+  exportDetailsButton: document.querySelector("#export-details-csv"),
   benchmarkResults: document.querySelector("#benchmark-results"),
   tableHead: document.querySelector("#benchmark-head"),
   tableBody: document.querySelector("#benchmark-body"),
@@ -96,6 +99,11 @@ function preferredDigit(probabilities) {
   return candidates.length === 1 ? candidates[0] : null;
 }
 
+function contextLength(methodId, length) {
+  if (methodId === "uniform") return 0;
+  return methodId === "transformer" ? Math.min(length, TRANSFORMER_CONTEXT_LENGTH) : length;
+}
+
 function renderDistribution() {
   const distribution = currentForecast?.predictions[elements.method.value][selectedStep];
   elements.chartTitle.hidden = !distribution;
@@ -129,7 +137,13 @@ function renderForecast() {
   }
   const { length, predictions } = currentForecast;
   const methodId = elements.method.value;
-  setMessage(elements.resultStatus, "forecastUsing", { methodId, count: length });
+  if (methodId === "uniform") {
+    setMessage(elements.resultStatus, "uniformUsing");
+  } else if (methodId === "transformer") {
+    setMessage(elements.resultStatus, "transformerUsing", { count: length, context: contextLength(methodId, length) });
+  } else {
+    setMessage(elements.resultStatus, "forecastUsing", { methodId, count: length });
+  }
   elements.steps.replaceChildren(...predictions[methodId].map((distribution, step) => {
     const digit = preferredDigit(distribution);
     const button = element("button", undefined, "step");
@@ -159,6 +173,7 @@ function clearBenchmark(key) {
   currentBenchmark = undefined;
   elements.benchmarkResults.hidden = true;
   elements.exportButton.disabled = true;
+  elements.exportDetailsButton.disabled = true;
   setMessage(elements.testStatus, key);
 }
 
@@ -212,15 +227,20 @@ function renderBenchmark(result) {
     heading.append(cell);
   }
   elements.tableHead.replaceChildren(heading);
+  const frequencySteps = result.results.find(({ id }) => id === "frequency").steps;
   elements.tableBody.replaceChildren(...result.results.map((method) => {
     const row = element("tr");
     const name = element("th", translator.method(method.id).label);
     name.scope = "row";
     row.append(name);
-    for (const step of method.steps) {
+    for (const [index, step] of method.steps.entries()) {
       const cell = element("td");
       const loss = step.logLoss === null ? "—" : translator.decimal(step.logLoss);
       cell.append(element("span", percentage(step.accuracy)), element("span", translator.text("lossValue", { loss }), "loss-value"));
+      if (step.accuracy !== null && frequencySteps[index].accuracy !== null) {
+        const difference = translator.percentagePoints(step.accuracy - frequencySteps[index].accuracy);
+        cell.append(element("span", translator.text("accuracyDifference", { difference }), "delta-value"));
+      }
       row.append(cell);
     }
     if (result.horizon > 1) row.append(element("td", percentage(method.fullMatchRate)));
@@ -228,6 +248,7 @@ function renderBenchmark(result) {
   }));
   elements.benchmarkResults.hidden = false;
   elements.exportButton.disabled = false;
+  elements.exportDetailsButton.disabled = !result.details?.length;
 }
 
 function runBacktest() {
@@ -236,7 +257,7 @@ function runBacktest() {
     const sequence = readHistory(elements.input.value);
     const historyLength = elements.historyLength.valueAsNumber;
     const horizon = Number(elements.testHorizon.value);
-    const result = backtest(sequence, historyLength, horizon);
+    const result = backtest(sequence, historyLength, horizon, { includeDetails: true });
     showCount(sequence.length);
     if (result.origins === 0) {
       setMessage(elements.testStatus, "missingDigits", { count: historyLength + horizon }, true);
@@ -254,6 +275,18 @@ function csvCell(value) {
   return '"' + String(value ?? "").replaceAll('"', '""') + '"';
 }
 
+function downloadCsv(rows, filename) {
+  const csv = rows.map((row) => row.map(csvCell).join(",")).join("\r\n") + "\r\n";
+  const url = URL.createObjectURL(new Blob(["\uFEFF", csv], { type: "text/csv;charset=utf-8" }));
+  const link = element("a");
+  link.href = url;
+  link.download = filename;
+  document.body.append(link);
+  link.click();
+  link.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
 function exportBenchmark() {
   if (!currentBenchmark) return;
   const { historyLength, horizon, origins, results } = currentBenchmark;
@@ -264,15 +297,32 @@ function exportBenchmark() {
       rows.push([translator.method(method.id).label, historyLength, horizon, origins, index + 1, step.accuracy, step.logLoss, method.fullMatchRate]);
     }
   }
-  const csv = rows.map((row) => row.map(csvCell).join(",")).join("\r\n") + "\r\n";
-  const url = URL.createObjectURL(new Blob(["\uFEFF", csv], { type: "text/csv;charset=utf-8" }));
-  const link = element("a");
-  link.href = url;
-  link.download = "digit-forecast-backtest.csv";
-  document.body.append(link);
-  link.click();
-  link.remove();
-  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  downloadCsv(rows, "digit-forecast-backtest.csv");
+}
+
+function exportBenchmarkDetails() {
+  if (!currentBenchmark?.details?.length) return;
+  const { historyLength, horizon, details } = currentBenchmark;
+  const headerKeys = [
+    "csvMethodId", "methodHeader", "csvAppVersion", "csvHistoryLength", "csvContextLength", "csvHorizon",
+    "csvHistoryStart", "csvOrigin", "csvTargetIndex", "csvHorizonStep", "csvPrediction", "csvActual",
+  ];
+  const probabilities = Array.from({ length: 10 }, (_, digit) => translator.text("csvProbability", { digit }));
+  const rows = [[...headerKeys.map(key => translator.text(key)), ...probabilities]];
+  for (const { start, origin, truth, forecasts } of details) {
+    for (const { id } of METHODS) {
+      const { label } = translator.method(id);
+      const usedContext = contextLength(id, historyLength);
+      for (const [step, actual] of truth.entries()) {
+        const distribution = forecasts[id][step];
+        rows.push([
+          id, label, APP_VERSION, historyLength, usedContext, horizon, start, origin, origin + step, step + 1,
+          mostLikely(distribution), actual, ...distribution,
+        ]);
+      }
+    }
+  }
+  downloadCsv(rows, "digit-forecast-backtest-details.csv");
 }
 
 function renderMethods() {
@@ -342,5 +392,6 @@ for (const control of [elements.historyLength, elements.testHorizon]) {
   control.addEventListener("input", () => clearBenchmark("settingsChanged"));
 }
 elements.exportButton.addEventListener("click", exportBenchmark);
+elements.exportDetailsButton.addEventListener("click", exportBenchmarkDetails);
 updateLanguage(DEFAULT_LANGUAGE);
 loadSample();
