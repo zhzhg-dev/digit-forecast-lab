@@ -58,6 +58,8 @@ button:disabled { cursor: default; }
 .header-inner { min-height: 68px; }
 .brand { display: inline-flex; align-items: center; gap: .65rem; color: var(--ink); font-weight: 750; text-decoration: none; }
 .brand-mark { color: var(--cobalt); flex: none; }
+.header-actions { display: flex; align-items: center; gap: clamp(.85rem, 3vw, 2rem); }
+.language-choice select { font-size: .83rem; }
 nav { display: flex; gap: clamp(.8rem, 3vw, 2rem); }
 nav a { color: var(--muted); text-decoration: none; font-size: .92rem; font-weight: 600; }
 nav a:hover { color: var(--cobalt-dark); text-decoration: underline; }
@@ -72,6 +74,7 @@ nav a:hover { color: var(--cobalt-dark); text-decoration: underline; }
 .intro-name { margin: 0 0 .7rem; color: var(--cobalt-dark); font-size: .85rem; font-weight: 700; }
 h1, h2, h3 { line-height: 1.15; margin: 0; }
 h1 { font-size: clamp(2.65rem, 6.2vw, 5.3rem); letter-spacing: -.055em; font-weight: 800; }
+h1:lang(en) { font-size: clamp(2.65rem, 5.65vw, 4.8rem); }
 .intro-copy > p:last-child { max-width: 32em; margin: 1.2rem 0 0; color: var(--muted); }
 .tape-wrap { min-width: 0; padding: .55rem; }
 .tape {
@@ -116,7 +119,7 @@ h1 { font-size: clamp(2.65rem, 6.2vw, 5.3rem); letter-spacing: -.055em; font-wei
 .section-heading { display: flex; align-items: center; justify-content: space-between; gap: .5rem 1rem; margin-bottom: .9rem; }
 .section-heading h2 { font-size: clamp(1.38rem, 3vw, 1.9rem); letter-spacing: -.035em; }
 .local-note { color: var(--muted); font-size: .8rem; display: inline-flex; align-items: center; gap: .45rem; }
-.local-note span { width: .42rem; height: .42rem; background: var(--cobalt); border-radius: 100%; }
+.local-note .local-dot { width: .42rem; height: .42rem; background: var(--cobalt); border-radius: 100%; flex: none; }
 .workbench { display: grid; grid-template-columns: 1fr 1.05fr; gap: 1rem; }
 .panel { min-width: 0; background: var(--white); border: 1px solid var(--line); border-radius: 13px; padding: clamp(1rem, 2.7vw, 1.8rem); }
 .input-panel { display: flex; flex-direction: column; }
@@ -142,6 +145,7 @@ textarea[aria-invalid="true"] { border-color: var(--coral-dark); }
 .editor-meta:has(.file-input:focus-visible) .text-action { outline: 2px solid var(--cobalt-dark); outline-offset: 3px; }
 .sample-line { display: flex; flex-wrap: wrap; align-items: center; gap: .45rem .55rem; margin-top: .9rem; font-size: .85rem; }
 .sample-line > label { color: var(--muted); font-weight: 650; }
+.sample-line select { max-width: 100%; }
 select, input[type="number"] {
   min-width: 0;
   padding: .38rem .58rem;
@@ -180,7 +184,8 @@ select, input[type="number"] {
 .message:empty { margin: 0; }
 .message.error, .error { color: var(--coral-dark); }
 
-.result-heading { display: flex; justify-content: space-between; gap: .55rem; align-items: center; }
+.result-heading { display: flex; justify-content: space-between; flex-wrap: wrap; gap: .55rem; align-items: center; }
+.result-heading label { max-width: 100%; }
 .result-heading select { max-width: 100%; font-size: .83rem; }
 .result-status { min-height: 1.35rem; margin-bottom: .7rem; }
 .forecast-steps { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: .38rem; }
@@ -248,15 +253,26 @@ td span { display: block; }
   .tape-digits span { font-size: clamp(.9rem, 5vw, 2.25rem); }
   .workbench { grid-template-columns: 1fr; }
 }
+@media (max-width: 560px) {
+  .header-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas: "brand language" "nav nav";
+    gap: .35rem .65rem;
+    padding-block: .6rem;
+  }
+  .header-actions { display: contents; }
+  .brand { grid-area: brand; gap: .4rem; font-size: .84rem; }
+  .brand-mark { width: 27px; height: 27px; }
+  .language-choice { grid-area: language; }
+  nav { grid-area: nav; gap: .8rem; }
+  nav a { font-size: .78rem; }
+}
 @media (max-width: 420px) {
   .shell { width: calc(100% - 1.5rem); }
-  .header-inner { min-height: 59px; }
-  .brand { gap: .4rem; font-size: .84rem; }
-  .brand-mark { width: 27px; height: 27px; }
-  nav { gap: .6rem; }
-  nav a { font-size: .78rem; }
-  h1 { font-size: clamp(2rem, 10vw, 2.65rem); }
+  h1, h1:lang(en) { font-size: clamp(2rem, 10vw, 2.65rem); }
   .tape { padding-inline: .7rem; }
+  .section-heading { flex-wrap: wrap; }
   .method-notes { grid-template-columns: 1fr; }
   .probability-grid { column-gap: .45rem; }
   .probability-row { grid-template-columns: .6rem minmax(0, 1fr) 2.85rem; gap: .22rem; }

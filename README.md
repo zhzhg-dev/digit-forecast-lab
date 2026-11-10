@@ -1,8 +1,14 @@
-# 数列预测实验室 · Digit Forecast Lab
+# Digit Forecast Lab · 数列预测实验室
+
+Compare four statistical methods for forecasting the next digit or the next five digits in a sequence of `0–9`. Try a synthetic example or paste your own sequence, then run a blind backtest and export the scores as CSV. All calculations stay in your browser.
+
+**[Open the app · 打开在线应用](https://zhzhg-dev.github.io/digit-forecast-lab/)**
+
+The app opens in English. Choose **简体中文** in the header to switch languages while keeping your input and results.
 
 给定一段按时间排序的 `0–9` 序列，比较四种统计方法对下一位或未来五位的预测。可以试用内置合成数据，也可以粘贴自己的实验序列。输入和计算都留在浏览器里。
 
-**[打开在线应用](https://zhzhg-dev.github.io/digit-forecast-lab/)**
+应用默认显示英文。可在页眉切换至**简体中文**，已输入的数字和计算结果会保留。
 
 ## 使用
 

@@ -1,17 +1,17 @@
 <!doctype html>
-<html lang="zh-Hans">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="输入 0–9 的数字序列，对比统计预测模型，并用后续真值做盲测。">
+  <meta name="description" content="Enter a sequence of digits from 0 to 9, compare statistical forecasts, and test them on held-out values." data-zh-content="输入 0–9 的数字序列，对比统计预测模型，并用后续真值做盲测。">
   <meta name="theme-color" content="#f5f7fc">
-  <title>数列预测实验室 | Digit Forecast Lab</title>
+  <title data-zh="数列预测实验室">Digit Forecast Lab</title>
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./styles.css">
-  <script type="module" src="./app.mjs"></script>
+  <link rel="stylesheet" href="./styles.css?v=0.1.1">
+  <script type="module" src="./app.mjs?v=0.1.1"></script>
 </head>
 <body>
-  <a class="skip-link" href="#forecast">跳到预测工作台</a>
+  <a class="skip-link" href="#forecast" data-zh="跳到预测工作台">Skip to the forecast workbench</a>
   <header class="site-header">
     <div class="shell header-inner">
       <a class="brand" href="#">
@@ -19,118 +19,128 @@
           <rect width="34" height="34" rx="8" fill="currentColor"/>
           <path d="M8 23V16m6 7V12m6 11V9m6 14V14" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
         </svg>
-        <span>数列预测实验室</span>
+        <span data-zh="数列预测实验室">Digit Forecast Lab</span>
       </a>
-      <nav aria-label="主导航">
-        <a href="#forecast">预测</a>
-        <a href="#backtest">盲测</a>
-        <a href="#methods">方法</a>
-      </nav>
+      <div class="header-actions">
+        <nav aria-label="Main navigation" data-zh-aria-label="主导航">
+          <a href="#forecast" data-zh="预测">Forecast</a>
+          <a href="#backtest" data-zh="盲测">Backtest</a>
+          <a href="#methods" data-zh="方法">Methods</a>
+        </nav>
+        <label class="language-choice" for="language">
+          <span class="sr-only" data-zh="界面语言">Display language</span>
+          <select id="language">
+            <option value="en" lang="en" selected>English</option>
+            <option value="zh" lang="zh-Hans">简体中文</option>
+          </select>
+        </label>
+      </div>
     </div>
   </header>
   <main class="shell">
     <section class="intro" aria-labelledby="page-title">
       <div class="intro-copy">
-        <p class="intro-name">Digit Forecast Lab</p>
-        <h1 id="page-title">下一位，<br class="hero-break">会是什么？</h1>
-        <p>输入一段 0–9 的数字，看看统计模型会怎么猜。用隐藏的后续数字做盲测，比较每种方法猜得有多准。</p>
+        <p class="intro-name" data-zh="数字序列实验台">A workbench for digit sequences</p>
+        <h1 id="page-title"><span data-zh="下一位，">What comes</span><br class="hero-break">
+          <span data-zh="会是什么？">next?</span></h1>
+        <p data-zh="输入一段 0–9 的数字，看看统计模型会怎么猜。用隐藏的后续数字做盲测，比较每种方法猜得有多准。">Enter a sequence of digits from 0 to 9 and see how different statistical models forecast it. Compare their guesses against digits held out of the forecast.</p>
       </div>
       <div class="tape-wrap" aria-hidden="true">
         <div class="tape">
-          <div class="tape-heading"><span>观测记录</span><span>待预测</span></div>
+          <div class="tape-heading"><span data-zh="观测记录">Observed digits</span><span data-zh="待预测">Forecast slots</span></div>
           <div class="tape-digits">
             <span>0</span><span>3</span><span>1</span><span>7</span><span>5</span><span>0</span>
             <span class="tape-unknown">?</span><span class="tape-unknown">?</span><span class="tape-unknown">?</span>
           </div>
-          <div class="tape-axis"><span>已知历史</span><span>未来</span></div>
+          <div class="tape-axis"><span data-zh="已知历史">History</span><span data-zh="未来">Future</span></div>
         </div>
       </div>
     </section>
 
     <section id="forecast" class="section" aria-labelledby="forecast-title">
       <div class="section-heading">
-        <h2 id="forecast-title">预测工作台</h2>
-        <span class="local-note"><span aria-hidden="true"></span> 浏览器内计算</span>
+        <h2 id="forecast-title" data-zh="预测工作台">Forecast workbench</h2>
+        <span class="local-note"><span class="local-dot" aria-hidden="true"></span><span data-zh="浏览器内计算">Runs in your browser</span></span>
       </div>
-      <noscript><p class="error">请在浏览器中启用 JavaScript，或用本地服务器打开项目。</p></noscript>
+      <noscript><p class="error" data-zh="请在浏览器中启用 JavaScript。">Enable JavaScript in your browser to use the workbench.</p></noscript>
       <div class="workbench">
         <form id="forecast-form" class="panel input-panel">
-          <label class="field-title" for="sequence">数字序列</label>
-          <p id="sequence-help" class="help">每个数字是一位。可以连续输入，也可以用空格、逗号或换行分隔。</p>
-          <textarea id="sequence" name="sequence" rows="6" spellcheck="false" autocomplete="off" autocapitalize="off" aria-describedby="sequence-help sequence-count" placeholder="例如 03175029"></textarea>
+          <label class="field-title" for="sequence" data-zh="数字序列">Digit sequence</label>
+          <p id="sequence-help" class="help" data-zh="每个数字是一位。可以连续输入，也可以用空格、逗号或换行分隔。">Enter digits together or separate them with spaces, commas, or line breaks.</p>
+          <textarea id="sequence" name="sequence" rows="6" spellcheck="false" autocomplete="off" autocapitalize="off" aria-describedby="sequence-help sequence-count" placeholder="For example, 03175029" data-zh-placeholder="例如 03175029"></textarea>
           <div class="editor-meta">
-            <span id="sequence-count">最多 20,000 位</span>
-            <label for="import-file" class="text-action">导入文本<span class="sr-only">或 CSV 文件</span></label>
+            <span id="sequence-count" data-zh="最多 20,000 位">Up to 20,000 digits</span>
+            <label for="import-file" class="text-action" data-zh="导入 TXT 或 CSV">Import TXT or CSV</label>
             <input id="import-file" class="sr-only file-input" type="file" accept=".txt,.csv,text/plain,text/csv">
           </div>
           <div class="sample-line">
-            <label for="sample">合成示例</label>
+            <label for="sample" data-zh="合成示例">Synthetic example</label>
             <select id="sample">
-              <option value="short">依赖上一位</option>
-              <option value="long">依赖更早的数字</option>
-              <option value="uniform">独立均匀</option>
-              <option value="biased">独立但有偏</option>
+              <option value="short" data-zh="依赖上一位">Depends on previous digit</option>
+              <option value="long" data-zh="依赖更早的数字">Depends on earlier digits</option>
+              <option value="uniform" data-zh="独立均匀">Independent and uniform</option>
+              <option value="biased" data-zh="独立但有偏">Independent and biased</option>
             </select>
-            <button id="load-sample" class="button button-outline" type="button">载入示例</button>
+            <button id="load-sample" class="button button-outline" type="button" data-zh="载入示例">Load example</button>
           </div>
           <div class="forecast-actions">
             <fieldset class="horizon-group">
-              <legend>预测范围</legend>
+              <legend data-zh="预测范围">Forecast horizon</legend>
               <div class="segments">
-                <label><input type="radio" name="horizon" value="1" checked><span>下一位</span></label>
-                <label><input type="radio" name="horizon" value="5"><span>未来五位</span></label>
+                <label><input type="radio" name="horizon" value="1" checked><span data-zh="下一位">Next digit</span></label>
+                <label><input type="radio" name="horizon" value="5"><span data-zh="未来五位">Next five digits</span></label>
               </div>
             </fieldset>
-            <button class="button button-primary" type="submit">计算预测</button>
+            <button class="button button-primary" type="submit" data-zh="计算预测">Run forecast</button>
           </div>
           <p id="input-status" class="message" role="status"></p>
         </form>
 
         <section class="panel result-panel" aria-labelledby="result-title">
           <div class="result-heading">
-            <h3 id="result-title">预测结果</h3>
-            <label for="method"><span class="sr-only">查看预测方法</span><select id="method"></select></label>
+            <h3 id="result-title" data-zh="预测结果">Forecast results</h3>
+            <label for="method"><span class="sr-only" data-zh="查看预测方法">Forecast method</span><select id="method"></select></label>
           </div>
-          <p id="result-status" class="help result-status" role="status">计算预测后，选一个位置查看各数字的概率。</p>
-          <div id="steps" class="forecast-steps" aria-label="预测位置"></div>
-          <p id="chart-title" class="chart-title">数字概率</p>
+          <p id="result-status" class="help result-status" role="status" data-zh="计算预测后，选一个位置查看各数字的概率。">Run a forecast, then select a position to see the digit probabilities.</p>
+          <div id="steps" class="forecast-steps" aria-label="Forecast positions" data-zh-aria-label="预测位置"></div>
+          <p id="chart-title" class="chart-title" data-zh="数字概率">Digit probabilities</p>
           <div id="probabilities" class="probability-grid" role="list" aria-labelledby="chart-title"></div>
-          <p class="help result-note">概率来自所选模型。任意新序列上的实际表现，可以用下方盲测检查。</p>
+          <p class="help result-note" data-zh="概率来自所选模型。任意新序列上的实际表现，可以用下方盲测检查。">Probabilities come from the selected model. Use the backtest below to check how it performs on your sequence.</p>
         </section>
       </div>
     </section>
 
     <section id="backtest" class="section backtest" aria-labelledby="backtest-title">
-      <div class="section-heading"><h2 id="backtest-title">盲测比较</h2></div>
-      <p class="section-description">从上面的完整序列切出多段。每轮只给模型固定长度的历史，等所有预测提交后，再用后续数字评分。</p>
+      <div class="section-heading"><h2 id="backtest-title" data-zh="盲测比较">Backtest comparison</h2></div>
+      <p class="section-description" data-zh="从上面的完整序列切出多段。每轮只给模型固定长度的历史，等所有预测提交后，再用后续数字评分。">Split the sequence above into test windows. In each window, models see a fixed amount of history and lock in their forecasts before the future digits are revealed.</p>
       <div class="panel benchmark-panel">
         <form id="backtest-form" class="benchmark-controls">
-          <label for="history-length">历史长度<input id="history-length" name="history-length" type="number" min="1" max="20000" step="1" value="64" required><span class="sr-only">位</span></label>
-          <label for="test-horizon">预测范围<select id="test-horizon"><option value="1">下一位</option><option value="5" selected>未来五位</option></select></label>
-          <button class="button button-primary" type="submit">运行盲测</button>
-          <button id="export-csv" class="button button-outline" type="button" disabled>导出 CSV</button>
+          <label for="history-length"><span data-zh="历史长度（位）">History length (digits)</span><input id="history-length" name="history-length" type="number" min="1" max="20000" step="1" value="64" required></label>
+          <label for="test-horizon"><span data-zh="预测范围">Forecast horizon</span><select id="test-horizon"><option value="1" data-zh="下一位">Next digit</option><option value="5" data-zh="未来五位" selected>Next five digits</option></select></label>
+          <button class="button button-primary" type="submit" data-zh="运行盲测">Run backtest</button>
+          <button id="export-csv" class="button button-outline" type="button" data-zh="导出 CSV" disabled>Export CSV</button>
         </form>
-        <p id="backtest-status" class="message benchmark-status" role="status">载入示例或输入包含后续真值的完整序列。</p>
+        <p id="backtest-status" class="message benchmark-status" role="status" data-zh="载入示例或输入包含后续真值的完整序列。">Load an example or enter a complete sequence with enough digits to score the forecasts.</p>
         <div id="benchmark-results" hidden>
-          <div class="table-scroll" tabindex="0" role="region" aria-label="各方法的盲测成绩">
+          <div class="table-scroll" tabindex="0" role="region" aria-label="Backtest scores by method" data-zh-aria-label="各方法的盲测成绩">
             <table>
-              <caption class="sr-only">各方法在相同盲测窗口上的成绩</caption>
+              <caption class="sr-only" data-zh="各方法在相同盲测窗口上的成绩">Scores for all methods on the same test windows</caption>
               <thead id="benchmark-head"></thead>
               <tbody id="benchmark-body"></tbody>
             </table>
           </div>
-          <p class="help benchmark-note">命中率越高越好。对数损失越低，表示模型平均给真值的概率越高。相邻测试窗口仍可能共享历史。</p>
+          <p class="help benchmark-note" data-zh="命中率越高越好。对数损失越低，表示模型通常给真值更高的概率。相邻测试窗口仍可能共享历史。">Higher accuracy is better. Lower log loss means the model generally assigns more probability to the observed digits. Adjacent test windows may share some history.</p>
         </div>
       </div>
     </section>
 
     <section id="methods" class="section method-section" aria-labelledby="methods-title">
-      <div class="section-heading"><h2 id="methods-title">方法说明</h2></div>
+      <div class="section-heading"><h2 id="methods-title" data-zh="方法说明">How the methods work</h2></div>
       <dl id="method-notes" class="method-notes"></dl>
     </section>
   </main>
   <footer class="site-footer">
-    <div class="shell footer-inner"><span>数列预测实验室 <span class="footer-version">v0.1</span></span><span>输入和计算都留在浏览器里。</span></div>
+    <div class="shell footer-inner"><span><span data-zh="数列预测实验室">Digit Forecast Lab</span> <span class="footer-version">v0.1.1</span></span><span data-zh="输入和计算都留在浏览器里。">Your input and calculations stay in your browser.</span></div>
   </footer>
 </body>
 </html>
