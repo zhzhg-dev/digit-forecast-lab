@@ -32,9 +32,9 @@ test('parses digit strings, separators and full-width digits while preserving le
   }
 });
 
-test('all five methods return normalized distributions at horizons from 1 through 20', () => {
+test('all six methods return normalized distributions at horizons from 1 through 20', () => {
   const history = syntheticSequence('long', 160, 29);
-  assert.deepEqual(METHODS.map(({ id }) => id).sort(), ['frequency', 'lag', 'markov', 'transformer', 'uniform']);
+  assert.deepEqual(METHODS.map(({ id }) => id).sort(), ['frequency', 'lag', 'markov', 'periodic', 'transformer', 'uniform']);
   for (let horizon = 1; horizon <= 20; horizon += 1) {
     verifyDistributions(predict(history, horizon), horizon);
   }

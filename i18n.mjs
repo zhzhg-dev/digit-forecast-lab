@@ -1,4 +1,4 @@
-import { METHODS } from "./forecast.mjs?v=0.2.0";
+import { METHODS } from "./forecast.mjs?v=0.3.0";
 import { TRANSFORMER_CONTEXT_LENGTH } from "./transformer.mjs?v=0.2.0";
 
 export const DEFAULT_LANGUAGE = "en";
@@ -9,6 +9,7 @@ const englishMethods = {
   markov: ["First-order Markov", "Estimates the next digit from the previous one. For later positions it carries the probabilities forward."],
   lag: ["Lag mixture (MTD)", "Combines digit frequencies with transitions from 1 to 12 positions back. Uses smoothed frequencies if the mixture does not improve enough on validation data."],
   transformer: ["Small Transformer", `Uses up to ${TRANSFORMER_CONTEXT_LENGTH} recent digits and forecasts every requested position from that same history. It was trained on synthetic uniform, biased, and lag-dependent sequences. The model stays fixed when you enter new data, and its performance on other sources may differ.`],
+  periodic: ["Verified cycle", "Looks for a repeating pattern across the full history. It requires two full cycles to fit and at least one more full cycle to check against held-out digits. If no cycle passes, it uses smoothed frequency."],
 };
 
 const dictionaries = {
@@ -19,6 +20,8 @@ const dictionaries = {
     forecastUsing: ({ methodId, count }, integer, method) => `${method(methodId).label} used ${integer(count)} ${count === 1 ? "digit" : "digits"} of history.`,
     uniformUsing: "The uniform baseline assigns the same probability to every digit.",
     transformerUsing: ({ count, context }, integer, method) => `${method("transformer").label} used the last ${integer(context)} of ${integer(count)} ${count === 1 ? "digit" : "digits"}.`,
+    periodicUsing: ({ count, period }, integer) => `A cycle of length ${integer(period)} passed validation in ${integer(count)} digits. The rule requires at least ${integer(3 * period)} digits, with two full cycles for fitting and one for validation.`,
+    periodicFallback: ({ count }, integer) => `No cycle passed validation in the ${integer(count)} available ${count === 1 ? "digit" : "digits"}. A cycle of length P needs at least 3 × P digits. Using smoothed frequency.`,
     positionProbabilities: ({ step }) => `Digit probabilities at position +${step}`,
     digitProbability: ({ digit, probability }) => `Digit ${digit}, ${probability}`,
     stepTied: ({ step }) => `Position +${step}, tied for highest probability`,
@@ -73,6 +76,8 @@ const dictionaries = {
     forecastUsing: ({ methodId, count }, integer, method) => `${method(methodId).label}使用 ${integer(count)} 位历史数字。`,
     uniformUsing: "均匀基线为每个数字分配相同的概率。",
     transformerUsing: ({ count, context }, integer, method) => `${method("transformer").label}使用了 ${integer(count)} 位数字中的最后 ${integer(context)} 位。`,
+    periodicUsing: ({ count, period }, integer) => `在已有的 ${integer(count)} 位数字中，长度为 ${integer(period)} 的周期通过了验证。规则至少需要 ${integer(3 * period)} 位数字，用两个完整周期拟合、一个完整周期验证。`,
+    periodicFallback: ({ count }, integer) => `已有的 ${integer(count)} 位数字中，没有周期通过验证。长度为 P 的周期至少需要 3 × P 位数字。当前使用平滑频率。`,
     positionProbabilities: ({ step }) => `第 ${step} 位各数字的概率`,
     digitProbability: ({ digit, probability }) => `数字 ${digit}，概率 ${probability}`,
     stepTied: ({ step }) => `第 ${step} 位，最高概率并列`,

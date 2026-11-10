@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title data-zh="独立合成基准 | 数列预测实验室">Independent synthetic benchmark | Digit Forecast Lab</title>
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./styles.css?v=0.2.0">
-  <script type="module" src="./benchmark.mjs?v=0.2.0"></script>
+  <link rel="stylesheet" href="./styles.css?v=0.3.0">
+  <script type="module" src="./benchmark.mjs?v=0.3.0"></script>
 </head>
 <body>
   <header class="site-header">
@@ -46,7 +46,8 @@
       <p class="help" data-zh="配对区间比较每条序列上模型与平滑频率基线是否命中，用差值均值 ± 1.96 倍标准误计算。每个区间单独对应当前条件。">Each paired interval uses the mean difference in per-sequence hits versus smoothed frequency, plus or minus 1.96 standard errors. Intervals apply to each condition separately.</p>
       <p class="help" data-zh="Transformer 在单独的合成数据上预训练，最多读取最近 32 位。统计模型从每条测试历史估计概率。成绩反映这些合成设定下的表现。">The Transformer was pretrained on separate synthetic data and reads at most the last 32 digits. The statistical methods estimate probabilities from each test history. Scores describe performance on these synthetic settings.</p>
       <p class="help"><span data-zh="在项目目录运行以下命令复查基准成绩">Reproduce the benchmark from the repository with</span> <code>npm run benchmark -- --holdout</code></p>
-      <p><a href="./benchmark-results.json" download data-zh="下载完整基准 JSON">Download the complete benchmark JSON</a></p>
+      <p><a href="./benchmark-results.json?v=0.3.0" download data-zh="下载完整基准 JSON">Download the complete benchmark JSON</a></p>
+      <p><a href="./high-precision.html" data-zh-href="./high-precision.html?lang=zh" data-zh="查看周期续写实验">View the verified-cycle experiment</a></p>
     </section>
   </main>
 </body>

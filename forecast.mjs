@@ -1,11 +1,15 @@
+import { forecastPeriodic } from './periodic.mjs';
 import { TRANSFORMER_CONTEXT_LENGTH, predictTransformer } from './transformer.mjs?v=0.2.0';
+
+export { verifiedPeriod } from './periodic.mjs';
 
 export const METHODS = [
   { id: 'uniform', label: '均匀基线', description: '每个数字的概率都是 10%。' },
   { id: 'frequency', label: '平滑频率', description: '按历史频率估计数字概率，并给未出现的数字保留概率。' },
   { id: 'markov', label: '一阶转移', description: '根据上一位估计下一位的分布，多步预测逐步传播概率。' },
   { id: 'lag', label: '滞后混合（MTD）', description: '混合频率与相隔 1–12 位的转移。验证优势不足时使用平滑频率。' },
-  { id: 'transformer', label: '小型 Transformer', description: `读取最近最多 ${TRANSFORMER_CONTEXT_LENGTH} 位数字，从同一段历史直接预测各个位置。在均匀、偏置和滞后相关的合成序列上预训练，输入新数据时参数固定。在其他来源上的表现可能不同。` }
+  { id: 'transformer', label: '小型 Transformer', description: `读取最近最多 ${TRANSFORMER_CONTEXT_LENGTH} 位数字，从同一段历史直接预测各个位置。在均匀、偏置和滞后相关的合成序列上预训练，输入新数据时参数固定。在其他来源上的表现可能不同。` },
+  { id: 'periodic', label: '周期续写', description: '在历史前段找到至少重复两轮的最短周期，并要求后段至少有一整轮且完全吻合。验证失败时使用平滑频率。' }
 ];
 
 const DIGIT_COUNT = 10;
@@ -188,7 +192,8 @@ function forecast(history, horizon) {
     frequency: repeatDistribution(frequency, horizon),
     markov: forecastMarkov(history, horizon, frequency),
     lag: forecastMixture(history, horizon, frequency),
-    transformer: predictTransformer(history, horizon)
+    transformer: predictTransformer(history, horizon),
+    periodic: forecastPeriodic(history, horizon) ?? repeatDistribution(frequency, horizon)
   };
 }
 

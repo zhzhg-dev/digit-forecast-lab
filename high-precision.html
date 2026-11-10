@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-zh="长历史精度验证 | 数列预测实验室">Long-history accuracy audit | Digit Forecast Lab</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css?v=0.3.0">
+  <script type="module" src="./high-precision.mjs?v=0.3.0"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="./" data-zh="返回数列预测实验室">Back to Digit Forecast Lab</a>
+      <div class="language-choice">
+        <label for="language" class="sr-only" data-zh="显示语言">Display language</label>
+        <select id="language"><option value="en">English</option><option value="zh" lang="zh-Hans">简体中文</option></select>
+      </div>
+    </div>
+  </header>
+  <main class="shell">
+    <section class="section" aria-labelledby="precision-title">
+      <div class="section-heading"><h2 id="precision-title" data-zh="长历史精度验证">Long-history accuracy audit</h2></div>
+      <p class="section-description" data-zh="使用独立生成的合成数字序列，分别测下一位、第 5 位和五位整段全中。每次先用固定长度的历史提交五个预测，再揭晓答案。">Independent synthetic digit sequences test the next digit, position +5, and all five digits together. Every forecast uses one fixed history before the future is revealed.</p>
+      <div class="panel benchmark-panel">
+        <div class="benchmark-controls">
+          <label for="precision-dataset"><span data-zh="合成机制">Synthetic process</span><select id="precision-dataset"></select></label>
+          <label for="precision-history"><span data-zh="可见历史（位）">Visible history (digits)</span><select id="precision-history"></select></label>
+        </div>
+        <p id="precision-status" class="message benchmark-status" role="status"></p>
+        <p id="precision-condition" class="help"></p>
+        <div id="precision-table" class="table-scroll" tabindex="0" role="region" aria-label="Long-history benchmark scores" data-zh-aria-label="长历史基准成绩" hidden>
+          <table>
+            <thead><tr>
+              <th scope="col" data-zh="方法">Method</th>
+              <th scope="col" data-zh="下一位">Next digit</th>
+              <th scope="col" data-zh="第 5 位">Position +5</th>
+              <th scope="col" data-zh="五位全中">All five correct</th>
+              <th scope="col" data-zh="平均对数损失">Mean log loss</th>
+              <th scope="col" data-zh="五位全中率首次达到 99% 的历史长度">First tested history with ≥99% all-five accuracy</th>
+            </tr></thead>
+            <tbody id="precision-results"></tbody>
+          </table>
+        </div>
+        <p id="precision-oracle" class="help benchmark-note"></p>
+      </div>
+      <p class="help" data-zh="周期续写先在历史前段寻找两次完整重复，再检查后段是否至少完整重复一次。因此周期 P 至少需要 3×P 位历史。表中的首次达标长度只来自本次测试网格。">Verified cycle requires two full copies in the fit portion and one full copy in the validation portion, so a period P needs at least 3×P historical digits. The first tested length refers to this benchmark grid.</p>
+      <p class="help"><span data-zh="在项目目录复跑实验">Run the experiment again from the repository with</span> <code>npm run high-precision -- --json</code></p>
+      <p><a href="./high-precision-results.json?v=0.3.0" download="high-precision-results.json" data-zh="下载完整结果和区间 JSON">Download the results and intervals as JSON</a></p>
+    </section>
+    <section class="section" aria-labelledby="papers-title">
+      <div class="section-heading"><h2 id="papers-title" data-zh="论文逐项对照">Comparison with published experiments</h2></div>
+      <p class="section-description" data-zh="本页把论文报告的成绩、应用采用的评估设计和本项目跑出的结果分别记录。">Published findings, evaluation designs used here, and results measured by this project are recorded separately.</p>
+      <div class="panel table-scroll" tabindex="0" role="region" aria-label="Literature audit" data-zh-aria-label="文献对照">
+        <table class="paper-comparison-table">
+          <thead><tr>
+            <th scope="col" data-zh="论文及实验">Paper and experiment</th>
+            <th scope="col" data-zh="原文报告">Published result</th>
+            <th scope="col" data-zh="本项目的对照范围">Scope of this project</th>
+          </tr></thead>
+          <tbody>
+            <tr>
+              <th scope="row"><a href="https://arxiv.org/html/2502.10390#S5.SS1" data-zh="ICML 2025，固定模数 LCG">ICML 2025, fixed-modulus LCG</a></th>
+              <td data-zh="固定生成器模数，留出参数测试。部分设定预测下一个完整整数达到 100%。">Fixed generator modulus with held-out parameters. Some settings reached 100% next-integer test accuracy.</td>
+              <td data-zh="文献核对。合成对照同样冻结测试历史，并比较新序列上的下一值命中率。">Literature audit. The synthetic control also fixes the history and measures next-value accuracy on held-out sequences.</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="https://arxiv.org/html/2502.10390#S5.SS2" data-zh="ICML 2025，留出模数">ICML 2025, unseen modulus</a></th>
+              <td data-zh="留出整个模数。论文按达到 60% 所需的历史量比较规模。">The modulus itself was held out. The scaling analysis used the history needed to reach 60% accuracy.</td>
+              <td data-zh="文献核对。应用独立基准按生成机制留出八位依赖，使用不同的十进制合成任务。">Literature audit. The independent benchmark holds out an eight-position dependency in a different synthetic decimal task.</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="https://arxiv.org/html/2510.26792v2#S3" data-zh="ICLR 2026，按变体训练与混合训练">ICLR 2026, separate and mixed training</a></th>
+              <td data-zh="指定小规模生成器上，按变体训练的下一值准确率接近满分，混合训练的各测试变体超过 90%。">On specified small generator variants, separate training was near perfect and mixed training exceeded 90% for each test variant.</td>
+              <td data-zh="文献核对。应用的 Transformer 使用固定合成权重、最多 32 位十进制历史，成绩单独报告。">Literature audit. The app Transformer uses fixed synthetic weights and up to 32 decimal digits, with scores reported separately.</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="https://arxiv.org/html/2510.26792v2#S4.SS1" data-zh="ICLR 2026，截断实验">ICLR 2026, truncation study</a></th>
+              <td data-zh="95% 对应特定截断 LCG 的二分类下一位预测，随机基线为 50%。">The 95% result is binary next-bit prediction for a specified truncated LCG, with a 50% chance baseline.</td>
+              <td data-zh="文献核对。合成报告是十类预测，独立均匀对照的单位置理论命中率为 10%。">Literature audit. The synthetic report predicts ten classes, with 10% per-position chance accuracy in the uniform control.</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="https://www.jmlr.org/papers/v24/22-0266.html" data-zh="高阶马尔可夫与 MTD">Higher-order Markov and MTD</a></th>
+              <td data-zh="通过混合多个滞后位置的转移来估计条件概率，研究关注模型假设和稀疏依赖。">Mixtures of lag-specific transitions estimate conditional probabilities, with results tied to model and sparsity assumptions.</td>
+              <td data-zh="应用实现简化 MTD，并在同一批合成序列上测量不同历史长度的表现。">The app uses a simplified MTD and measures it at several history lengths on the same synthetic streams.</td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="https://proceedings.mlr.press/v32/taieb14.html" data-zh="递推与直接多步预测">Recursive and direct multi-step forecasts</a></th>
+              <td data-zh="研究比较逐步递推与按预测距离直接建模的方法。">The study compares recursive forecasting and models fitted directly for each horizon.</td>
+              <td data-zh="应用沿用这两种预测口径，在同一个固定历史切点同时锁定五位。">The app uses both forecast designs and locks all five positions from the same history boundary.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,6 +1,6 @@
 # Digit Forecast Lab · 数列预测实验室
 
-Compare four statistical methods and a small Transformer for forecasting the next digit or the next five digits in a sequence of `0–9`. Try a synthetic example or paste your own sequence, then run a blind backtest and export summary scores or per-window forecasts as CSV. All calculations stay in your browser.
+Compare six methods for forecasting the next digit or the next five digits in a sequence of `0–9`. Try a synthetic example or paste your own sequence, then run a blind backtest and export summary scores or per-window forecasts as CSV. All calculations stay in your browser.
 
 **[Open the app · 打开在线应用](https://zhzhg-dev.github.io/digit-forecast-lab/)**
 
@@ -8,7 +8,9 @@ The app opens in English. Choose **简体中文** in the header to switch langua
 
 The [independent synthetic benchmark](https://zhzhg-dev.github.io/digit-forecast-lab/benchmark.html) compares accuracy and log loss on 400 sequences per process at three history lengths. The Transformer uses at most the latest 32 digits and fixed weights trained on separate synthetic examples. The benchmark includes an unseen eight-position dependency.
 
-给定一段按时间排序的 `0–9` 序列，比较四种统计方法和小型 Transformer 对下一位或未来五位的预测。可以试用内置合成数据，也可以粘贴自己的实验序列。输入和计算都留在浏览器里。
+The [long-history accuracy audit](https://zhzhg-dev.github.io/digit-forecast-lab/high-precision.html) separates published findings from our synthetic controls. It covers exact decimal repetitions, noisy copying and uniform draws, with histories up to 16,384 digits. Verified cycle needs two full cycles for fitting and a separate full cycle for historical validation.
+
+给定一段按时间排序的 `0–9` 序列，比较六种方法对下一位或未来五位的预测。可以试用内置合成数据，也可以粘贴自己的实验序列。输入和计算都留在浏览器里。
 
 应用默认显示英文。可在页眉切换至**简体中文**，已输入的数字和计算结果会保留。
 
@@ -28,12 +30,15 @@ The [independent synthetic benchmark](https://zhzhg-dev.github.io/digit-forecast
 | 一阶马尔可夫 | 历史中上一位与下一位的转移 |
 | 滞后混合（MTD） | 按权重结合平滑频率与 1–12 位之前的转移概率 |
 | 小型 Transformer | 用合成样本预训练的注意力模型。固定权重，最多读取最近 32 位 |
+| 周期续写 | 前段至少两轮发现精确周期，后段至少一轮核验。未通过时使用平滑频率 |
 
 内置样本覆盖独立均匀、独立有偏、相隔一位和相隔五位的依赖。两种依赖样本以 60% 的概率复制指定历史位置，其余时候从十个数字中重新均匀抽取。模型只看到数字历史。命中率按预测位置计算，对数损失用自然对数，越低越好。展示的多步概率是各位置的边际概率。
 
 界面回测用于探索单条序列。命令行基准从多条独立合成序列各取一个固定切点，用同一批历史和目标比较各方法。合成基准的结果适用于这些设定。单条输入的预测概率来自模型，是否适用于该序列要结合盲测判断。
 
 [`独立合成基准`](https://zhzhg-dev.github.io/digit-forecast-lab/benchmark.html?lang=zh) 使用 32、128、512 位历史，分别评估下一位和提前预测第 5 位。每类使用 400 条独立初始化的合成序列，并加入模型训练时未见的八位依赖机制。配对区间以每条序列相对平滑频率的命中差值为单位。统计模型从各条可见历史估计参数，Transformer 另有合成预训练数据，因此同时报告其有效上下文和训练方式。
+
+[`长历史精度验证`](https://zhzhg-dev.github.io/digit-forecast-lab/high-precision.html?lang=zh) 逐项对照论文条件，并公开本项目的合成实验结果。测试历史最长 16,384 位。周期为 P 的精确重复至少需要 3×P 位供发现和验证，实际还需历史通过一致性检查。报告按下一位、第 5 位和五位全中分别计分，公开 95% Wilson 区间及首次达到 99% 的测试长度。
 
 ## 本地运行
 
@@ -48,6 +53,7 @@ python -m http.server 8000 --bind 127.0.0.1
 ```sh
 npm test
 npm run benchmark -- --holdout
+npm run high-precision -- --json
 ```
 
 Add `--json` to export reproducible benchmark rows. Add `--timing` to measure the full prediction pipeline on your machine.

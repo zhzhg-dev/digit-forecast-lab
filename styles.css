@@ -227,6 +227,9 @@ select, input[type="number"] {
 .benchmark-controls select { min-width: 6.6rem; }
 .benchmark-status { margin-top: .8rem; }
 .table-scroll { max-width: 100%; overflow-x: auto; margin-top: .9rem; }
+.paper-comparison-table { min-width: 34rem; white-space: normal; }
+.paper-comparison-table th, .paper-comparison-table td { text-align: left; vertical-align: top; }
+.paper-comparison-table th:first-child { width: 26%; }
 table { border-collapse: collapse; width: 100%; font-size: .83rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
 th, td { padding: .55rem .62rem; border-bottom: 1px solid var(--line); text-align: right; }
 th:first-child, td:first-child { text-align: left; }
@@ -240,6 +243,7 @@ td span { display: block; }
 .benchmark-reference h3 { font-size: .96rem; }
 .benchmark-reference p { margin: .2rem 0 .15rem; color: var(--muted); font-size: .85rem; }
 .benchmark-reference a { font-size: .85rem; font-weight: 700; }
+.benchmark-links { display: flex; flex-wrap: wrap; gap: .25rem 1rem; }
 
 .method-notes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 1.5rem; margin: 0; }
 .method-notes > div { border-top: 1px solid var(--line); padding: .8rem 0; }

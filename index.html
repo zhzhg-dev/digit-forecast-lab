@@ -7,8 +7,8 @@
   <meta name="theme-color" content="#f5f7fc">
   <title data-zh="数列预测实验室">Digit Forecast Lab</title>
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./styles.css?v=0.2.0">
-  <script type="module" src="./app.mjs?v=0.2.0"></script>
+  <link rel="stylesheet" href="./styles.css?v=0.3.0">
+  <script type="module" src="./app.mjs?v=0.3.0"></script>
 </head>
 <body>
   <a class="skip-link" href="#forecast" data-zh="跳到预测工作台">Skip to the forecast workbench</a>
@@ -78,6 +78,7 @@
             <select id="sample">
               <option value="short" data-zh="依赖上一位">Depends on previous digit</option>
               <option value="long" data-zh="依赖更早的数字">Depends on earlier digits</option>
+              <option value="periodic" data-zh="精确重复 64 位">Exact 64-digit repetition</option>
               <option value="uniform" data-zh="独立均匀">Independent and uniform</option>
               <option value="biased" data-zh="独立但有偏">Independent and biased</option>
             </select>
@@ -137,7 +138,10 @@
       <aside class="benchmark-reference" aria-labelledby="benchmark-reference-title">
         <h3 id="benchmark-reference-title" data-zh="独立基准测试">Independent benchmark</h3>
         <p data-zh="用独立生成的合成序列比较预测方法。报告包含测试设置和复现方式。">Compare methods on independently generated synthetic sequences. The report includes the test setup and reproduction instructions.</p>
-        <a href="./benchmark.html" data-zh-href="./benchmark.html?lang=zh" data-zh="查看独立基准报告">View the benchmark report</a>
+        <div class="benchmark-links">
+          <a href="./benchmark.html" data-zh-href="./benchmark.html?lang=zh" data-zh="查看独立基准报告">View the benchmark report</a>
+          <a href="./high-precision.html" data-zh-href="./high-precision.html?lang=zh" data-zh="查看周期续写实验">View the verified-cycle experiment</a>
+        </div>
       </aside>
     </section>
 
@@ -147,7 +151,7 @@
     </section>
   </main>
   <footer class="site-footer">
-    <div class="shell footer-inner"><span><span data-zh="数列预测实验室">Digit Forecast Lab</span> <span class="footer-version">v0.2.0</span></span><span data-zh="输入和计算都留在浏览器里。">Your input and calculations stay in your browser.</span></div>
+    <div class="shell footer-inner"><span><span data-zh="数列预测实验室">Digit Forecast Lab</span> <span class="footer-version">v0.3.0</span></span><span data-zh="输入和计算都留在浏览器里。">Your input and calculations stay in your browser.</span></div>
   </footer>
 </body>
 </html>

@@ -1,4 +1,4 @@
-import { createStaticLocalizer, createTranslator } from './i18n.mjs?v=0.2.0';
+import { createStaticLocalizer, createTranslator } from './i18n.mjs?v=0.3.0';
 
 const localizeStatic = createStaticLocalizer(document);
 const language = document.querySelector('#language');
@@ -83,7 +83,7 @@ for (const filter of [dataset, history, position]) filter.addEventListener('chan
 setLanguage();
 
 try {
-  const response = await fetch('./benchmark-results.json?v=0.2.0');
+  const response = await fetch('./benchmark-results.json?v=0.3.0');
   if (!response.ok) throw new Error(`Benchmark request failed (${response.status})`);
   rows = await response.json();
 } catch {

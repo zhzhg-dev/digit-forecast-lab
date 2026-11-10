@@ -99,6 +99,25 @@
     "dataset": "独立均匀",
     "distribution": "baseline",
     "historyLength": 32,
+    "step": 1,
+    "method": "periodic",
+    "label": "周期续写",
+    "streams": 400,
+    "accuracy": 0.11,
+    "logLoss": 2.402157641186243,
+    "oracleAccuracy": 0.1,
+    "oracleLogLoss": 2.3025850929940455,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "uniform",
+    "dataset": "独立均匀",
+    "distribution": "baseline",
+    "historyLength": 32,
     "step": 5,
     "method": "uniform",
     "label": "均匀基线",
@@ -187,6 +206,25 @@
     "advantageInterval": [
       -0.021000744537527347,
       0.06100074453752735
+    ]
+  },
+  {
+    "datasetId": "uniform",
+    "dataset": "独立均匀",
+    "distribution": "baseline",
+    "historyLength": 32,
+    "step": 5,
+    "method": "periodic",
+    "label": "周期续写",
+    "streams": 400,
+    "accuracy": 0.1025,
+    "logLoss": 2.3682642500027082,
+    "oracleAccuracy": 0.1,
+    "oracleLogLoss": 2.3025850929940455,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
     ]
   },
   {
@@ -289,6 +327,25 @@
     "dataset": "独立均匀",
     "distribution": "baseline",
     "historyLength": 128,
+    "step": 1,
+    "method": "periodic",
+    "label": "周期续写",
+    "streams": 400,
+    "accuracy": 0.1,
+    "logLoss": 2.3613838810932686,
+    "oracleAccuracy": 0.1,
+    "oracleLogLoss": 2.3025850929940455,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "uniform",
+    "dataset": "独立均匀",
+    "distribution": "baseline",
+    "historyLength": 128,
     "step": 5,
     "method": "uniform",
     "label": "均匀基线",
@@ -377,6 +434,25 @@
     "advantageInterval": [
       -0.032651714476951,
       0.047651714476951
+    ]
+  },
+  {
+    "datasetId": "uniform",
+    "dataset": "独立均匀",
+    "distribution": "baseline",
+    "historyLength": 128,
+    "step": 5,
+    "method": "periodic",
+    "label": "周期续写",
+    "streams": 400,
+    "accuracy": 0.0925,
+    "logLoss": 2.3488290672491776,
+    "oracleAccuracy": 0.1,
+    "oracleLogLoss": 2.3025850929940455,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
     ]
   },
   {
@@ -479,6 +555,25 @@
     "dataset": "独立均匀",
     "distribution": "baseline",
     "historyLength": 512,
+    "step": 1,
+    "method": "periodic",
+    "label": "周期续写",
+    "streams": 400,
+    "accuracy": 0.1125,
+    "logLoss": 2.3128843936774164,
+    "oracleAccuracy": 0.1,
+    "oracleLogLoss": 2.3025850929940455,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "uniform",
+    "dataset": "独立均匀",
+    "distribution": "baseline",
+    "historyLength": 512,
     "step": 5,
     "method": "uniform",
     "label": "均匀基线",
@@ -567,6 +662,25 @@
     "advantageInterval": [
       -0.029970681321705033,
       0.05497068132170503
+    ]
+  },
+  {
+    "datasetId": "uniform",
+    "dataset": "独立均匀",
+    "distribution": "baseline",
+    "historyLength": 512,
+    "step": 5,
+    "method": "periodic",
+    "label": "周期续写",
+    "streams": 400,
+    "accuracy": 0.11,
+    "logLoss": 2.31896460865254,
+    "oracleAccuracy": 0.1,
+    "oracleLogLoss": 2.3025850929940455,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
     ]
   },
   {
@@ -669,6 +783,25 @@
     "dataset": "独立有偏",
     "distribution": "baseline",
     "historyLength": 32,
+    "step": 1,
+    "method": "periodic",
+    "label": "周期续写",
+    "streams": 400,
+    "accuracy": 0.4725,
+    "logLoss": 1.9593671034462892,
+    "oracleAccuracy": 0.46,
+    "oracleLogLoss": 1.876445030219958,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "biased",
+    "dataset": "独立有偏",
+    "distribution": "baseline",
+    "historyLength": 32,
     "step": 5,
     "method": "uniform",
     "label": "均匀基线",
@@ -757,6 +890,25 @@
     "advantageInterval": [
       -0.13947466415633392,
       -0.06552533584366607
+    ]
+  },
+  {
+    "datasetId": "biased",
+    "dataset": "独立有偏",
+    "distribution": "baseline",
+    "historyLength": 32,
+    "step": 5,
+    "method": "periodic",
+    "label": "周期续写",
+    "streams": 400,
+    "accuracy": 0.46,
+    "logLoss": 1.9592358941104038,
+    "oracleAccuracy": 0.46,
+    "oracleLogLoss": 1.876445030219958,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
     ]
   },
   {
@@ -859,6 +1011,25 @@
     "dataset": "独立有偏",
     "distribution": "baseline",
     "historyLength": 128,
+    "step": 1,
+    "method": "periodic",
+    "label": "周期续写",
+    "streams": 400,
+    "accuracy": 0.465,
+    "logLoss": 1.9029492209254943,
+    "oracleAccuracy": 0.46,
+    "oracleLogLoss": 1.876445030219958,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "biased",
+    "dataset": "独立有偏",
+    "distribution": "baseline",
+    "historyLength": 128,
     "step": 5,
     "method": "uniform",
     "label": "均匀基线",
@@ -947,6 +1118,25 @@
     "advantageInterval": [
       -0.11440026398174886,
       -0.05059973601825114
+    ]
+  },
+  {
+    "datasetId": "biased",
+    "dataset": "独立有偏",
+    "distribution": "baseline",
+    "historyLength": 128,
+    "step": 5,
+    "method": "periodic",
+    "label": "周期续写",
+    "streams": 400,
+    "accuracy": 0.4325,
+    "logLoss": 1.9524716613941713,
+    "oracleAccuracy": 0.46,
+    "oracleLogLoss": 1.876445030219958,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
     ]
   },
   {
@@ -1049,6 +1239,25 @@
     "dataset": "独立有偏",
     "distribution": "baseline",
     "historyLength": 512,
+    "step": 1,
+    "method": "periodic",
+    "label": "周期续写",
+    "streams": 400,
+    "accuracy": 0.47,
+    "logLoss": 1.867652630243351,
+    "oracleAccuracy": 0.46,
+    "oracleLogLoss": 1.876445030219958,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "biased",
+    "dataset": "独立有偏",
+    "distribution": "baseline",
+    "historyLength": 512,
     "step": 5,
     "method": "uniform",
     "label": "均匀基线",
@@ -1137,6 +1346,25 @@
     "advantageInterval": [
       -0.11233586895465517,
       -0.04766413104534484
+    ]
+  },
+  {
+    "datasetId": "biased",
+    "dataset": "独立有偏",
+    "distribution": "baseline",
+    "historyLength": 512,
+    "step": 5,
+    "method": "periodic",
+    "label": "周期续写",
+    "streams": 400,
+    "accuracy": 0.4175,
+    "logLoss": 1.970508989642579,
+    "oracleAccuracy": 0.46,
+    "oracleLogLoss": 1.876445030219958,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
     ]
   },
   {
@@ -1239,6 +1467,25 @@
     "dataset": "依赖上一位",
     "distribution": "baseline",
     "historyLength": 32,
+    "step": 1,
+    "method": "periodic",
+    "label": "周期续写",
+    "streams": 400,
+    "accuracy": 0.1725,
+    "logLoss": 2.332670769382364,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "short",
+    "dataset": "依赖上一位",
+    "distribution": "baseline",
+    "historyLength": 32,
     "step": 5,
     "method": "uniform",
     "label": "均匀基线",
@@ -1327,6 +1574,25 @@
     "advantageInterval": [
       0.0351257753784131,
       0.1198742246215869
+    ]
+  },
+  {
+    "datasetId": "short",
+    "dataset": "依赖上一位",
+    "distribution": "baseline",
+    "historyLength": 32,
+    "step": 5,
+    "method": "periodic",
+    "label": "周期续写",
+    "streams": 400,
+    "accuracy": 0.1,
+    "logLoss": 2.620316357842279,
+    "oracleAccuracy": 0.169984,
+    "oracleLogLoss": 2.2795923968662573,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
     ]
   },
   {
@@ -1429,6 +1695,25 @@
     "dataset": "依赖上一位",
     "distribution": "baseline",
     "historyLength": 128,
+    "step": 1,
+    "method": "periodic",
+    "label": "周期续写",
+    "streams": 400,
+    "accuracy": 0.1575,
+    "logLoss": 2.2852112435092358,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "short",
+    "dataset": "依赖上一位",
+    "distribution": "baseline",
+    "historyLength": 128,
     "step": 5,
     "method": "uniform",
     "label": "均匀基线",
@@ -1517,6 +1802,25 @@
     "advantageInterval": [
       -0.0003487200160931722,
       0.08534872001609317
+    ]
+  },
+  {
+    "datasetId": "short",
+    "dataset": "依赖上一位",
+    "distribution": "baseline",
+    "historyLength": 128,
+    "step": 5,
+    "method": "periodic",
+    "label": "周期续写",
+    "streams": 400,
+    "accuracy": 0.1025,
+    "logLoss": 2.467726820193084,
+    "oracleAccuracy": 0.169984,
+    "oracleLogLoss": 2.2795923968662573,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
     ]
   },
   {
@@ -1619,6 +1923,25 @@
     "dataset": "依赖上一位",
     "distribution": "baseline",
     "historyLength": 512,
+    "step": 1,
+    "method": "periodic",
+    "label": "周期续写",
+    "streams": 400,
+    "accuracy": 0.1325,
+    "logLoss": 2.28337658733073,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "short",
+    "dataset": "依赖上一位",
+    "distribution": "baseline",
+    "historyLength": 512,
     "step": 5,
     "method": "uniform",
     "label": "均匀基线",
@@ -1707,6 +2030,25 @@
     "advantageInterval": [
       0.05908369933600195,
       0.15091630066399803
+    ]
+  },
+  {
+    "datasetId": "short",
+    "dataset": "依赖上一位",
+    "distribution": "baseline",
+    "historyLength": 512,
+    "step": 5,
+    "method": "periodic",
+    "label": "周期续写",
+    "streams": 400,
+    "accuracy": 0.0775,
+    "logLoss": 2.3573987634004645,
+    "oracleAccuracy": 0.169984,
+    "oracleLogLoss": 2.2795923968662573,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
     ]
   },
   {
@@ -1809,6 +2151,25 @@
     "dataset": "依赖五位之前",
     "distribution": "baseline",
     "historyLength": 32,
+    "step": 1,
+    "method": "periodic",
+    "label": "周期续写",
+    "streams": 400,
+    "accuracy": 0.2125,
+    "logLoss": 2.2152435218356104,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "long",
+    "dataset": "依赖五位之前",
+    "distribution": "baseline",
+    "historyLength": 32,
     "step": 5,
     "method": "uniform",
     "label": "均匀基线",
@@ -1897,6 +2258,25 @@
     "advantageInterval": [
       0.3720156304608415,
       0.48298436953915846
+    ]
+  },
+  {
+    "datasetId": "long",
+    "dataset": "依赖五位之前",
+    "distribution": "baseline",
+    "historyLength": 32,
+    "step": 5,
+    "method": "periodic",
+    "label": "周期续写",
+    "streams": 400,
+    "accuracy": 0.17,
+    "logLoss": 2.2349856978721814,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
     ]
   },
   {
@@ -1999,6 +2379,25 @@
     "dataset": "依赖五位之前",
     "distribution": "baseline",
     "historyLength": 128,
+    "step": 1,
+    "method": "periodic",
+    "label": "周期续写",
+    "streams": 400,
+    "accuracy": 0.125,
+    "logLoss": 2.2864275658214974,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "long",
+    "dataset": "依赖五位之前",
+    "distribution": "baseline",
+    "historyLength": 128,
     "step": 5,
     "method": "uniform",
     "label": "均匀基线",
@@ -2087,6 +2486,25 @@
     "advantageInterval": [
       0.4626374782481733,
       0.5673625217518268
+    ]
+  },
+  {
+    "datasetId": "long",
+    "dataset": "依赖五位之前",
+    "distribution": "baseline",
+    "historyLength": 128,
+    "step": 5,
+    "method": "periodic",
+    "label": "周期续写",
+    "streams": 400,
+    "accuracy": 0.135,
+    "logLoss": 2.2961837706059893,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
     ]
   },
   {
@@ -2189,6 +2607,25 @@
     "dataset": "依赖五位之前",
     "distribution": "baseline",
     "historyLength": 512,
+    "step": 1,
+    "method": "periodic",
+    "label": "周期续写",
+    "streams": 400,
+    "accuracy": 0.1175,
+    "logLoss": 2.3135297383302444,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "long",
+    "dataset": "依赖五位之前",
+    "distribution": "baseline",
+    "historyLength": 512,
     "step": 5,
     "method": "uniform",
     "label": "均匀基线",
@@ -2277,6 +2714,25 @@
     "advantageInterval": [
       0.42951291915814205,
       0.5404870808418579
+    ]
+  },
+  {
+    "datasetId": "long",
+    "dataset": "依赖五位之前",
+    "distribution": "baseline",
+    "historyLength": 512,
+    "step": 5,
+    "method": "periodic",
+    "label": "周期续写",
+    "streams": 400,
+    "accuracy": 0.095,
+    "logLoss": 2.312715683988597,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
     ]
   },
   {
@@ -2379,6 +2835,25 @@
     "dataset": "依赖八位之前（留出）",
     "distribution": "holdout",
     "historyLength": 32,
+    "step": 1,
+    "method": "periodic",
+    "label": "周期续写",
+    "streams": 400,
+    "accuracy": 0.1925,
+    "logLoss": 2.240284275646311,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "lag8",
+    "dataset": "依赖八位之前（留出）",
+    "distribution": "holdout",
+    "historyLength": 32,
     "step": 5,
     "method": "uniform",
     "label": "均匀基线",
@@ -2467,6 +2942,25 @@
     "advantageInterval": [
       -0.1465436976343058,
       -0.0534563023656942
+    ]
+  },
+  {
+    "datasetId": "lag8",
+    "dataset": "依赖八位之前（留出）",
+    "distribution": "holdout",
+    "historyLength": 32,
+    "step": 5,
+    "method": "periodic",
+    "label": "周期续写",
+    "streams": 400,
+    "accuracy": 0.2125,
+    "logLoss": 2.149871293903087,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
     ]
   },
   {
@@ -2569,6 +3063,25 @@
     "dataset": "依赖八位之前（留出）",
     "distribution": "holdout",
     "historyLength": 128,
+    "step": 1,
+    "method": "periodic",
+    "label": "周期续写",
+    "streams": 400,
+    "accuracy": 0.145,
+    "logLoss": 2.27401822162106,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "lag8",
+    "dataset": "依赖八位之前（留出）",
+    "distribution": "holdout",
+    "historyLength": 128,
     "step": 5,
     "method": "uniform",
     "label": "均匀基线",
@@ -2657,6 +3170,25 @@
     "advantageInterval": [
       -0.09133984102703288,
       -0.008660158972967125
+    ]
+  },
+  {
+    "datasetId": "lag8",
+    "dataset": "依赖八位之前（留出）",
+    "distribution": "holdout",
+    "historyLength": 128,
+    "step": 5,
+    "method": "periodic",
+    "label": "周期续写",
+    "streams": 400,
+    "accuracy": 0.15,
+    "logLoss": 2.301689132088132,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
     ]
   },
   {
@@ -2759,6 +3291,25 @@
     "dataset": "依赖八位之前（留出）",
     "distribution": "holdout",
     "historyLength": 512,
+    "step": 1,
+    "method": "periodic",
+    "label": "周期续写",
+    "streams": 400,
+    "accuracy": 0.1475,
+    "logLoss": 2.2939322193319502,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
+    ]
+  },
+  {
+    "datasetId": "lag8",
+    "dataset": "依赖八位之前（留出）",
+    "distribution": "holdout",
+    "historyLength": 512,
     "step": 5,
     "method": "uniform",
     "label": "均匀基线",
@@ -2847,6 +3398,25 @@
     "advantageInterval": [
       -0.053234969243860314,
       0.02823496924386031
+    ]
+  },
+  {
+    "datasetId": "lag8",
+    "dataset": "依赖八位之前（留出）",
+    "distribution": "holdout",
+    "historyLength": 512,
+    "step": 5,
+    "method": "periodic",
+    "label": "周期续写",
+    "streams": 400,
+    "accuracy": 0.11,
+    "logLoss": 2.3136403190725803,
+    "oracleAccuracy": 0.64,
+    "oracleLogLoss": 1.4444190426347405,
+    "advantage": 0,
+    "advantageInterval": [
+      0,
+      0
     ]
   }
 ]

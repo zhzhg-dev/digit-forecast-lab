@@ -1,11 +1,12 @@
-import { METHODS, backtest, mostLikely, parseSequence, predict, syntheticSequence } from "./forecast.mjs?v=0.2.0";
-import { DEFAULT_LANGUAGE, LocalizedError, createStaticLocalizer, createTranslator, describeError } from "./i18n.mjs?v=0.2.0";
+import { METHODS, backtest, mostLikely, parseSequence, predict, syntheticSequence, verifiedPeriod } from "./forecast.mjs?v=0.3.0";
+import { DEFAULT_LANGUAGE, LocalizedError, createStaticLocalizer, createTranslator, describeError } from "./i18n.mjs?v=0.3.0";
 import { TRANSFORMER_CONTEXT_LENGTH } from "./transformer.mjs?v=0.2.0";
 
 const MAX_TEXT_LENGTH = 100_000;
 const SAMPLE_LENGTH = 420;
 const DEMO_SEED = 1729;
-const APP_VERSION = "0.2.0";
+const PERIODIC_SAMPLE_LENGTH = 64;
+const APP_VERSION = "0.3.0";
 
 const elements = {
   language: document.querySelector("#language"),
@@ -135,12 +136,15 @@ function renderForecast() {
     renderDistribution();
     return;
   }
-  const { length, predictions } = currentForecast;
+  const { length, predictions, period } = currentForecast;
   const methodId = elements.method.value;
   if (methodId === "uniform") {
     setMessage(elements.resultStatus, "uniformUsing");
   } else if (methodId === "transformer") {
     setMessage(elements.resultStatus, "transformerUsing", { count: length, context: contextLength(methodId, length) });
+  } else if (methodId === "periodic") {
+    const key = period === null ? "periodicFallback" : "periodicUsing";
+    setMessage(elements.resultStatus, key, { count: length, period });
   } else {
     setMessage(elements.resultStatus, "forecastUsing", { methodId, count: length });
   }
@@ -190,7 +194,7 @@ function runForecast() {
   try {
     const history = readHistory(elements.input.value);
     const horizon = Number(new FormData(elements.forecastForm).get("horizon"));
-    currentForecast = { length: history.length, predictions: predict(history, horizon) };
+    currentForecast = { length: history.length, predictions: predict(history, horizon), period: verifiedPeriod(history) };
     selectedStep = 0;
     elements.input.removeAttribute("aria-invalid");
     setMessage(elements.inputStatus, "empty");
@@ -205,7 +209,13 @@ function runForecast() {
 
 function loadSample() {
   try {
-    elements.input.value = syntheticSequence(elements.sample.value, SAMPLE_LENGTH, DEMO_SEED).join("");
+    const kind = elements.sample.value;
+    if (kind === "periodic") {
+      const cycle = syntheticSequence("uniform", PERIODIC_SAMPLE_LENGTH, DEMO_SEED);
+      elements.input.value = Array.from({ length: SAMPLE_LENGTH }, (_, index) => cycle[index % cycle.length]).join("");
+    } else {
+      elements.input.value = syntheticSequence(kind, SAMPLE_LENGTH, DEMO_SEED).join("");
+    }
   } catch (error) {
     showError(elements.inputStatus, error, "sampleFailed");
     return;
