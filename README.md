@@ -12,6 +12,8 @@ The [per-method acceptance report](https://zhzhg-dev.github.io/digit-forecast-la
 
 The [long-history accuracy audit](https://zhzhg-dev.github.io/digit-forecast-lab/high-precision.html) separates published findings from our synthetic controls. It covers exact decimal repetitions, noisy copying and uniform draws, with histories up to 16,384 digits. Verified cycle needs two full cycles for fitting and a separate full cycle for historical validation.
 
+The [Integer Sequence Lab](./integer-lab.html) preserves each integer as one observation. Paste up to 20,000 unsigned 64-bit values separated by commas or whitespace. Run a one- or five-value forecast using only the prefix, then enter the held-out values to score exact integer matches. It compares frequency, a first-order transition validated on the last third of the visible history, and a verified exact cycle. The latter two methods can abstain. Run `npm run integer-benchmark` for an independent synthetic comparison that reports coverage and accuracy separately.
+
 给定一段按时间排序的 `0–9` 序列，比较六种方法对下一位或未来五位的预测。可以试用内置合成数据，也可以粘贴自己的实验序列。输入和计算都留在浏览器里。
 
 应用默认显示英文。可在页眉切换至**简体中文**，已输入的数字和计算结果会保留。
@@ -43,6 +45,14 @@ The [long-history accuracy audit](https://zhzhg-dev.github.io/digit-forecast-lab
 [`长历史精度验证`](https://zhzhg-dev.github.io/digit-forecast-lab/high-precision.html?lang=zh) 逐项对照论文条件，并公开本项目的合成实验结果。测试历史最长 16,384 位。周期为 P 的精确重复至少需要 3×P 位供发现和验证，实际还需历史通过一致性检查。报告按下一位、第 5 位和五位全中分别计分，公开 95% Wilson 区间及首次达到 99% 的测试长度。
 
 [`六种方法逐项验收`](https://zhzhg-dev.github.io/digit-forecast-lab/acceptance.html?lang=zh) 公布每项条件、门槛与实测结果。确定性测试要求整段全中。随机测试对同一批留出序列比较已知规则参照、命中率差值和对数损失差值。
+
+[`整值序列实验室`](./integer-lab.html?lang=zh) 把每个整数作为一次观测。支持用逗号或空白分隔最多 20,000 个无符号 64 位整数。先用历史预测未来一个或五个整值，再输入留出的真值按整值计分。工作台比较频率基线、一阶转移和周期验证法。一阶转移用历史前段拟合，在最后三分之一与频率基线比较。转移和周期方法在证据不足时会弃权。运行 `npm run integer-benchmark` 可查看独立合成序列上的覆盖率和命中率。
+
+### What transfers from the papers · 论文条件如何对照
+
+The ICML LCG experiments train on many sequences from a defined family and score whole generator outputs. Their analysis finds that the input representation and the history available to attention affect which structure the model can learn. The ICLR PCG experiments also use trained models and explicit generator settings. In the one-bit truncation case, 95% refers to the next observed bit at position 256. The Integer Sequence Lab matches the unit of observation for whole-value evaluation. Its benchmark measures generic methods on synthetic controls. [ICML 2025 §4–5](https://arxiv.org/html/2502.10390#S4) · [ICLR 2026 §3–4](https://arxiv.org/html/2510.26792v2#S3)
+
+ICML 的 LCG 实验在同一生成器族的许多序列上训练，并按完整输出计分。论文分析显示，输入编码和注意力能看到的历史会影响模型可利用的结构。ICLR 的 PCG 实验也明确指定了生成器和训练方案。其中 95% 对应截断实验的第 256 个可见比特。整值工作台对齐了完整输出的观测和评分单位，基准结果来自对通用方法的合成对照测试。 [ICML 2025 §4–5](https://arxiv.org/html/2502.10390#S4) · [ICLR 2026 §3–4](https://arxiv.org/html/2510.26792v2#S3)
 
 ## 本地运行
 

@@ -6,16 +6,22 @@ function isDigit(value) {
 }
 
 export function verifiedPeriod(history) {
-  if (!Array.isArray(history) || history.length < 3 || !isDigit(history[0])) return null;
+  if (!Array.isArray(history)) return null;
+  for (const digit of history) {
+    if (!isDigit(digit)) return null;
+  }
+  return verifiedSymbolPeriod(history);
+}
 
+export function verifiedSymbolPeriod(history) {
+  if (history.length < 3) return null;
   const fitLength = Math.floor(history.length * 2 / 3);
   const borders = new Uint32Array(fitLength);
   for (let index = 1; index < fitLength; index += 1) {
-    const digit = history[index];
-    if (!isDigit(digit)) return null;
+    const symbol = history[index];
     let border = borders[index - 1];
-    while (border > 0 && digit !== history[border]) border = borders[border - 1];
-    borders[index] = digit === history[border] ? border + 1 : border;
+    while (border > 0 && symbol !== history[border]) border = borders[border - 1];
+    borders[index] = symbol === history[border] ? border + 1 : border;
   }
 
   // The longest prefix that is also a suffix gives the shortest period,

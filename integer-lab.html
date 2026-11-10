@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Forecast whole integers from a visible history and compare locked predictions with later values." data-zh-content="根据可见的整数历史提交预测，再与后续真值逐项比较。">
+  <title data-zh="整数序列实验室 | 数列预测实验室">Integer Sequence Lab | Digit Forecast Lab</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css?v=0.5.0">
+  <script type="module" src="./integer-lab-ui.mjs?v=0.5.0"></script>
+</head>
+<body>
+  <a class="skip-link" href="#integer-history" data-zh="跳到历史输入">Skip to history input</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="./" data-zh="返回数列预测实验室">Back to Digit Forecast Lab</a>
+      <div class="language-choice">
+        <label for="language" class="sr-only" data-zh="显示语言">Display language</label>
+        <select id="language">
+          <option value="en" lang="en" selected>English</option>
+          <option value="zh" lang="zh-Hans">简体中文</option>
+        </select>
+      </div>
+    </div>
+  </header>
+  <main id="integer-lab" class="shell">
+    <section class="integer-intro" aria-labelledby="integer-title">
+      <h1 id="integer-title" data-zh="整数序列实验室">Integer Sequence Lab</h1>
+      <p class="section-description" data-zh="把每个完整整数作为一个值。先用已有历史锁定预测，再输入后续真值，逐个检查是否完全一致。">Treat each whole integer as one value. Lock forecasts from the available history, then enter the later values to check for exact matches.</p>
+    </section>
+    <noscript><p class="error" data-zh="请启用 JavaScript 来使用整数实验室。">Enable JavaScript to use the Integer Sequence Lab.</p></noscript>
+    <section class="section" aria-label="Forecast and score" data-zh-aria-label="预测与评分">
+      <div class="workbench">
+        <form id="integer-history-form" class="panel integer-form" novalidate>
+          <h2 data-zh="1. 锁定预测">1. Lock a forecast</h2>
+          <label for="integer-history" class="field-title" data-zh="可见历史">Visible history</label>
+          <p id="integer-history-help" class="help" data-zh="每个整数写成连续数字，用逗号或空白分隔各个值。最多输入 20,000 个值，每个值须在 0 至 18446744073709551615 之间。">Write each integer as consecutive digits. Separate values with commas or whitespace. Enter up to 20,000 values from 0 to 18446744073709551615.</p>
+          <textarea id="integer-history" rows="5" spellcheck="false" autocomplete="off" autocapitalize="off" aria-describedby="integer-history-help integer-history-status" placeholder="For example, 308, 9007199254740993, 42" data-zh-placeholder="例如 308, 9007199254740993, 42"></textarea>
+          <div class="forecast-actions">
+            <fieldset class="horizon-group">
+              <legend data-zh="预测范围">Forecast horizon</legend>
+              <div class="segments">
+                <label><input type="radio" name="integer-horizon" value="1" checked><span data-zh="下一个值">Next value</span></label>
+                <label><input type="radio" name="integer-horizon" value="5"><span data-zh="未来五个值">Next five values</span></label>
+              </div>
+            </fieldset>
+            <button class="button button-primary" type="submit" data-zh="锁定预测">Lock forecasts</button>
+          </div>
+          <button id="integer-example" class="button button-outline integer-example" type="button" data-zh="填入合成周期示例">Load a synthetic cycle</button>
+          <p id="integer-history-status" class="message" role="status"></p>
+        </form>
+        <form id="integer-truth-form" class="panel integer-form" novalidate>
+          <h2 data-zh="2. 比较真值（可选）">2. Compare actual values (optional)</h2>
+          <fieldset id="integer-truth-fields" disabled>
+            <legend class="sr-only" data-zh="评分输入">Scoring inputs</legend>
+            <label for="integer-truth" class="field-title" data-zh="后续真值">Later actual values</label>
+            <p id="integer-truth-help" class="help" data-zh="锁定预测后再按顺序输入真值。真值只用于与当前锁定的预测比较。">Enter the actual values in order after locking a forecast. These values are used to score the locked predictions.</p>
+            <textarea id="integer-truth" rows="5" spellcheck="false" autocomplete="off" autocapitalize="off" aria-describedby="integer-truth-help integer-score-status" placeholder="Enter the actual values after forecasting" data-zh-placeholder="锁定预测后输入后续真值"></textarea>
+            <button class="button button-primary integer-score-button" type="submit" data-zh="逐项评分">Score exact matches</button>
+          </fieldset>
+          <p id="integer-score-status" class="message" role="status"></p>
+        </form>
+      </div>
+      <section id="integer-results" class="panel integer-results" aria-labelledby="integer-result-title" hidden>
+        <h2 id="integer-result-title" data-zh="已锁定的预测">Locked forecasts</h2>
+        <div class="table-scroll" role="region" tabindex="0" aria-labelledby="integer-result-title">
+          <table>
+            <thead id="integer-result-head"></thead>
+            <tbody id="integer-result-body"></tbody>
+          </table>
+        </div>
+        <p class="help" data-zh="每个完整整数都须与真值完全一致。方法可以在证据不足时弃权，弃权不会被计成猜错。">Each entire integer must match the observed value. A method can abstain when the evidence is insufficient. Abstentions are shown separately.</p>
+      </section>
+    </section>
+    <section class="section" aria-labelledby="integer-method-title">
+      <div class="section-heading"><h2 id="integer-method-title" data-zh="方法说明">How the methods work</h2></div>
+      <dl class="method-notes">
+        <div>
+          <dt data-zh="频率基线">Frequency baseline</dt>
+          <dd data-zh="预测历史中出现次数最多的整数。并列时选较小的整数。">Predicts the most frequent integer in the history. Ties go to the smaller integer.</dd>
+        </div>
+        <div>
+          <dt data-zh="经验证的一阶转移">Validated first-order transition</dt>
+          <dd data-zh="用历史前段估计从一个值到下一个值的转移，再用留出的后段验证。证据不足或遇到缺少支持的转移时弃权。">Learns which value usually follows each observed value, then checks the rule on held-out history. It abstains if validation or the forecast path lacks support.</dd>
+        </div>
+        <div>
+          <dt data-zh="经验证的周期">Verified cycle</dt>
+          <dd data-zh="检查完整整数是否按同一周期重复。只有在留出的历史中通过验证才续写。">Checks for a repeating cycle of whole integers. It continues the cycle when held-out history confirms it.</dd>
+        </div>
+      </dl>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <span><span data-zh="整数序列实验室">Integer Sequence Lab</span> <span class="footer-version">v0.5.0</span></span>
+      <span data-zh="输入和计算都留在浏览器里。">Your input and calculations stay in your browser.</span>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,12 +1,13 @@
 {
   "name": "digit-forecast-lab",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "private": true,
   "type": "module",
   "scripts": {
     "test": "node --test",
     "benchmark": "node scripts/benchmark.mjs",
     "high-precision": "node scripts/high-precision.mjs",
-    "acceptance": "node scripts/acceptance.mjs"
+    "acceptance": "node scripts/acceptance.mjs",
+    "integer-benchmark": "node scripts/integer-benchmark.mjs"
   }
 }
